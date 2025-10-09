@@ -62,4 +62,9 @@
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
+
+    Private Sub FlowLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles FlowLayoutPanel1.Paint
+        FlowLayoutPanel1.WrapContents = False
+
+    End Sub
 End Class

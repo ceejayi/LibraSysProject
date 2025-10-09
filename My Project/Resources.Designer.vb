@@ -63,6 +63,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property _1__The_winter_s_tale__Author__William_Shakespeare() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("1. The winter's tale, Author_ William Shakespeare", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property BORROWING() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("BORROWING", resourceCulture)

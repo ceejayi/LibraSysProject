@@ -24,6 +24,10 @@ Partial Class UserMainPage
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
         PanelMain = New Panel()
+        Panel2 = New Panel()
+        FlowLayoutPanel1 = New FlowLayoutPanel()
+        PictureBox1 = New PictureBox()
+        PictureBox2 = New PictureBox()
         Panel1 = New Panel()
         Panel3 = New Panel()
         Button5 = New Button()
@@ -33,6 +37,10 @@ Partial Class UserMainPage
         Button1 = New Button()
         Timer1 = New Timer(components)
         PanelMain.SuspendLayout()
+        Panel2.SuspendLayout()
+        FlowLayoutPanel1.SuspendLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         Panel3.SuspendLayout()
         SuspendLayout()
         ' 
@@ -42,6 +50,7 @@ Partial Class UserMainPage
         PanelMain.BackgroundImage = My.Resources.Resources.MAINPAGE1
         PanelMain.BackgroundImageLayout = ImageLayout.Stretch
         PanelMain.BorderStyle = BorderStyle.FixedSingle
+        PanelMain.Controls.Add(Panel2)
         PanelMain.Controls.Add(Panel1)
         PanelMain.Controls.Add(Panel3)
         PanelMain.Dock = DockStyle.Fill
@@ -50,6 +59,43 @@ Partial Class UserMainPage
         PanelMain.Name = "PanelMain"
         PanelMain.Size = New Size(1006, 633)
         PanelMain.TabIndex = 0
+        ' 
+        ' Panel2
+        ' 
+        Panel2.AutoScroll = True
+        Panel2.BackColor = Color.Transparent
+        Panel2.Controls.Add(FlowLayoutPanel1)
+        Panel2.Location = New Point(145, 250)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(820, 260)
+        Panel2.TabIndex = 2
+        ' 
+        ' FlowLayoutPanel1
+        ' 
+        FlowLayoutPanel1.AutoScroll = True
+        FlowLayoutPanel1.Controls.Add(PictureBox1)
+        FlowLayoutPanel1.Controls.Add(PictureBox2)
+        FlowLayoutPanel1.Location = New Point(0, 0)
+        FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        FlowLayoutPanel1.Size = New Size(820, 260)
+        FlowLayoutPanel1.TabIndex = 0
+        FlowLayoutPanel1.WrapContents = False
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Location = New Point(3, 3)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(184, 254)
+        PictureBox1.TabIndex = 1
+        PictureBox1.TabStop = False
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.Location = New Point(193, 3)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(184, 254)
+        PictureBox2.TabIndex = 2
+        PictureBox2.TabStop = False
         ' 
         ' Panel1
         ' 
@@ -137,6 +183,10 @@ Partial Class UserMainPage
         StartPosition = FormStartPosition.CenterScreen
         Text = "UserMainPage"
         PanelMain.ResumeLayout(False)
+        Panel2.ResumeLayout(False)
+        FlowLayoutPanel1.ResumeLayout(False)
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         Panel3.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
@@ -151,4 +201,7 @@ Partial Class UserMainPage
     Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
 End Class
