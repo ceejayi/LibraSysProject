@@ -67,7 +67,7 @@ Partial Class UserMainPage
         Panel2.Controls.Add(FlowLayoutPanel1)
         Panel2.Location = New Point(145, 250)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(820, 260)
+        Panel2.Size = New Size(820, 343)
         Panel2.TabIndex = 2
         ' 
         ' FlowLayoutPanel1
