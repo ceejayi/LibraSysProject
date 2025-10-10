@@ -23,9 +23,9 @@ Partial Class Welcome
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Panel1 = New Panel()
+        Button3 = New Button()
         Button2 = New Button()
         Button1 = New Button()
-        Button3 = New Button()
         Panel1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -41,6 +41,20 @@ Partial Class Welcome
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(1006, 633)
         Panel1.TabIndex = 0
+        ' 
+        ' Button3
+        ' 
+        Button3.BackColor = Color.Transparent
+        Button3.BackgroundImageLayout = ImageLayout.Stretch
+        Button3.FlatAppearance.BorderSize = 0
+        Button3.FlatAppearance.MouseDownBackColor = Color.Transparent
+        Button3.FlatAppearance.MouseOverBackColor = Color.Transparent
+        Button3.FlatStyle = FlatStyle.Flat
+        Button3.Location = New Point(634, 455)
+        Button3.Name = "Button3"
+        Button3.Size = New Size(151, 92)
+        Button3.TabIndex = 2
+        Button3.UseVisualStyleBackColor = False
         ' 
         ' Button2
         ' 
@@ -68,20 +82,6 @@ Partial Class Welcome
         Button1.Size = New Size(151, 92)
         Button1.TabIndex = 0
         Button1.UseVisualStyleBackColor = False
-        ' 
-        ' Button3
-        ' 
-        Button3.BackColor = Color.Transparent
-        Button3.BackgroundImageLayout = ImageLayout.Stretch
-        Button3.FlatAppearance.BorderSize = 0
-        Button3.FlatAppearance.MouseDownBackColor = Color.Transparent
-        Button3.FlatAppearance.MouseOverBackColor = Color.Transparent
-        Button3.FlatStyle = FlatStyle.Flat
-        Button3.Location = New Point(634, 455)
-        Button3.Name = "Button3"
-        Button3.Size = New Size(151, 92)
-        Button3.TabIndex = 2
-        Button3.UseVisualStyleBackColor = False
         ' 
         ' Welcome
         ' 
