@@ -100,4 +100,7 @@ Partial Class Welcome
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents Button3 As Button
+
+
+    'CEEJAY MALAKI BURAT
 End Class
