@@ -14,5 +14,8 @@
 
         ' Optional: border
         e.Graphics.DrawRectangle(Pens.Black, 0, 0, Me.Width - 1, Me.Height - 1)
+
+
+        'CEEJ TRY'
     End Sub
 End Class
