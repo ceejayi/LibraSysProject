@@ -101,4 +101,31 @@ Public Class UserMainPage
             MessageBox.Show("Error retrieving book details: " & ex.Message)
         End Try
     End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+
+    End Sub
+
+    Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
+
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Dim result As DialogResult
+        result = MessageBox.Show("Sign Out?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If result = DialogResult.Yes Then
+            ' Do your sign out process here
+            MessageBox.Show("You have signed out successfully.", "Signed Out", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Welcome.Show()
+            Me.Hide()
+        Else
+            ' User clicked No, do nothing
+        End If
+
+    End Sub
+
+    Private Sub PanelMain_Paint(sender As Object, e As PaintEventArgs) Handles PanelMain.Paint
+
+    End Sub
 End Class

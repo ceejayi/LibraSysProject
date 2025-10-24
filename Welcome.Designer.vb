@@ -31,7 +31,7 @@ Partial Class Welcome
         ' 
         ' Panel1
         ' 
-        Panel1.BackgroundImage = My.Resources.Resources.WELCOMEPAGE3
+        Panel1.BackgroundImage = My.Resources.Resources.WELCOMEPAGE__2_
         Panel1.BackgroundImageLayout = ImageLayout.Stretch
         Panel1.Controls.Add(Button3)
         Panel1.Controls.Add(Button2)

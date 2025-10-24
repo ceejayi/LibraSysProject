@@ -5,7 +5,9 @@ Public Class Loading
         ProgressBar2.Increment(2)
         If ProgressBar2.Value >= ProgressBar2.Maximum Then
             Timer1.Stop()
-            Welcome.Show() ' Ilabas ang main 
+            Welcome.Show()
+            Me.Hide()
+
         End If
     End Sub
 

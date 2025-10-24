@@ -31,7 +31,7 @@ Partial Class Loading
         ' 
         ' Panel1
         ' 
-        Panel1.BackgroundImage = My.Resources.Resources.LOADING
+        Panel1.BackgroundImage = My.Resources.Resources.LOADING1
         Panel1.BackgroundImageLayout = ImageLayout.Stretch
         Panel1.Controls.Add(ProgressBar2)
         Panel1.Dock = DockStyle.Fill

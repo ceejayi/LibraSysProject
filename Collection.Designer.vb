@@ -27,6 +27,7 @@ Partial Class Collection
         ' 
         ' Panel1
         ' 
+        Panel1.BackgroundImageLayout = ImageLayout.Stretch
         Panel1.Location = New Point(12, 12)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(776, 426)
