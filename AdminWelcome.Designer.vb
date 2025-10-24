@@ -44,7 +44,7 @@ Partial Class AdminWelcome
         ' 
         ' PanelMain
         ' 
-        PanelMain.BackgroundImage = My.Resources.Resources.ADMINHOMEPAGE
+        PanelMain.BackgroundImage = My.Resources.Resources.ADMINHOMEPAGE1
         PanelMain.BackgroundImageLayout = ImageLayout.Stretch
         PanelMain.Controls.Add(Button11)
         PanelMain.Controls.Add(Button10)
@@ -61,11 +61,10 @@ Partial Class AdminWelcome
         ' 
         ' Button11
         ' 
-        Button11.Location = New Point(21, 27)
+        Button11.Location = New Point(908, 562)
         Button11.Name = "Button11"
-        Button11.Size = New Size(94, 29)
+        Button11.Size = New Size(80, 27)
         Button11.TabIndex = 7
-        Button11.Text = "LOG OUT"
         Button11.UseVisualStyleBackColor = True
         ' 
         ' Button10

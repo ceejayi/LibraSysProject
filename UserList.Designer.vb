@@ -58,6 +58,7 @@ Partial Class UserList
         ClientSize = New Size(1006, 633)
         Controls.Add(Panel1)
         Name = "UserList"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "UserList"
         Panel1.ResumeLayout(False)
         ResumeLayout(False)

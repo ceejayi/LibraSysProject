@@ -63,6 +63,7 @@
             TxtboxPassword.Text = ""
 
             AdminWelcome.Show()
+            Me.Hide()
         ElseIf username = "" OrElse password = "" Then
             MessageBox.Show("Please enter your username and password.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Else
