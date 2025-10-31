@@ -24,6 +24,7 @@ Partial Class AdminLogin
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AdminLogin))
         Panel1 = New Panel()
+        bttnBack = New Button()
         BtnContinue = New Button()
         TxtboxPassword = New TextBox()
         TxtboxUsername = New TextBox()
@@ -35,6 +36,7 @@ Partial Class AdminLogin
         Panel1.BackColor = SystemColors.ControlDarkDark
         Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), Image)
         Panel1.BackgroundImageLayout = ImageLayout.Stretch
+        Panel1.Controls.Add(bttnBack)
         Panel1.Controls.Add(BtnContinue)
         Panel1.Controls.Add(TxtboxPassword)
         Panel1.Controls.Add(TxtboxUsername)
@@ -45,6 +47,18 @@ Partial Class AdminLogin
         Panel1.Size = New Size(1258, 791)
         Panel1.TabIndex = 0
         ' 
+        ' bttnBack
+        ' 
+        bttnBack.BackColor = Color.Transparent
+        bttnBack.FlatAppearance.BorderSize = 0
+        bttnBack.FlatStyle = FlatStyle.Flat
+        bttnBack.Location = New Point(892, 628)
+        bttnBack.Margin = New Padding(2)
+        bttnBack.Name = "bttnBack"
+        bttnBack.Size = New Size(121, 48)
+        bttnBack.TabIndex = 3
+        bttnBack.UseVisualStyleBackColor = False
+        ' 
         ' BtnContinue
         ' 
         BtnContinue.BackColor = Color.Transparent
@@ -52,7 +66,7 @@ Partial Class AdminLogin
         BtnContinue.FlatAppearance.MouseDownBackColor = Color.Transparent
         BtnContinue.FlatAppearance.MouseOverBackColor = Color.Transparent
         BtnContinue.FlatStyle = FlatStyle.Flat
-        BtnContinue.Location = New Point(715, 627)
+        BtnContinue.Location = New Point(715, 628)
         BtnContinue.Margin = New Padding(4)
         BtnContinue.Name = "BtnContinue"
         BtnContinue.Size = New Size(126, 48)
@@ -64,8 +78,9 @@ Partial Class AdminLogin
         TxtboxPassword.BackColor = Color.Wheat
         TxtboxPassword.BorderStyle = BorderStyle.None
         TxtboxPassword.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        TxtboxPassword.Location = New Point(685, 485)
+        TxtboxPassword.Location = New Point(685, 475)
         TxtboxPassword.Margin = New Padding(4)
+        TxtboxPassword.MaximumSize = New Size(600, 80)
         TxtboxPassword.Multiline = True
         TxtboxPassword.Name = "TxtboxPassword"
         TxtboxPassword.Size = New Size(364, 73)
@@ -75,7 +90,8 @@ Partial Class AdminLogin
         ' 
         TxtboxUsername.BackColor = Color.Wheat
         TxtboxUsername.BorderStyle = BorderStyle.None
-        TxtboxUsername.Location = New Point(685, 207)
+        TxtboxUsername.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        TxtboxUsername.Location = New Point(685, 208)
         TxtboxUsername.Margin = New Padding(4)
         TxtboxUsername.Multiline = True
         TxtboxUsername.Name = "TxtboxUsername"
@@ -84,8 +100,7 @@ Partial Class AdminLogin
         ' 
         ' AdminLogin
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
-        AutoScaleMode = AutoScaleMode.Font
+        AutoScaleMode = AutoScaleMode.None
         ClientSize = New Size(1258, 791)
         Controls.Add(Panel1)
         Margin = New Padding(4)
@@ -101,4 +116,5 @@ Partial Class AdminLogin
     Friend WithEvents TxtboxPassword As TextBox
     Friend WithEvents TxtboxUsername As TextBox
     Friend WithEvents BtnContinue As Button
+    Friend WithEvents bttnBack As Button
 End Class

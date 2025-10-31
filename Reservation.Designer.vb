@@ -26,7 +26,6 @@ Partial Class Reservation
         bttnaccepted = New Button()
         bttnrejected = New Button()
         bttnback = New Button()
-        TextBox1 = New TextBox()
         Panel1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -34,7 +33,6 @@ Partial Class Reservation
         ' 
         Panel1.BackgroundImage = My.Resources.Resources.RESERVATION
         Panel1.BackgroundImageLayout = ImageLayout.Stretch
-        Panel1.Controls.Add(TextBox1)
         Panel1.Controls.Add(bttnaccepted)
         Panel1.Controls.Add(bttnrejected)
         Panel1.Controls.Add(bttnback)
@@ -80,13 +78,6 @@ Partial Class Reservation
         bttnback.TabIndex = 0
         bttnback.UseVisualStyleBackColor = False
         ' 
-        ' TextBox1
-        ' 
-        TextBox1.Location = New Point(476, 177)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(427, 31)
-        TextBox1.TabIndex = 3
-        ' 
         ' Reservation
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
@@ -98,7 +89,6 @@ Partial Class Reservation
         StartPosition = FormStartPosition.CenterScreen
         Text = "Reservation"
         Panel1.ResumeLayout(False)
-        Panel1.PerformLayout()
         ResumeLayout(False)
     End Sub
 
@@ -106,5 +96,4 @@ Partial Class Reservation
     Friend WithEvents bttnback As Button
     Friend WithEvents bttnaccepted As Button
     Friend WithEvents bttnrejected As Button
-    Friend WithEvents TextBox1 As TextBox
 End Class
