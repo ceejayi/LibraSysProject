@@ -77,6 +77,8 @@ Partial Class AdminLogin
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1006, 633)
         Controls.Add(Panel1)
+        MaximizeBox = False
+        MinimizeBox = False
         Name = "AdminLogin"
         StartPosition = FormStartPosition.CenterScreen
         Text = "AdminLogin"

@@ -23,8 +23,8 @@ Partial Class BORROWCONFIRMATION
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Panel1 = New Panel()
-        Button1 = New Button()
         Button2 = New Button()
+        Button1 = New Button()
         Panel1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -40,15 +40,6 @@ Partial Class BORROWCONFIRMATION
         Panel1.Size = New Size(1006, 633)
         Panel1.TabIndex = 0
         ' 
-        ' Button1
-        ' 
-        Button1.Location = New Point(888, 573)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(94, 29)
-        Button1.TabIndex = 0
-        Button1.Text = "Button1"
-        Button1.UseVisualStyleBackColor = True
-        ' 
         ' Button2
         ' 
         Button2.Location = New Point(583, 487)
@@ -58,6 +49,15 @@ Partial Class BORROWCONFIRMATION
         Button2.Text = "Button2"
         Button2.UseVisualStyleBackColor = True
         ' 
+        ' Button1
+        ' 
+        Button1.Location = New Point(888, 573)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(94, 29)
+        Button1.TabIndex = 0
+        Button1.Text = "Button1"
+        Button1.UseVisualStyleBackColor = True
+        ' 
         ' BORROWCONFIRMATION
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -66,7 +66,6 @@ Partial Class BORROWCONFIRMATION
         Controls.Add(Panel1)
         Name = "BORROWCONFIRMATION"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "BORROWCONFIRMATION"
         Panel1.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
