@@ -23,7 +23,9 @@ Partial Class Reservation
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Panel1 = New Panel()
-        Button1 = New Button()
+        bttnback = New Button()
+        bttnrejected = New Button()
+        bttnaccepted = New Button()
         Panel1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -31,28 +33,58 @@ Partial Class Reservation
         ' 
         Panel1.BackgroundImage = My.Resources.Resources.RESERVATION
         Panel1.BackgroundImageLayout = ImageLayout.Stretch
-        Panel1.Controls.Add(Button1)
+        Panel1.Controls.Add(bttnaccepted)
+        Panel1.Controls.Add(bttnrejected)
+        Panel1.Controls.Add(bttnback)
         Panel1.Dock = DockStyle.Fill
         Panel1.Location = New Point(0, 0)
+        Panel1.Margin = New Padding(4, 4, 4, 4)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1006, 633)
+        Panel1.Size = New Size(1258, 791)
         Panel1.TabIndex = 0
         ' 
-        ' Button1
+        ' bttnback
         ' 
-        Button1.Location = New Point(887, 552)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(94, 29)
-        Button1.TabIndex = 0
-        Button1.Text = "Button1"
-        Button1.UseVisualStyleBackColor = True
+        bttnback.BackColor = Color.Transparent
+        bttnback.FlatAppearance.BorderSize = 0
+        bttnback.FlatStyle = FlatStyle.Flat
+        bttnback.ForeColor = Color.Transparent
+        bttnback.Location = New Point(1108, 690)
+        bttnback.Margin = New Padding(4, 4, 4, 4)
+        bttnback.Name = "bttnback"
+        bttnback.Size = New Size(118, 36)
+        bttnback.TabIndex = 0
+        bttnback.UseVisualStyleBackColor = False
+        ' 
+        ' bttnrejected
+        ' 
+        bttnrejected.BackColor = Color.Transparent
+        bttnrejected.FlatAppearance.BorderSize = 0
+        bttnrejected.FlatStyle = FlatStyle.Flat
+        bttnrejected.Location = New Point(748, 636)
+        bttnrejected.Name = "bttnrejected"
+        bttnrejected.Size = New Size(161, 50)
+        bttnrejected.TabIndex = 1
+        bttnrejected.UseVisualStyleBackColor = False
+        ' 
+        ' bttnaccepted
+        ' 
+        bttnaccepted.BackColor = Color.Transparent
+        bttnaccepted.FlatAppearance.BorderSize = 0
+        bttnaccepted.FlatStyle = FlatStyle.Flat
+        bttnaccepted.Location = New Point(528, 636)
+        bttnaccepted.Name = "bttnaccepted"
+        bttnaccepted.Size = New Size(175, 50)
+        bttnaccepted.TabIndex = 2
+        bttnaccepted.UseVisualStyleBackColor = False
         ' 
         ' Reservation
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1006, 633)
+        ClientSize = New Size(1258, 791)
         Controls.Add(Panel1)
+        Margin = New Padding(4, 4, 4, 4)
         Name = "Reservation"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Reservation"
@@ -61,5 +93,7 @@ Partial Class Reservation
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Button1 As Button
+    Friend WithEvents bttnback As Button
+    Friend WithEvents bttnaccepted As Button
+    Friend WithEvents bttnrejected As Button
 End Class
