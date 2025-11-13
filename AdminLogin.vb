@@ -76,4 +76,16 @@
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
+
+    Private Sub TxtboxUsername_TextChanged(sender As Object, e As EventArgs) Handles TxtboxUsername.TextChanged
+
+    End Sub
+
+    Private Sub bttnBack_Click(sender As Object, e As EventArgs) Handles bttnBack.Click
+
+    End Sub
+
+    Private Sub TxtboxPassword_TextChanged(sender As Object, e As EventArgs) Handles TxtboxPassword.TextChanged
+
+    End Sub
 End Class

@@ -44,7 +44,7 @@ Partial Class AdminLogin
         Panel1.Location = New Point(0, 0)
         Panel1.Margin = New Padding(4)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1258, 791)
+        Panel1.Size = New Size(988, 622)
         Panel1.TabIndex = 0
         ' 
         ' bttnBack
@@ -66,11 +66,12 @@ Partial Class AdminLogin
         BtnContinue.FlatAppearance.MouseDownBackColor = Color.Transparent
         BtnContinue.FlatAppearance.MouseOverBackColor = Color.Transparent
         BtnContinue.FlatStyle = FlatStyle.Flat
-        BtnContinue.Location = New Point(715, 628)
+        BtnContinue.Location = New Point(711, 498)
         BtnContinue.Margin = New Padding(4)
         BtnContinue.Name = "BtnContinue"
         BtnContinue.Size = New Size(126, 48)
         BtnContinue.TabIndex = 2
+        BtnContinue.Text = "'"
         BtnContinue.UseVisualStyleBackColor = False
         ' 
         ' TxtboxPassword
@@ -78,12 +79,12 @@ Partial Class AdminLogin
         TxtboxPassword.BackColor = Color.Wheat
         TxtboxPassword.BorderStyle = BorderStyle.None
         TxtboxPassword.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        TxtboxPassword.Location = New Point(685, 475)
+        TxtboxPassword.Location = New Point(556, 486)
         TxtboxPassword.Margin = New Padding(4)
         TxtboxPassword.MaximumSize = New Size(600, 80)
         TxtboxPassword.Multiline = True
         TxtboxPassword.Name = "TxtboxPassword"
-        TxtboxPassword.Size = New Size(364, 73)
+        TxtboxPassword.Size = New Size(105, 41)
         TxtboxPassword.TabIndex = 1
         ' 
         ' TxtboxUsername
@@ -91,21 +92,22 @@ Partial Class AdminLogin
         TxtboxUsername.BackColor = Color.Wheat
         TxtboxUsername.BorderStyle = BorderStyle.None
         TxtboxUsername.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        TxtboxUsername.Location = New Point(685, 208)
+        TxtboxUsername.Location = New Point(540, 158)
         TxtboxUsername.Margin = New Padding(4)
         TxtboxUsername.Multiline = True
         TxtboxUsername.Name = "TxtboxUsername"
-        TxtboxUsername.Size = New Size(364, 84)
+        TxtboxUsername.Size = New Size(297, 73)
         TxtboxUsername.TabIndex = 0
         ' 
         ' AdminLogin
         ' 
-        AutoScaleMode = AutoScaleMode.None
-        ClientSize = New Size(1258, 791)
+        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleMode = AutoScaleMode.Font
+        ClientSize = New Size(988, 622)
         Controls.Add(Panel1)
+        Margin = New Padding(4)
         MaximizeBox = False
         MinimizeBox = False
-        Margin = New Padding(4)
         Name = "AdminLogin"
         StartPosition = FormStartPosition.CenterScreen
         Text = "AdminLogin"

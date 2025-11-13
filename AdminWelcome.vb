@@ -63,17 +63,17 @@ Public Class AdminWelcome
         Hide
     End Sub
 
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles bttnArchives.Click
         ArchivesAndList.Show()
         Me.Hide()
     End Sub
 
-    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles btttnUserlist.Click
         UserList.Show()
         Me.Hide()
     End Sub
 
-    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles bttnMaintenance.Click
         Maintenance.Show()
         Me.Hide()
     End Sub

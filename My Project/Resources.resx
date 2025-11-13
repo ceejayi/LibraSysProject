@@ -127,6 +127,9 @@
   <data name="ARCHIVESANDLIST1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ARCHIVESANDLIST.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="6 The history of Herodotus, Author_ Herodotus1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\6 The history of Herodotus, Author_ Herodotus.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="GUESTMODE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GUESTMODE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -138,6 +141,12 @@
   </data>
   <data name="WELCOMEPAGE (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WELCOMEPAGE (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LoadingScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LoadingScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AdminLoginForm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AdminLoginForm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="91" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\9. The Arte of Warre, Author_ Niccolò Machiavelli.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,6 +208,9 @@
   <data name="NAVBAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NAVBAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ADMINHOMEPAGE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ADMINHOMEPAGE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="MAINPAGE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MAINPAGE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -223,10 +235,10 @@
   <data name="BORROWING" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BORROWING.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="6 The history of Herodotus, Author_ Herodotus1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\6 The history of Herodotus, Author_ Herodotus.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="WelcomeScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WelcomeScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ADMINHOMEPAGE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ADMINHOMEPAGE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AdminLoginForm1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AdminLoginForm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

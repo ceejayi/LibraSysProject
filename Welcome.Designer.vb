@@ -31,7 +31,7 @@ Partial Class Welcome
         ' 
         ' Panel1
         ' 
-        Panel1.BackgroundImage = My.Resources.Resources.WELCOMEPAGE__2_
+        Panel1.BackgroundImage = My.Resources.Resources.WelcomeScreen
         Panel1.BackgroundImageLayout = ImageLayout.Stretch
         Panel1.Controls.Add(Button3)
         Panel1.Controls.Add(Button2)
@@ -50,9 +50,9 @@ Partial Class Welcome
         Button3.FlatAppearance.MouseDownBackColor = Color.Transparent
         Button3.FlatAppearance.MouseOverBackColor = Color.Transparent
         Button3.FlatStyle = FlatStyle.Flat
-        Button3.Location = New Point(634, 455)
+        Button3.Location = New Point(584, 454)
         Button3.Name = "Button3"
-        Button3.Size = New Size(151, 92)
+        Button3.Size = New Size(105, 45)
         Button3.TabIndex = 2
         Button3.UseVisualStyleBackColor = False
         ' 
@@ -63,9 +63,9 @@ Partial Class Welcome
         Button2.FlatAppearance.MouseDownBackColor = Color.Transparent
         Button2.FlatAppearance.MouseOverBackColor = Color.Transparent
         Button2.FlatStyle = FlatStyle.Flat
-        Button2.Location = New Point(426, 455)
+        Button2.Location = New Point(448, 454)
         Button2.Name = "Button2"
-        Button2.Size = New Size(151, 92)
+        Button2.Size = New Size(109, 45)
         Button2.TabIndex = 1
         Button2.UseVisualStyleBackColor = False
         ' 
@@ -77,9 +77,9 @@ Partial Class Welcome
         Button1.FlatAppearance.MouseDownBackColor = Color.Transparent
         Button1.FlatAppearance.MouseOverBackColor = Color.Transparent
         Button1.FlatStyle = FlatStyle.Flat
-        Button1.Location = New Point(219, 456)
+        Button1.Location = New Point(315, 454)
         Button1.Name = "Button1"
-        Button1.Size = New Size(151, 92)
+        Button1.Size = New Size(111, 45)
         Button1.TabIndex = 0
         Button1.UseVisualStyleBackColor = False
         ' 
@@ -89,6 +89,8 @@ Partial Class Welcome
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1006, 633)
         Controls.Add(Panel1)
+        MaximizeBox = False
+        MinimizeBox = False
         Name = "Welcome"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Welcome"

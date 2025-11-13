@@ -244,6 +244,8 @@ Partial Class UserMainPage
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1006, 633)
         Controls.Add(PanelMain)
+        MaximizeBox = False
+        MinimizeBox = False
         Name = "UserMainPage"
         StartPosition = FormStartPosition.CenterScreen
         Text = "UserMainPage"
