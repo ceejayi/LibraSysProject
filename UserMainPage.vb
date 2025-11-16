@@ -1,10 +1,8 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class UserMainPage
-    ' Connection string to your DB
     Private connectionString As String = "Server=localhost\SQLEXPRESS;Database=LibraSysDB;Trusted_Connection=True;"
 
-    ' Form Load
     Private Sub UserMainPagee_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         FlowLayoutPanelGenres.FlowDirection = FlowDirection.TopDown
         FlowLayoutPanelGenres.WrapContents = False
@@ -13,10 +11,8 @@ Public Class UserMainPage
         LoadNetflixStyleHomepage()
     End Sub
 
-    ' Load Netflix-style homepage
     Private Sub LoadNetflixStyleHomepage()
         FlowLayoutPanelGenres.Controls.Clear()
-
         Dim genres As New List(Of String)
 
         Using con As New SqlConnection(connectionString)
@@ -59,25 +55,35 @@ Public Class UserMainPage
                         bookPanel.Width = 120
                         bookPanel.Height = 180
                         bookPanel.Margin = New Padding(5)
+                        bookPanel.Cursor = Cursors.Hand
+                        bookPanel.Tag = New With {.Title = title, .Genre = genre, .PicturePath = picPath}
 
-                        Dim picBox As New PictureBox()
-                        picBox.Width = 120
-                        picBox.Height = 140
-                        picBox.SizeMode = PictureBoxSizeMode.StretchImage
+                        ' Panel for book cover
+                        Dim coverPanel As New Panel()
+                        coverPanel.Width = 120
+                        coverPanel.Height = 140
                         If System.IO.File.Exists(picPath) Then
-                            picBox.Image = Image.FromFile(picPath)
+                            coverPanel.BackgroundImage = Image.FromFile(picPath)
+                            coverPanel.BackgroundImageLayout = ImageLayout.Stretch
                         Else
-                            picBox.BackColor = Color.Gray
+                            coverPanel.BackColor = Color.Gray
                         End If
-                        bookPanel.Controls.Add(picBox)
+                        coverPanel.Cursor = Cursors.Hand
+                        bookPanel.Controls.Add(coverPanel)
 
+                        ' Title label below cover
                         Dim lblTitle As New Label()
                         lblTitle.Text = title
-                        lblTitle.Top = picBox.Bottom + 5
+                        lblTitle.Top = coverPanel.Bottom + 5
                         lblTitle.Width = 120
                         lblTitle.TextAlign = ContentAlignment.MiddleCenter
                         lblTitle.AutoEllipsis = True
                         bookPanel.Controls.Add(lblTitle)
+
+                        ' Click handlers
+                        AddHandler bookPanel.Click, AddressOf BookPanel_Click
+                        AddHandler coverPanel.Click, AddressOf BookPanel_Click
+                        AddHandler lblTitle.Click, AddressOf BookPanel_Click
 
                         panelGenre.Controls.Add(bookPanel)
                     End While
@@ -88,10 +94,43 @@ Public Class UserMainPage
         Next
     End Sub
 
-    '-------------------- SEARCH BUTTON FUNCTION -------------------------
+    Private Sub BookPanel_Click(sender As Object, e As EventArgs)
+        Dim ctrl As Control = CType(sender, Control)
+
+        ' Walk up the parent chain until we find a control with Tag
+        While ctrl IsNot Nothing AndAlso ctrl.Tag Is Nothing
+            ctrl = ctrl.Parent
+        End While
+
+        If ctrl Is Nothing Then Return ' safety check
+
+        Dim bookInfo = ctrl.Tag
+
+        Using con As New SqlConnection(connectionString)
+            con.Open()
+            Dim cmd As New SqlCommand("SELECT * FROM Books WHERE Title=@title", con)
+            cmd.Parameters.AddWithValue("@title", bookInfo.Title)
+
+            Using reader = cmd.ExecuteReader()
+                If reader.Read() Then
+                    BookChosen.bookTitle = reader("Title").ToString()
+                    BookChosen.bookAuthor = reader("Author").ToString()
+                    BookChosen.bookGenre = reader("Genre").ToString()
+                    BookChosen.bookDescription = reader("Description").ToString()
+                    BookChosen.bookCoverPath = reader("PicturePath").ToString()
+                    BookChosen.bookFile = reader("SoftCopyPath").ToString()
+                End If
+            End Using
+        End Using
+
+        Dim chosen As New BookChosen()
+        chosen.Show()
+        Me.Hide()
+    End Sub
+
+    '-------------------- SEARCH BUTTON -------------------------
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim keyword As String = TextBox1.Text.Trim()
-
         If keyword = "" Then
             LoadNetflixStyleHomepage()
             Return
@@ -99,7 +138,6 @@ Public Class UserMainPage
 
         FlowLayoutPanelGenres.Controls.Clear()
 
-        ' SEARCH RESULT HEADER
         Dim lblSearch As New Label()
         lblSearch.Text = "Search results for: " & keyword
         lblSearch.Font = New Font("Arial", 14, FontStyle.Bold)
@@ -107,7 +145,6 @@ Public Class UserMainPage
         lblSearch.Margin = New Padding(5)
         FlowLayoutPanelGenres.Controls.Add(lblSearch)
 
-        ' PANEL FOR RESULTS
         Dim resultPanel As New FlowLayoutPanel()
         resultPanel.Width = FlowLayoutPanelGenres.ClientSize.Width - 25
         resultPanel.Height = 200
@@ -118,37 +155,45 @@ Public Class UserMainPage
 
         Using con As New SqlConnection(connectionString)
             con.Open()
-            Dim cmdSearch As New SqlCommand("SELECT Title, PicturePath FROM Books WHERE Title LIKE @keyword", con)
+            Dim cmdSearch As New SqlCommand("SELECT Title, PicturePath, Genre FROM Books WHERE Title LIKE @keyword", con)
             cmdSearch.Parameters.AddWithValue("@keyword", "%" & keyword & "%")
 
             Using readerBooks = cmdSearch.ExecuteReader()
                 While readerBooks.Read()
                     Dim title As String = readerBooks("Title").ToString()
                     Dim picPath As String = readerBooks("PicturePath").ToString()
+                    Dim genre As String = readerBooks("Genre").ToString()
 
                     Dim bookPanel As New Panel()
                     bookPanel.Width = 120
                     bookPanel.Height = 180
                     bookPanel.Margin = New Padding(5)
+                    bookPanel.Cursor = Cursors.Hand
+                    bookPanel.Tag = New With {.Title = title, .Genre = genre, .PicturePath = picPath}
 
-                    Dim picBox As New PictureBox()
-                    picBox.Width = 120
-                    picBox.Height = 140
-                    picBox.SizeMode = PictureBoxSizeMode.StretchImage
+                    Dim coverPanel As New Panel()
+                    coverPanel.Width = 120
+                    coverPanel.Height = 140
                     If System.IO.File.Exists(picPath) Then
-                        picBox.Image = Image.FromFile(picPath)
+                        coverPanel.BackgroundImage = Image.FromFile(picPath)
+                        coverPanel.BackgroundImageLayout = ImageLayout.Stretch
                     Else
-                        picBox.BackColor = Color.Gray
+                        coverPanel.BackColor = Color.Gray
                     End If
-                    bookPanel.Controls.Add(picBox)
+                    coverPanel.Cursor = Cursors.Hand
+                    bookPanel.Controls.Add(coverPanel)
 
                     Dim lblTitle As New Label()
                     lblTitle.Text = title
-                    lblTitle.Top = picBox.Bottom + 5
+                    lblTitle.Top = coverPanel.Bottom + 5
                     lblTitle.Width = 120
                     lblTitle.TextAlign = ContentAlignment.MiddleCenter
                     lblTitle.AutoEllipsis = True
                     bookPanel.Controls.Add(lblTitle)
+
+                    AddHandler bookPanel.Click, AddressOf BookPanel_Click
+                    AddHandler coverPanel.Click, AddressOf BookPanel_Click
+                    AddHandler lblTitle.Click, AddressOf BookPanel_Click
 
                     resultPanel.Controls.Add(bookPanel)
                 End While
@@ -157,24 +202,21 @@ Public Class UserMainPage
 
         FlowLayoutPanelGenres.Controls.Add(resultPanel)
     End Sub
+
+    ' LOGOUT BUTTON
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Dim result As DialogResult = MessageBox.Show("Are you sure you want to log out?", "Logout Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-
         If result = DialogResult.Yes Then
             Dim welcomeForm As New Welcome()
             welcomeForm.Show()
-            Me.Close() ' closes the current form
+            Me.Close()
         End If
     End Sub
+
+    ' NAVIGATION BUTTON
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        ' Open UserNavigation form
         Dim navForm As New UserNavigation()
         navForm.Show()
-
-        ' Close current form
         Me.Close()
     End Sub
-
-
-
 End Class
