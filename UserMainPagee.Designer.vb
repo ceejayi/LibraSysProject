@@ -55,6 +55,7 @@ Partial Class UserMainPagee
         MaximizeBox = False
         MinimizeBox = False
         Name = "UserMainPagee"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "UserMainPagee"
         Panel1.ResumeLayout(False)
         ResumeLayout(False)
