@@ -28,17 +28,21 @@ Partial Class Collection
         ' Panel1
         ' 
         Panel1.BackgroundImageLayout = ImageLayout.Stretch
-        Panel1.Location = New Point(12, 12)
+        Panel1.Location = New Point(10, 9)
+        Panel1.Margin = New Padding(3, 2, 3, 2)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(776, 426)
+        Panel1.Size = New Size(679, 320)
         Panel1.TabIndex = 0
         ' 
         ' Collection
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        ClientSize = New Size(700, 338)
         Controls.Add(Panel1)
+        Margin = New Padding(3, 2, 3, 2)
+        MaximizeBox = False
+        MinimizeBox = False
         Name = "Collection"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Collection"
