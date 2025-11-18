@@ -34,25 +34,30 @@ Partial Class Maintenance
         Panel1.Controls.Add(Button1)
         Panel1.Dock = DockStyle.Fill
         Panel1.Location = New Point(0, 0)
+        Panel1.Margin = New Padding(3, 2, 3, 2)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1006, 633)
+        Panel1.Size = New Size(880, 475)
         Panel1.TabIndex = 0
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(576, 544)
+        Button1.Location = New Point(504, 408)
+        Button1.Margin = New Padding(3, 2, 3, 2)
         Button1.Name = "Button1"
-        Button1.Size = New Size(94, 29)
+        Button1.Size = New Size(82, 22)
         Button1.TabIndex = 0
         Button1.Text = "Button1"
         Button1.UseVisualStyleBackColor = True
         ' 
         ' Maintenance
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1006, 633)
+        ClientSize = New Size(880, 475)
         Controls.Add(Panel1)
+        Margin = New Padding(3, 2, 3, 2)
+        MaximizeBox = False
+        MinimizeBox = False
         Name = "Maintenance"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Maintenance"

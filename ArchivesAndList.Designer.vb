@@ -34,9 +34,9 @@ Partial Class ArchivesAndList
         Panel1.Controls.Add(bttnBack)
         Panel1.Dock = DockStyle.Fill
         Panel1.Location = New Point(0, 0)
-        Panel1.Margin = New Padding(4, 4, 4, 4)
+        Panel1.Margin = New Padding(3, 2, 3, 2)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1258, 791)
+        Panel1.Size = New Size(881, 449)
         Panel1.TabIndex = 0
         ' 
         ' bttnBack
@@ -44,20 +44,22 @@ Partial Class ArchivesAndList
         bttnBack.BackColor = Color.Transparent
         bttnBack.FlatAppearance.BorderSize = 0
         bttnBack.FlatStyle = FlatStyle.Flat
-        bttnBack.Location = New Point(184, 705)
-        bttnBack.Margin = New Padding(4, 4, 4, 4)
+        bttnBack.Location = New Point(129, 423)
+        bttnBack.Margin = New Padding(3, 2, 3, 2)
         bttnBack.Name = "bttnBack"
-        bttnBack.Size = New Size(118, 36)
+        bttnBack.Size = New Size(83, 22)
         bttnBack.TabIndex = 0
         bttnBack.UseVisualStyleBackColor = False
         ' 
         ' ArchivesAndList
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1258, 791)
+        ClientSize = New Size(881, 449)
         Controls.Add(Panel1)
-        Margin = New Padding(4, 4, 4, 4)
+        Margin = New Padding(3, 2, 3, 2)
+        MaximizeBox = False
+        MinimizeBox = False
         Name = "ArchivesAndList"
         StartPosition = FormStartPosition.CenterScreen
         Text = "ArchivesAndList"

@@ -23,12 +23,12 @@ Partial Class Guest
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Panel1 = New Panel()
-        picCover = New PictureBox()
-        lblTitle = New Label()
-        lblAuthor = New Label()
-        txtSummary = New TextBox()
-        btnPrevBook = New Button()
         Button1 = New Button()
+        btnPrevBook = New Button()
+        txtSummary = New TextBox()
+        lblAuthor = New Label()
+        lblTitle = New Label()
+        picCover = New PictureBox()
         Panel1.SuspendLayout()
         CType(picCover, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -45,59 +45,10 @@ Partial Class Guest
         Panel1.Controls.Add(picCover)
         Panel1.Dock = DockStyle.Fill
         Panel1.Location = New Point(0, 0)
+        Panel1.Margin = New Padding(3, 2, 3, 2)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1006, 633)
+        Panel1.Size = New Size(880, 475)
         Panel1.TabIndex = 0
-        ' 
-        ' picCover
-        ' 
-        picCover.Location = New Point(268, 123)
-        picCover.Name = "picCover"
-        picCover.Size = New Size(294, 427)
-        picCover.TabIndex = 0
-        picCover.TabStop = False
-        ' 
-        ' lblTitle
-        ' 
-        lblTitle.BackColor = Color.FromArgb(CByte(59), CByte(10), CByte(7))
-        lblTitle.Font = New Font("Century Schoolbook", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblTitle.ForeColor = SystemColors.Control
-        lblTitle.Location = New Point(673, 141)
-        lblTitle.Name = "lblTitle"
-        lblTitle.Size = New Size(282, 35)
-        lblTitle.TabIndex = 1
-        lblTitle.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' lblAuthor
-        ' 
-        lblAuthor.BackColor = Color.FromArgb(CByte(138), CByte(25), CByte(22))
-        lblAuthor.Font = New Font("Century Schoolbook", 10.8F, FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        lblAuthor.ForeColor = Color.White
-        lblAuthor.Location = New Point(659, 220)
-        lblAuthor.Name = "lblAuthor"
-        lblAuthor.Size = New Size(296, 30)
-        lblAuthor.TabIndex = 2
-        ' 
-        ' txtSummary
-        ' 
-        txtSummary.BackColor = Color.FromArgb(CByte(255), CByte(224), CByte(192))
-        txtSummary.Font = New Font("Segoe UI Symbol", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        txtSummary.Location = New Point(580, 277)
-        txtSummary.Multiline = True
-        txtSummary.Name = "txtSummary"
-        txtSummary.ScrollBars = ScrollBars.Vertical
-        txtSummary.Size = New Size(388, 179)
-        txtSummary.TabIndex = 3
-        ' 
-        ' btnPrevBook
-        ' 
-        btnPrevBook.Font = New Font("Century Schoolbook", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnPrevBook.Location = New Point(580, 462)
-        btnPrevBook.Name = "btnPrevBook"
-        btnPrevBook.Size = New Size(186, 52)
-        btnPrevBook.TabIndex = 4
-        btnPrevBook.Text = "Previous"
-        btnPrevBook.UseVisualStyleBackColor = True
         ' 
         ' Button1
         ' 
@@ -105,20 +56,77 @@ Partial Class Guest
         Button1.FlatStyle = FlatStyle.Popup
         Button1.Font = New Font("Century Schoolbook", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Button1.ForeColor = SystemColors.Control
-        Button1.Location = New Point(772, 462)
+        Button1.Location = New Point(676, 346)
+        Button1.Margin = New Padding(3, 2, 3, 2)
         Button1.Name = "Button1"
-        Button1.Size = New Size(196, 52)
+        Button1.Size = New Size(172, 39)
         Button1.TabIndex = 5
         Button1.Text = "Next"
         Button1.UseVisualStyleBackColor = False
         ' 
+        ' btnPrevBook
+        ' 
+        btnPrevBook.Font = New Font("Century Schoolbook", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnPrevBook.Location = New Point(508, 346)
+        btnPrevBook.Margin = New Padding(3, 2, 3, 2)
+        btnPrevBook.Name = "btnPrevBook"
+        btnPrevBook.Size = New Size(163, 39)
+        btnPrevBook.TabIndex = 4
+        btnPrevBook.Text = "Previous"
+        btnPrevBook.UseVisualStyleBackColor = True
+        ' 
+        ' txtSummary
+        ' 
+        txtSummary.BackColor = Color.FromArgb(CByte(255), CByte(224), CByte(192))
+        txtSummary.Font = New Font("Segoe UI Symbol", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        txtSummary.Location = New Point(508, 208)
+        txtSummary.Margin = New Padding(3, 2, 3, 2)
+        txtSummary.Multiline = True
+        txtSummary.Name = "txtSummary"
+        txtSummary.ScrollBars = ScrollBars.Vertical
+        txtSummary.Size = New Size(340, 135)
+        txtSummary.TabIndex = 3
+        ' 
+        ' lblAuthor
+        ' 
+        lblAuthor.BackColor = Color.FromArgb(CByte(138), CByte(25), CByte(22))
+        lblAuthor.Font = New Font("Century Schoolbook", 10.8F, FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        lblAuthor.ForeColor = Color.White
+        lblAuthor.Location = New Point(577, 165)
+        lblAuthor.Name = "lblAuthor"
+        lblAuthor.Size = New Size(259, 22)
+        lblAuthor.TabIndex = 2
+        ' 
+        ' lblTitle
+        ' 
+        lblTitle.BackColor = Color.FromArgb(CByte(59), CByte(10), CByte(7))
+        lblTitle.Font = New Font("Century Schoolbook", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblTitle.ForeColor = SystemColors.Control
+        lblTitle.Location = New Point(589, 106)
+        lblTitle.Name = "lblTitle"
+        lblTitle.Size = New Size(247, 26)
+        lblTitle.TabIndex = 1
+        lblTitle.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' picCover
+        ' 
+        picCover.Location = New Point(234, 92)
+        picCover.Margin = New Padding(3, 2, 3, 2)
+        picCover.Name = "picCover"
+        picCover.Size = New Size(257, 320)
+        picCover.TabIndex = 0
+        picCover.TabStop = False
+        ' 
         ' Guest
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImageLayout = ImageLayout.Stretch
-        ClientSize = New Size(1006, 633)
+        ClientSize = New Size(880, 475)
         Controls.Add(Panel1)
+        Margin = New Padding(3, 2, 3, 2)
+        MaximizeBox = False
+        MinimizeBox = False
         Name = "Guest"
         Text = "Guest"
         Panel1.ResumeLayout(False)

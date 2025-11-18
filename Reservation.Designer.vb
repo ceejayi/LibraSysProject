@@ -38,9 +38,9 @@ Partial Class Reservation
         Panel1.Controls.Add(bttnback)
         Panel1.Dock = DockStyle.Fill
         Panel1.Location = New Point(0, 0)
-        Panel1.Margin = New Padding(4)
+        Panel1.Margin = New Padding(3, 2, 3, 2)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1258, 791)
+        Panel1.Size = New Size(881, 449)
         Panel1.TabIndex = 0
         ' 
         ' bttnaccepted
@@ -48,9 +48,10 @@ Partial Class Reservation
         bttnaccepted.BackColor = Color.Transparent
         bttnaccepted.FlatAppearance.BorderSize = 0
         bttnaccepted.FlatStyle = FlatStyle.Flat
-        bttnaccepted.Location = New Point(520, 636)
+        bttnaccepted.Location = New Point(364, 382)
+        bttnaccepted.Margin = New Padding(2, 2, 2, 2)
         bttnaccepted.Name = "bttnaccepted"
-        bttnaccepted.Size = New Size(175, 50)
+        bttnaccepted.Size = New Size(122, 30)
         bttnaccepted.TabIndex = 2
         bttnaccepted.UseVisualStyleBackColor = False
         ' 
@@ -59,9 +60,10 @@ Partial Class Reservation
         bttnrejected.BackColor = Color.Transparent
         bttnrejected.FlatAppearance.BorderSize = 0
         bttnrejected.FlatStyle = FlatStyle.Flat
-        bttnrejected.Location = New Point(748, 636)
+        bttnrejected.Location = New Point(524, 382)
+        bttnrejected.Margin = New Padding(2, 2, 2, 2)
         bttnrejected.Name = "bttnrejected"
-        bttnrejected.Size = New Size(161, 50)
+        bttnrejected.Size = New Size(113, 30)
         bttnrejected.TabIndex = 1
         bttnrejected.UseVisualStyleBackColor = False
         ' 
@@ -71,20 +73,22 @@ Partial Class Reservation
         bttnback.FlatAppearance.BorderSize = 0
         bttnback.FlatStyle = FlatStyle.Flat
         bttnback.ForeColor = Color.Transparent
-        bttnback.Location = New Point(1108, 690)
-        bttnback.Margin = New Padding(4)
+        bttnback.Location = New Point(776, 414)
+        bttnback.Margin = New Padding(3, 2, 3, 2)
         bttnback.Name = "bttnback"
-        bttnback.Size = New Size(118, 36)
+        bttnback.Size = New Size(83, 22)
         bttnback.TabIndex = 0
         bttnback.UseVisualStyleBackColor = False
         ' 
         ' Reservation
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1258, 791)
+        ClientSize = New Size(881, 449)
         Controls.Add(Panel1)
-        Margin = New Padding(4)
+        Margin = New Padding(3, 2, 3, 2)
+        MaximizeBox = False
+        MinimizeBox = False
         Name = "Reservation"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Reservation"

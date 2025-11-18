@@ -47,8 +47,9 @@ Partial Class Borrow
         Panel1.Controls.Add(lblTitle)
         Panel1.Dock = DockStyle.Fill
         Panel1.Location = New Point(0, 0)
+        Panel1.Margin = New Padding(3, 2, 3, 2)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1006, 633)
+        Panel1.Size = New Size(880, 475)
         Panel1.TabIndex = 0
         ' 
         ' Button2
@@ -58,9 +59,10 @@ Partial Class Borrow
         Button2.FlatAppearance.MouseDownBackColor = Color.Transparent
         Button2.FlatAppearance.MouseOverBackColor = Color.Transparent
         Button2.FlatStyle = FlatStyle.Flat
-        Button2.Location = New Point(777, 475)
+        Button2.Location = New Point(680, 356)
+        Button2.Margin = New Padding(3, 2, 3, 2)
         Button2.Name = "Button2"
-        Button2.Size = New Size(183, 39)
+        Button2.Size = New Size(160, 29)
         Button2.TabIndex = 6
         Button2.UseVisualStyleBackColor = False
         ' 
@@ -71,63 +73,68 @@ Partial Class Borrow
         eBookButton.FlatAppearance.MouseDownBackColor = Color.Transparent
         eBookButton.FlatAppearance.MouseOverBackColor = Color.Transparent
         eBookButton.FlatStyle = FlatStyle.Flat
-        eBookButton.Location = New Point(581, 472)
+        eBookButton.Location = New Point(508, 354)
+        eBookButton.Margin = New Padding(3, 2, 3, 2)
         eBookButton.Name = "eBookButton"
-        eBookButton.Size = New Size(185, 42)
+        eBookButton.Size = New Size(162, 32)
         eBookButton.TabIndex = 5
         eBookButton.UseVisualStyleBackColor = False
         ' 
         ' BookPicture
         ' 
-        BookPicture.Location = New Point(270, 125)
+        BookPicture.Location = New Point(236, 94)
+        BookPicture.Margin = New Padding(3, 2, 3, 2)
         BookPicture.Name = "BookPicture"
-        BookPicture.Size = New Size(289, 424)
+        BookPicture.Size = New Size(253, 318)
         BookPicture.TabIndex = 4
         BookPicture.TabStop = False
         ' 
         ' lblGenre
         ' 
         lblGenre.BackColor = Color.Transparent
-        lblGenre.Location = New Point(800, 217)
+        lblGenre.Location = New Point(700, 163)
         lblGenre.Name = "lblGenre"
-        lblGenre.Size = New Size(160, 34)
+        lblGenre.Size = New Size(140, 26)
         lblGenre.TabIndex = 3
         lblGenre.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' lblAuthor
         ' 
         lblAuthor.BackColor = Color.Transparent
-        lblAuthor.Location = New Point(581, 217)
+        lblAuthor.Location = New Point(508, 163)
         lblAuthor.Name = "lblAuthor"
-        lblAuthor.Size = New Size(208, 34)
+        lblAuthor.Size = New Size(182, 26)
         lblAuthor.TabIndex = 2
         lblAuthor.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' lblDesc
         ' 
         lblDesc.BackColor = Color.Transparent
-        lblDesc.Location = New Point(581, 280)
+        lblDesc.Location = New Point(508, 210)
         lblDesc.Name = "lblDesc"
-        lblDesc.Size = New Size(382, 170)
+        lblDesc.Size = New Size(334, 128)
         lblDesc.TabIndex = 1
         lblDesc.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' lblTitle
         ' 
         lblTitle.BackColor = Color.Transparent
-        lblTitle.Location = New Point(581, 125)
+        lblTitle.Location = New Point(508, 94)
         lblTitle.Name = "lblTitle"
-        lblTitle.Size = New Size(382, 61)
+        lblTitle.Size = New Size(334, 46)
         lblTitle.TabIndex = 0
         lblTitle.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Borrow
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1006, 633)
+        ClientSize = New Size(880, 475)
         Controls.Add(Panel1)
         FormBorderStyle = FormBorderStyle.FixedSingle
+        Margin = New Padding(3, 2, 3, 2)
+        MaximizeBox = False
+        MinimizeBox = False
         Name = "Borrow"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Borrow"

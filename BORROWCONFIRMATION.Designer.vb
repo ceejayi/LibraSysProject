@@ -36,34 +36,40 @@ Partial Class BORROWCONFIRMATION
         Panel1.Controls.Add(Button1)
         Panel1.Dock = DockStyle.Fill
         Panel1.Location = New Point(0, 0)
+        Panel1.Margin = New Padding(3, 2, 3, 2)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1006, 633)
+        Panel1.Size = New Size(880, 475)
         Panel1.TabIndex = 0
         ' 
         ' Button2
         ' 
-        Button2.Location = New Point(583, 487)
+        Button2.Location = New Point(510, 365)
+        Button2.Margin = New Padding(3, 2, 3, 2)
         Button2.Name = "Button2"
-        Button2.Size = New Size(94, 29)
+        Button2.Size = New Size(82, 22)
         Button2.TabIndex = 1
         Button2.Text = "Button2"
         Button2.UseVisualStyleBackColor = True
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(888, 573)
+        Button1.Location = New Point(777, 430)
+        Button1.Margin = New Padding(3, 2, 3, 2)
         Button1.Name = "Button1"
-        Button1.Size = New Size(94, 29)
+        Button1.Size = New Size(82, 22)
         Button1.TabIndex = 0
         Button1.Text = "Button1"
         Button1.UseVisualStyleBackColor = True
         ' 
         ' BORROWCONFIRMATION
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1006, 633)
+        ClientSize = New Size(880, 475)
         Controls.Add(Panel1)
+        Margin = New Padding(3, 2, 3, 2)
+        MaximizeBox = False
+        MinimizeBox = False
         Name = "BORROWCONFIRMATION"
         StartPosition = FormStartPosition.CenterScreen
         Panel1.ResumeLayout(False)
