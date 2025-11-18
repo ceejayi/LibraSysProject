@@ -56,9 +56,9 @@ Partial Class AdminWelcome
         PanelMain.Controls.Add(Panel3)
         PanelMain.Dock = DockStyle.Fill
         PanelMain.Location = New Point(0, 0)
-        PanelMain.Margin = New Padding(4, 4, 4, 4)
+        PanelMain.Margin = New Padding(3, 2, 3, 2)
         PanelMain.Name = "PanelMain"
-        PanelMain.Size = New Size(1258, 791)
+        PanelMain.Size = New Size(881, 449)
         PanelMain.TabIndex = 0
         ' 
         ' Button11
@@ -66,10 +66,10 @@ Partial Class AdminWelcome
         Button11.BackColor = Color.Transparent
         Button11.FlatAppearance.BorderSize = 0
         Button11.FlatStyle = FlatStyle.Flat
-        Button11.Location = New Point(1135, 702)
-        Button11.Margin = New Padding(4, 4, 4, 4)
+        Button11.Location = New Point(794, 421)
+        Button11.Margin = New Padding(3, 2, 3, 2)
         Button11.Name = "Button11"
-        Button11.Size = New Size(100, 34)
+        Button11.Size = New Size(70, 20)
         Button11.TabIndex = 7
         Button11.UseVisualStyleBackColor = False
         ' 
@@ -78,10 +78,10 @@ Partial Class AdminWelcome
         btttnUserlist.BackColor = Color.Transparent
         btttnUserlist.FlatAppearance.BorderSize = 0
         btttnUserlist.FlatStyle = FlatStyle.Flat
-        btttnUserlist.Location = New Point(829, 376)
-        btttnUserlist.Margin = New Padding(4, 4, 4, 4)
+        btttnUserlist.Location = New Point(580, 226)
+        btttnUserlist.Margin = New Padding(3, 2, 3, 2)
         btttnUserlist.Name = "btttnUserlist"
-        btttnUserlist.Size = New Size(164, 36)
+        btttnUserlist.Size = New Size(115, 22)
         btttnUserlist.TabIndex = 6
         btttnUserlist.UseVisualStyleBackColor = False
         ' 
@@ -90,10 +90,10 @@ Partial Class AdminWelcome
         bttnMaintenance.BackColor = Color.Transparent
         bttnMaintenance.FlatAppearance.BorderSize = 0
         bttnMaintenance.FlatStyle = FlatStyle.Flat
-        bttnMaintenance.Location = New Point(370, 686)
-        bttnMaintenance.Margin = New Padding(4, 4, 4, 4)
+        bttnMaintenance.Location = New Point(259, 412)
+        bttnMaintenance.Margin = New Padding(3, 2, 3, 2)
         bttnMaintenance.Name = "bttnMaintenance"
-        bttnMaintenance.Size = New Size(164, 36)
+        bttnMaintenance.Size = New Size(115, 22)
         bttnMaintenance.TabIndex = 5
         bttnMaintenance.UseVisualStyleBackColor = False
         ' 
@@ -102,10 +102,10 @@ Partial Class AdminWelcome
         Button8.BackColor = Color.Transparent
         Button8.FlatAppearance.BorderSize = 0
         Button8.FlatStyle = FlatStyle.Flat
-        Button8.Location = New Point(829, 686)
-        Button8.Margin = New Padding(4, 4, 4, 4)
+        Button8.Location = New Point(580, 412)
+        Button8.Margin = New Padding(3, 2, 3, 2)
         Button8.Name = "Button8"
-        Button8.Size = New Size(164, 36)
+        Button8.Size = New Size(115, 22)
         Button8.TabIndex = 4
         Button8.UseVisualStyleBackColor = False
         ' 
@@ -114,20 +114,20 @@ Partial Class AdminWelcome
         bttnArchives.BackColor = Color.Transparent
         bttnArchives.FlatAppearance.BorderSize = 0
         bttnArchives.FlatStyle = FlatStyle.Flat
-        bttnArchives.Location = New Point(358, 373)
-        bttnArchives.Margin = New Padding(4, 4, 4, 4)
+        bttnArchives.Location = New Point(251, 224)
+        bttnArchives.Margin = New Padding(3, 2, 3, 2)
         bttnArchives.Name = "bttnArchives"
-        bttnArchives.Size = New Size(164, 36)
+        bttnArchives.Size = New Size(115, 22)
         bttnArchives.TabIndex = 3
         bttnArchives.UseVisualStyleBackColor = False
         ' 
         ' Panel1
         ' 
         Panel1.BackColor = Color.Transparent
-        Panel1.Location = New Point(0, 88)
-        Panel1.Margin = New Padding(4, 4, 4, 4)
+        Panel1.Location = New Point(0, 53)
+        Panel1.Margin = New Padding(3, 2, 3, 2)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(12, 702)
+        Panel1.Size = New Size(8, 421)
         Panel1.TabIndex = 2
         ' 
         ' Panel3
@@ -141,10 +141,10 @@ Partial Class AdminWelcome
         Panel3.Controls.Add(Button2)
         Panel3.Controls.Add(Button1)
         Panel3.ForeColor = Color.DarkKhaki
-        Panel3.Location = New Point(-250, 91)
-        Panel3.Margin = New Padding(4, 4, 4, 4)
+        Panel3.Location = New Point(-175, 55)
+        Panel3.Margin = New Padding(3, 2, 3, 2)
         Panel3.Name = "Panel3"
-        Panel3.Size = New Size(235, 699)
+        Panel3.Size = New Size(164, 419)
         Panel3.TabIndex = 1
         ' 
         ' Button6
@@ -154,10 +154,10 @@ Partial Class AdminWelcome
         Button6.FlatAppearance.MouseDownBackColor = Color.Transparent
         Button6.FlatAppearance.MouseOverBackColor = Color.Transparent
         Button6.FlatStyle = FlatStyle.Flat
-        Button6.Location = New Point(35, 626)
-        Button6.Margin = New Padding(4, 4, 4, 4)
+        Button6.Location = New Point(24, 376)
+        Button6.Margin = New Padding(3, 2, 3, 2)
         Button6.Name = "Button6"
-        Button6.Size = New Size(169, 42)
+        Button6.Size = New Size(118, 25)
         Button6.TabIndex = 7
         Button6.UseVisualStyleBackColor = False
         ' 
@@ -168,10 +168,10 @@ Partial Class AdminWelcome
         Button5.FlatAppearance.MouseDownBackColor = Color.Transparent
         Button5.FlatAppearance.MouseOverBackColor = Color.Transparent
         Button5.FlatStyle = FlatStyle.Flat
-        Button5.Location = New Point(46, 451)
-        Button5.Margin = New Padding(4, 4, 4, 4)
+        Button5.Location = New Point(32, 271)
+        Button5.Margin = New Padding(3, 2, 3, 2)
         Button5.Name = "Button5"
-        Button5.Size = New Size(142, 42)
+        Button5.Size = New Size(99, 25)
         Button5.TabIndex = 6
         Button5.UseVisualStyleBackColor = False
         ' 
@@ -182,10 +182,10 @@ Partial Class AdminWelcome
         Button4.FlatAppearance.MouseDownBackColor = Color.Transparent
         Button4.FlatAppearance.MouseOverBackColor = Color.Transparent
         Button4.FlatStyle = FlatStyle.Flat
-        Button4.Location = New Point(46, 360)
-        Button4.Margin = New Padding(4, 4, 4, 4)
+        Button4.Location = New Point(32, 216)
+        Button4.Margin = New Padding(3, 2, 3, 2)
         Button4.Name = "Button4"
-        Button4.Size = New Size(142, 42)
+        Button4.Size = New Size(99, 25)
         Button4.TabIndex = 5
         Button4.UseVisualStyleBackColor = False
         ' 
@@ -196,10 +196,10 @@ Partial Class AdminWelcome
         Button3.FlatAppearance.MouseDownBackColor = Color.Transparent
         Button3.FlatAppearance.MouseOverBackColor = Color.Transparent
         Button3.FlatStyle = FlatStyle.Flat
-        Button3.Location = New Point(46, 279)
-        Button3.Margin = New Padding(4, 4, 4, 4)
+        Button3.Location = New Point(32, 167)
+        Button3.Margin = New Padding(3, 2, 3, 2)
         Button3.Name = "Button3"
-        Button3.Size = New Size(142, 42)
+        Button3.Size = New Size(99, 25)
         Button3.TabIndex = 4
         Button3.UseVisualStyleBackColor = False
         ' 
@@ -210,10 +210,10 @@ Partial Class AdminWelcome
         Button2.FlatAppearance.MouseDownBackColor = Color.Transparent
         Button2.FlatAppearance.MouseOverBackColor = Color.Transparent
         Button2.FlatStyle = FlatStyle.Flat
-        Button2.Location = New Point(46, 200)
-        Button2.Margin = New Padding(4, 4, 4, 4)
+        Button2.Location = New Point(32, 120)
+        Button2.Margin = New Padding(3, 2, 3, 2)
         Button2.Name = "Button2"
-        Button2.Size = New Size(142, 42)
+        Button2.Size = New Size(99, 25)
         Button2.TabIndex = 3
         Button2.UseVisualStyleBackColor = False
         ' 
@@ -225,10 +225,10 @@ Partial Class AdminWelcome
         Button1.FlatAppearance.MouseDownBackColor = Color.Transparent
         Button1.FlatAppearance.MouseOverBackColor = Color.Transparent
         Button1.FlatStyle = FlatStyle.Flat
-        Button1.Location = New Point(46, 120)
-        Button1.Margin = New Padding(4, 4, 4, 4)
+        Button1.Location = New Point(32, 72)
+        Button1.Margin = New Padding(3, 2, 3, 2)
         Button1.Name = "Button1"
-        Button1.Size = New Size(142, 42)
+        Button1.Size = New Size(99, 25)
         Button1.TabIndex = 2
         Button1.UseVisualStyleBackColor = False
         ' 
@@ -238,11 +238,13 @@ Partial Class AdminWelcome
         ' 
         ' AdminWelcome
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1258, 791)
+        ClientSize = New Size(881, 449)
         Controls.Add(PanelMain)
-        Margin = New Padding(4, 4, 4, 4)
+        Margin = New Padding(3, 2, 3, 2)
+        MaximizeBox = False
+        MinimizeBox = False
         Name = "AdminWelcome"
         StartPosition = FormStartPosition.CenterScreen
         Text = "AdminWelcome"
