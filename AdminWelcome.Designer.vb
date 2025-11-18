@@ -238,7 +238,7 @@ Partial Class AdminWelcome
         ' 
         ' AdminWelcome
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleDimensions = New SizeF(10.0F, 25.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1258, 791)
         Controls.Add(PanelMain)

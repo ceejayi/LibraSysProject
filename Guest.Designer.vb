@@ -60,7 +60,7 @@ Partial Class Guest
         ' lblTitle
         ' 
         lblTitle.BackColor = Color.FromArgb(CByte(59), CByte(10), CByte(7))
-        lblTitle.Font = New Font("Century Schoolbook", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblTitle.Font = New Font("Century Schoolbook", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblTitle.ForeColor = SystemColors.Control
         lblTitle.Location = New Point(673, 141)
         lblTitle.Name = "lblTitle"
@@ -114,7 +114,7 @@ Partial Class Guest
         ' 
         ' Guest
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(1006, 633)

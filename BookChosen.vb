@@ -23,10 +23,14 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If System.IO.File.Exists(bookFile) Then
-            Process.Start(bookFile)
+            Dim psi As New ProcessStartInfo()
+            psi.FileName = bookFile
+            psi.UseShellExecute = True
+            Process.Start(psi)
         Else
             MessageBox.Show("Soft copy not available.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
+
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
