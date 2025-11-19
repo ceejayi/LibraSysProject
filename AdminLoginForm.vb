@@ -32,7 +32,7 @@ Public Class AdminLoginForm
                         TextBox1.Text = ""
                         TextBox2.Text = ""
                         ' Open AdminWelcome form
-                        Dim welcomeForm As New AdminWelcome()
+                        Dim welcomeForm As New AdminDashboard()
                         welcomeForm.Show()
 
                         ' Hide the login form
