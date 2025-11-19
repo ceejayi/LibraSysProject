@@ -4,18 +4,18 @@
         Me.Hide()
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+    Private Sub Panel1_Paint(sejnder As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
 
 
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        UserMainPage.Show()
+        LoginForm.Show()
         Me.Hide()
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
 
     End Sub
 

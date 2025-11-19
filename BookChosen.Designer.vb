@@ -23,19 +23,19 @@ Partial Class BookChosen
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Panel1 = New Panel()
+        Panel2 = New Panel()
         lblDescription = New Label()
         lblAuthorGenre = New Label()
         lblTitle = New Label()
         Button3 = New Button()
         Button2 = New Button()
         Button1 = New Button()
-        Panel2 = New Panel()
         Panel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' Panel1
         ' 
-        Panel1.BackgroundImage = My.Resources.Resources.BookChosen1
+        Panel1.BackgroundImage = My.Resources.Resources.BookChosen
         Panel1.BackgroundImageLayout = ImageLayout.Stretch
         Panel1.Controls.Add(Panel2)
         Panel1.Controls.Add(lblDescription)
@@ -48,6 +48,14 @@ Partial Class BookChosen
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(982, 609)
         Panel1.TabIndex = 0
+        ' 
+        ' Panel2
+        ' 
+        Panel2.BackgroundImageLayout = ImageLayout.Stretch
+        Panel2.Location = New Point(119, 158)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(265, 403)
+        Panel2.TabIndex = 7
         ' 
         ' lblDescription
         ' 
@@ -120,14 +128,6 @@ Partial Class BookChosen
         Button1.Size = New Size(85, 36)
         Button1.TabIndex = 0
         Button1.UseVisualStyleBackColor = False
-        ' 
-        ' Panel2
-        ' 
-        Panel2.BackgroundImageLayout = ImageLayout.Stretch
-        Panel2.Location = New Point(119, 158)
-        Panel2.Name = "Panel2"
-        Panel2.Size = New Size(265, 403)
-        Panel2.TabIndex = 7
         ' 
         ' BookChosen
         ' 

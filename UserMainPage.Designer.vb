@@ -33,7 +33,7 @@ Partial Class UserMainPage
         ' 
         ' Panel1
         ' 
-        Panel1.BackgroundImage = My.Resources.Resources.UserMainPage2
+        Panel1.BackgroundImage = My.Resources.Resources.UserMainPage
         Panel1.BackgroundImageLayout = ImageLayout.Stretch
         Panel1.Controls.Add(Button3)
         Panel1.Controls.Add(Button2)

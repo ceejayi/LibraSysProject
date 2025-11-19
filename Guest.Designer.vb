@@ -35,7 +35,6 @@ Partial Class Guest
         ' 
         ' Panel1
         ' 
-        Panel1.BackgroundImage = My.Resources.Resources.GUESTMODE
         Panel1.BackgroundImageLayout = ImageLayout.Stretch
         Panel1.Controls.Add(Button1)
         Panel1.Controls.Add(btnPrevBook)
