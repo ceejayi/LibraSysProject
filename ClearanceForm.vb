@@ -15,6 +15,39 @@ Public Class ClearanceForm
         currentUserRole = LoginForm.loggedUserRole
         currentUserEmail = LoginForm.loggedUserEmail
 
+        ' Placeholder setup
+        TextBox1.Text = "Enter your password..."
+        TextBox1.ForeColor = Color.Gray
+        TextBox1.UseSystemPasswordChar = False ' Disable password char for placeholder
+
+        ' Configure checkbox
+        chk.Text = "Hide Password"
+        chk.Checked = False
+        AddHandler chk.CheckedChanged, AddressOf chk_CheckedChanged
+
+        ' GotFocus
+        AddHandler TextBox1.GotFocus, Sub()
+                                          If TextBox1.Text = "Enter your password..." Then
+                                              TextBox1.Text = ""
+                                              TextBox1.ForeColor = Color.Black
+                                          End If
+                                          ApplyPasswordMask()
+                                      End Sub
+
+        ' LostFocus
+        AddHandler TextBox1.LostFocus, Sub()
+                                           If TextBox1.Text = "" Then
+                                               TextBox1.Text = "Enter your password..."
+                                               TextBox1.ForeColor = Color.Gray
+                                           End If
+                                           ApplyPasswordMask()
+                                       End Sub
+
+        ' TextChanged (for typing)
+        AddHandler TextBox1.TextChanged, Sub()
+                                             ApplyPasswordMask()
+                                         End Sub
+
         ' Add Terms and Conditions dynamically to Panel2
         Dim lblTerms As New Label()
         lblTerms.Text = "TERMS AND CONDITIONS:" & vbCrLf &
@@ -30,10 +63,23 @@ Public Class ClearanceForm
         Panel2.Controls.Add(lblTerms)
     End Sub
 
+    ' Centralized password masking logic
+    Private Sub ApplyPasswordMask()
+        If TextBox1.Text = "Enter your password..." Then
+            TextBox1.UseSystemPasswordChar = False
+        Else
+            TextBox1.UseSystemPasswordChar = chk.Checked ' Hide if checked, show if unchecked
+        End If
+    End Sub
+
+    Private Sub chk_CheckedChanged(sender As Object, e As EventArgs)
+        ApplyPasswordMask()
+    End Sub
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim passwordEntered As String = TextBox1.Text.Trim()
 
-        If passwordEntered = "" Then
+        If passwordEntered = "" OrElse passwordEntered = "Enter your password..." Then
             MessageBox.Show("Please enter your password to confirm.", "Password Required", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
@@ -73,7 +119,7 @@ Public Class ClearanceForm
         ' --- Send email via Gmail SMTP ---
         Try
             Dim mail As New MailMessage()
-            mail.From = New MailAddress("unsoncarljoshua@gmail.com") ' Replace with your Gmail
+            mail.From = New MailAddress("unsoncarljoshua@gmail.com")
             mail.To.Add(currentUserEmail)
             mail.Subject = "LibraSys Borrow Confirmation"
             mail.Body = $"Hello,{Environment.NewLine}{Environment.NewLine}" &
@@ -84,7 +130,7 @@ Public Class ClearanceForm
 
             Dim smtp As New SmtpClient("smtp.gmail.com")
             smtp.Port = 587
-            smtp.Credentials = New NetworkCredential("unsoncarljoshua@gmail.com", "zquw uqsh wzit nzzz") ' <- Use Gmail App Password here
+            smtp.Credentials = New NetworkCredential("unsoncarljoshua@gmail.com", "zquw uqsh wzit nzzz")
             smtp.EnableSsl = True
             smtp.Send(mail)
 
@@ -93,14 +139,16 @@ Public Class ClearanceForm
             MessageBox.Show("Borrowed successfully, but failed to send email: " & ex.Message, "Borrow Success", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
 
-        ' Return to main page
         UserMainPage.Show()
         Me.Close()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        ' Back to user main page
         UserMainPage.Show()
         Me.Close()
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
     End Sub
 End Class

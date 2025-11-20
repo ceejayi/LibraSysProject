@@ -9,8 +9,16 @@
 
     Private Sub BookChosen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblTitle.Text = bookTitle
+        lblTitle.ForeColor = Color.Black
+        lblTitle.Font = New Font("Times New Roman", lblTitle.Font.Size, lblTitle.Font.Style)
+
         lblAuthorGenre.Text = bookAuthor & vbCrLf & bookGenre
+        lblAuthorGenre.ForeColor = Color.Black
+        lblAuthorGenre.Font = New Font("Times New Roman", lblAuthorGenre.Font.Size, lblAuthorGenre.Font.Style)
+
         lblDescription.Text = bookDescription
+        lblDescription.ForeColor = Color.Black
+        lblDescription.Font = New Font("Times New Roman", lblDescription.Font.Size, lblDescription.Font.Style)
 
         ' Load book cover into Panel2
         If System.IO.File.Exists(bookCoverPath) Then

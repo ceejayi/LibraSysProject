@@ -35,11 +35,11 @@ Public Class UserMainPage
 
             Dim panelGenre As New FlowLayoutPanel()
             panelGenre.Width = FlowLayoutPanelGenres.ClientSize.Width - 25
-            panelGenre.Height = 200
+            panelGenre.Height = 208
             panelGenre.FlowDirection = FlowDirection.LeftToRight
             panelGenre.WrapContents = False
             panelGenre.AutoScroll = True
-            panelGenre.Margin = New Padding(0, 0, 0, 30)
+            panelGenre.Margin = New Padding(0, 0, 0, 20)
 
             Using con As New SqlConnection(connectionString)
                 con.Open()
@@ -54,7 +54,7 @@ Public Class UserMainPage
                         Dim bookPanel As New Panel()
                         bookPanel.Width = 120
                         bookPanel.Height = 180
-                        bookPanel.Margin = New Padding(5)
+                        bookPanel.Margin = New Padding(10, 5, 5, 5) ' <-- adjusted left margin
                         bookPanel.Cursor = Cursors.Hand
                         bookPanel.Tag = New With {.Title = title, .Genre = genre, .PicturePath = picPath}
 
@@ -167,7 +167,7 @@ Public Class UserMainPage
                     Dim bookPanel As New Panel()
                     bookPanel.Width = 120
                     bookPanel.Height = 180
-                    bookPanel.Margin = New Padding(5)
+                    bookPanel.Margin = New Padding(10, 5, 5, 5) ' <-- adjusted left margin
                     bookPanel.Cursor = Cursors.Hand
                     bookPanel.Tag = New With {.Title = title, .Genre = genre, .PicturePath = picPath}
 
@@ -215,7 +215,7 @@ Public Class UserMainPage
 
     ' NAVIGATION BUTTON
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim navForm As New UserNavigation()
+        Dim navForm As New BorrowHistory()
         navForm.Show()
         Me.Close()
     End Sub
