@@ -10,10 +10,27 @@ Public Class ClearanceForm
     Private selectedBookTitle As String = BookChosen.bookTitle
 
     Private Sub ClearanceForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Load current logged-in user info
-        currentUserID = LoginForm.loggedUserID
-        currentUserRole = LoginForm.loggedUserRole
-        currentUserEmail = LoginForm.loggedUserEmail
+        ' Load current logged-in user info from UserLogs joined to Users
+        Using con As New SqlConnection(connectionString)
+            con.Open()
+            Dim cmd As New SqlCommand("
+                SELECT TOP 1 u.UserID, u.Role, u.Email
+                FROM UserLogs ul
+                INNER JOIN Users u ON ul.UserID = u.UserID
+                ORDER BY ul.LogID DESC
+            ", con)
+            Using reader = cmd.ExecuteReader()
+                If reader.Read() Then
+                    currentUserID = CInt(reader("UserID"))
+                    currentUserRole = reader("Role").ToString()
+                    currentUserEmail = reader("Email").ToString()
+                Else
+                    MessageBox.Show("No logged-in user found in UserLogs.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Me.Close()
+                    Return
+                End If
+            End Using
+        End Using
 
         ' Placeholder setup
         TextBox1.Text = "Enter your password..."
@@ -55,7 +72,7 @@ Public Class ClearanceForm
                         "2. Faculty/Professors may borrow a maximum of 5 books at a time." & vbCrLf &
                         "3. Books must be returned within 1 week. Late returns incur a penalty of 20 pesos/day." & vbCrLf &
                         "4. Damaged books may incur additional penalties depending on the severity." & vbCrLf &
-                        "5. Borrowing requires your account password confirmation." & vbCrLf &
+                        "5. Borrowing requires admin password confirmation." & vbCrLf &
                         "6. By clicking Borrow, you acknowledge these terms."
         lblTerms.Font = New Font("Arial", 12)
         lblTerms.AutoSize = True
@@ -68,7 +85,7 @@ Public Class ClearanceForm
         If TextBox1.Text = "Enter your password..." Then
             TextBox1.UseSystemPasswordChar = False
         Else
-            TextBox1.UseSystemPasswordChar = chk.Checked ' Hide if checked, show if unchecked
+            TextBox1.UseSystemPasswordChar = chk.Checked
         End If
     End Sub
 
@@ -80,29 +97,38 @@ Public Class ClearanceForm
         Dim passwordEntered As String = TextBox1.Text.Trim()
 
         If passwordEntered = "" OrElse passwordEntered = "Enter your password..." Then
-            MessageBox.Show("Please enter your password to confirm.", "Password Required", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("Please enter admin password to confirm.", "Password Required", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 
         Using con As New SqlConnection(connectionString)
             con.Open()
 
-            ' Validate password
-            Dim cmdPass As New SqlCommand("SELECT Password FROM Users WHERE UserID=@uid", con)
-            cmdPass.Parameters.AddWithValue("@uid", currentUserID)
-            Dim dbPassword = cmdPass.ExecuteScalar()
-
-            If dbPassword Is Nothing OrElse dbPassword.ToString() <> passwordEntered Then
-                MessageBox.Show("Incorrect password. Borrowing failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ' Validate admin password
+            Dim cmdAdmin As New SqlCommand("SELECT COUNT(*) FROM Admins WHERE Password=@pass", con)
+            cmdAdmin.Parameters.AddWithValue("@pass", passwordEntered)
+            If CInt(cmdAdmin.ExecuteScalar()) = 0 Then
+                MessageBox.Show("Incorrect admin password. Borrowing failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return
             End If
 
-            ' Check borrowed books count
+            ' Check book availability
+            Dim cmdBook As New SqlCommand("SELECT BookStatus FROM Books WHERE Title=@title", con)
+            cmdBook.Parameters.AddWithValue("@title", selectedBookTitle)
+            Dim bookStatus As Object = cmdBook.ExecuteScalar()
+            If bookStatus Is Nothing Then
+                MessageBox.Show("Book not found in the library.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            ElseIf bookStatus.ToString().ToLower() = "borrowed" Then
+                MessageBox.Show("This book is already borrowed.", "Unavailable", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Return
+            End If
+
+            ' Check borrowed books count for user
             Dim cmdCount As New SqlCommand("SELECT COUNT(*) FROM BorrowedBooks WHERE UserID=@uid AND ReturnDate IS NULL", con)
             cmdCount.Parameters.AddWithValue("@uid", currentUserID)
             Dim borrowedCount As Integer = CInt(cmdCount.ExecuteScalar())
-            Dim maxAllowed As Integer = If(currentUserRole.ToLower() = "student", 3, 5)
-
+            Dim maxAllowed As Integer = If(currentUserRole.Trim().ToLower() = "student", 3, 5)
             If borrowedCount >= maxAllowed Then
                 MessageBox.Show($"You have reached the maximum borrow limit ({maxAllowed} books).", "Limit Reached", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Return
@@ -114,9 +140,14 @@ Public Class ClearanceForm
             cmdInsert.Parameters.AddWithValue("@title", selectedBookTitle)
             cmdInsert.Parameters.AddWithValue("@borrowDate", DateTime.Now)
             cmdInsert.ExecuteNonQuery()
+
+            ' Update BookStatus to 'Borrowed'
+            Dim cmdUpdate As New SqlCommand("UPDATE Books SET BookStatus='Borrowed' WHERE Title=@title", con)
+            cmdUpdate.Parameters.AddWithValue("@title", selectedBookTitle)
+            cmdUpdate.ExecuteNonQuery()
         End Using
 
-        ' --- Send email via Gmail SMTP ---
+        ' Send email
         Try
             Dim mail As New MailMessage()
             mail.From = New MailAddress("unsoncarljoshua@gmail.com")

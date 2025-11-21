@@ -118,29 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ADMINHOMEPAGE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="UserNavigation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UserNavigation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ADMINHOMEPAGE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ADMINHOMEPAGE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AdminLoginForm1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AdminLoginForm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AdminLoginForm" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AdminLoginForm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="UserMainPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\UserMainPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="9. The Arte of Warre, Author_ Niccolò Machiavelli" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\9. The Arte of Warre, Author_ Niccolò Machiavelli.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="TermsAndConditions" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TermsAndConditions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="WelcomeScreen1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\WelcomeScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="121" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\12. Roman history, Author_ Titus Livius.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="12. Roman history, Author_ Titus Livius" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\12. Roman history, Author_ Titus Livius.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,29 +130,17 @@
   <data name="BookCollection" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BookCollection.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="WelcomeScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\WelcomeScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="UserNavigation" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\UserNavigation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="13. History of the Peloponnesian war, Author_ Thucydides" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\13. History of the Peloponnesian war, Author_ Thucydides.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CLEARANCE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CLEARANCE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="6 The history of Herodotus, Author_ Herodotus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\6 The history of Herodotus, Author_ Herodotus.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="6 The history of Herodotus, Author_ Herodotus1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\6 The history of Herodotus, Author_ Herodotus.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BookChosen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BookChosen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="LoadingScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LoadingScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TermsAndConditions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TermsAndConditions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BorrowHistory1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BorrowHistory.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AdminLoginForm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AdminLoginForm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BorrowHistory" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BorrowHistory.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,16 +148,67 @@
   <data name="91" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\9. The Arte of Warre, Author_ Niccolò Machiavelli.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ADMINHOMEPAGE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ADMINHOMEPAGE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AdminDashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AdminDashboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BookChosen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BookChosen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="9. The Arte of Warre, Author_ Niccolò Machiavelli" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\9. The Arte of Warre, Author_ Niccolò Machiavelli.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BookCollection3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BookCollection.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="6 The history of Herodotus, Author_ Herodotus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\6 The history of Herodotus, Author_ Herodotus.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1. The winter's tale, Author_ William Shakespeare" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1. The winter's tale, Author_ William Shakespeare.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AdminDashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AdminDashboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BookCollection2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BookCollection.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WelcomeScreen1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WelcomeScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="13. History of the Peloponnesian war, Author_ Thucydides" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\13. History of the Peloponnesian war, Author_ Thucydides.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UserQRLogin1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UserQRLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CLEARANCE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CLEARANCE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="121" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\12. Roman history, Author_ Titus Livius.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AdminLoginForm1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AdminLoginForm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ADMINHOMEPAGE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ADMINHOMEPAGE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QRManagement" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QRManagement.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UserMainPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UserMainPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BookCollection1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BookCollection.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UserQRLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UserQRLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="6 The history of Herodotus, Author_ Herodotus1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\6 The history of Herodotus, Author_ Herodotus.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WelcomeScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WelcomeScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BookManagement" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BookManagement.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

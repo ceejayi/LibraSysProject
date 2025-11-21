@@ -23,116 +23,117 @@ Partial Class BorrowHistory
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Panel1 = New Panel()
-        alreadyRead = New Button()
-        wantToRead = New Button()
-        currentlyReading = New Button()
-        serviceFeedback = New Button()
-        myReviews = New Button()
-        brrowHistory = New Button()
-        browse = New Button()
+        Button1 = New Button()
+        Button2 = New Button()
+        Button3 = New Button()
+        Button4 = New Button()
+        Button5 = New Button()
+        Button6 = New Button()
         logOut = New Button()
-        Panel2 = New Panel()
+        Button8 = New Button()
+        borrowHistoryy = New DataGridView()
         Panel1.SuspendLayout()
+        CType(borrowHistoryy, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel1
         ' 
-        Panel1.BackgroundImage = My.Resources.Resources.BorrowHistory
+        Panel1.BackgroundImage = My.Resources.Resources.BorrowHistory1
         Panel1.BackgroundImageLayout = ImageLayout.Stretch
-        Panel1.Controls.Add(alreadyRead)
-        Panel1.Controls.Add(wantToRead)
-        Panel1.Controls.Add(currentlyReading)
-        Panel1.Controls.Add(serviceFeedback)
-        Panel1.Controls.Add(myReviews)
-        Panel1.Controls.Add(brrowHistory)
-        Panel1.Controls.Add(browse)
+        Panel1.Controls.Add(borrowHistoryy)
+        Panel1.Controls.Add(Button8)
         Panel1.Controls.Add(logOut)
-        Panel1.Controls.Add(Panel2)
+        Panel1.Controls.Add(Button6)
+        Panel1.Controls.Add(Button5)
+        Panel1.Controls.Add(Button4)
+        Panel1.Controls.Add(Button3)
+        Panel1.Controls.Add(Button2)
+        Panel1.Controls.Add(Button1)
         Panel1.Location = New Point(12, 12)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(982, 609)
         Panel1.TabIndex = 0
         ' 
-        ' alreadyRead
+        ' Button1
         ' 
-        alreadyRead.Location = New Point(73, 470)
-        alreadyRead.Name = "alreadyRead"
-        alreadyRead.Size = New Size(220, 29)
-        alreadyRead.TabIndex = 8
-        alreadyRead.Text = "alreadyRead"
-        alreadyRead.UseVisualStyleBackColor = True
+        Button1.Location = New Point(74, 180)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(220, 29)
+        Button1.TabIndex = 0
+        Button1.Text = "Borrow History"
+        Button1.UseVisualStyleBackColor = True
         ' 
-        ' wantToRead
+        ' Button2
         ' 
-        wantToRead.Location = New Point(73, 422)
-        wantToRead.Name = "wantToRead"
-        wantToRead.Size = New Size(220, 29)
-        wantToRead.TabIndex = 7
-        wantToRead.Text = "wantToRead"
-        wantToRead.UseVisualStyleBackColor = True
+        Button2.Location = New Point(73, 222)
+        Button2.Name = "Button2"
+        Button2.Size = New Size(220, 29)
+        Button2.TabIndex = 1
+        Button2.Text = "My Reviews"
+        Button2.UseVisualStyleBackColor = True
         ' 
-        ' currentlyReading
+        ' Button3
         ' 
-        currentlyReading.Location = New Point(73, 373)
-        currentlyReading.Name = "currentlyReading"
-        currentlyReading.Size = New Size(220, 29)
-        currentlyReading.TabIndex = 6
-        currentlyReading.Text = "currentlyReading"
-        currentlyReading.UseVisualStyleBackColor = True
+        Button3.Location = New Point(73, 262)
+        Button3.Name = "Button3"
+        Button3.Size = New Size(220, 29)
+        Button3.TabIndex = 2
+        Button3.Text = "Service Feedback"
+        Button3.UseVisualStyleBackColor = True
         ' 
-        ' serviceFeedback
+        ' Button4
         ' 
-        serviceFeedback.Location = New Point(73, 264)
-        serviceFeedback.Name = "serviceFeedback"
-        serviceFeedback.Size = New Size(220, 29)
-        serviceFeedback.TabIndex = 5
-        serviceFeedback.Text = "serviceFeedback"
-        serviceFeedback.UseVisualStyleBackColor = True
+        Button4.Location = New Point(74, 372)
+        Button4.Name = "Button4"
+        Button4.Size = New Size(220, 29)
+        Button4.TabIndex = 3
+        Button4.Text = "CurrentlyReading"
+        Button4.UseVisualStyleBackColor = True
         ' 
-        ' myReviews
+        ' Button5
         ' 
-        myReviews.Location = New Point(73, 222)
-        myReviews.Name = "myReviews"
-        myReviews.Size = New Size(220, 29)
-        myReviews.TabIndex = 4
-        myReviews.Text = "myReviews"
-        myReviews.UseVisualStyleBackColor = True
+        Button5.Location = New Point(74, 418)
+        Button5.Name = "Button5"
+        Button5.Size = New Size(220, 29)
+        Button5.TabIndex = 4
+        Button5.Text = "Want To Read"
+        Button5.UseVisualStyleBackColor = True
         ' 
-        ' brrowHistory
+        ' Button6
         ' 
-        brrowHistory.Location = New Point(72, 180)
-        brrowHistory.Name = "brrowHistory"
-        brrowHistory.Size = New Size(220, 29)
-        brrowHistory.TabIndex = 3
-        brrowHistory.Text = "borrowHistory"
-        brrowHistory.UseVisualStyleBackColor = True
-        ' 
-        ' browse
-        ' 
-        browse.Location = New Point(233, 533)
-        browse.Name = "browse"
-        browse.Size = New Size(59, 29)
-        browse.TabIndex = 2
-        browse.Text = "browse"
-        browse.UseVisualStyleBackColor = True
+        Button6.Location = New Point(74, 468)
+        Button6.Name = "Button6"
+        Button6.Size = New Size(220, 29)
+        Button6.TabIndex = 5
+        Button6.Text = "Already Read"
+        Button6.UseVisualStyleBackColor = True
         ' 
         ' logOut
         ' 
-        logOut.Location = New Point(72, 533)
+        logOut.Location = New Point(74, 532)
         logOut.Name = "logOut"
-        logOut.Size = New Size(59, 29)
-        logOut.TabIndex = 1
-        logOut.Text = "logOut"
+        logOut.Size = New Size(56, 29)
+        logOut.TabIndex = 6
+        logOut.Text = "LogOut"
         logOut.UseVisualStyleBackColor = True
         ' 
-        ' Panel2
+        ' Button8
         ' 
-        Panel2.BackColor = Color.Transparent
-        Panel2.ForeColor = SystemColors.ControlText
-        Panel2.Location = New Point(335, 130)
-        Panel2.Name = "Panel2"
-        Panel2.Size = New Size(569, 429)
-        Panel2.TabIndex = 0
+        Button8.Location = New Point(230, 532)
+        Button8.Name = "Button8"
+        Button8.Size = New Size(64, 29)
+        Button8.TabIndex = 7
+        Button8.Text = "Browse"
+        Button8.UseVisualStyleBackColor = True
+        ' 
+        ' borrowHistoryy
+        ' 
+        borrowHistoryy.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        borrowHistoryy.Location = New Point(342, 132)
+        borrowHistoryy.Name = "borrowHistoryy"
+        borrowHistoryy.RowHeadersWidth = 51
+        borrowHistoryy.Size = New Size(559, 429)
+        borrowHistoryy.TabIndex = 8
         ' 
         ' BorrowHistory
         ' 
@@ -143,17 +144,18 @@ Partial Class BorrowHistory
         Name = "BorrowHistory"
         Text = "BorrowHistory"
         Panel1.ResumeLayout(False)
+        CType(borrowHistoryy, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents alreadyRead As Button
-    Friend WithEvents wantToRead As Button
-    Friend WithEvents currentlyReading As Button
-    Friend WithEvents serviceFeedback As Button
-    Friend WithEvents myReviews As Button
-    Friend WithEvents brrowHistory As Button
-    Friend WithEvents browse As Button
+    Friend WithEvents Button8 As Button
     Friend WithEvents logOut As Button
-    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Button6 As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents borrowHistoryy As DataGridView
 End Class

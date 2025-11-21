@@ -31,11 +31,12 @@ Partial Class AdminDashboard
         ' 
         ' Button1
         ' 
+        Button1.FlatAppearance.BorderSize = 0
+        Button1.FlatStyle = FlatStyle.Flat
         Button1.Location = New Point(289, 295)
         Button1.Name = "Button1"
         Button1.Size = New Size(132, 34)
         Button1.TabIndex = 0
-        Button1.Text = "Collection"
         Button1.UseVisualStyleBackColor = True
         ' 
         ' Button2
@@ -76,7 +77,7 @@ Partial Class AdminDashboard
         ' 
         ' AdminDashboard
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = My.Resources.Resources.AdminDashboard
         BackgroundImageLayout = ImageLayout.Stretch

@@ -23,35 +23,28 @@ Partial Class Collection
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Panel1 = New Panel()
-        logOut = New Button()
         CollectionOfBooks = New DataGridView()
+        AddBtn = New Button()
+        deleteBtn = New Button()
+        editBtn = New Button()
+        backBtn = New Button()
         Panel1.SuspendLayout()
         CType(CollectionOfBooks, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel1
         ' 
-        Panel1.BackgroundImage = My.Resources.Resources.BookCollection1
+        Panel1.BackgroundImage = My.Resources.Resources.BookCollection3
         Panel1.BackgroundImageLayout = ImageLayout.Stretch
+        Panel1.Controls.Add(backBtn)
+        Panel1.Controls.Add(editBtn)
+        Panel1.Controls.Add(deleteBtn)
+        Panel1.Controls.Add(AddBtn)
         Panel1.Controls.Add(CollectionOfBooks)
-        Panel1.Controls.Add(logOut)
         Panel1.Location = New Point(12, 12)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(982, 609)
         Panel1.TabIndex = 0
-        ' 
-        ' logOut
-        ' 
-        logOut.BackColor = Color.Transparent
-        logOut.FlatAppearance.BorderSize = 0
-        logOut.FlatAppearance.MouseDownBackColor = Color.Transparent
-        logOut.FlatAppearance.MouseOverBackColor = Color.Transparent
-        logOut.FlatStyle = FlatStyle.Flat
-        logOut.Location = New Point(463, 548)
-        logOut.Name = "logOut"
-        logOut.Size = New Size(58, 30)
-        logOut.TabIndex = 0
-        logOut.UseVisualStyleBackColor = False
         ' 
         ' CollectionOfBooks
         ' 
@@ -62,6 +55,42 @@ Partial Class Collection
         CollectionOfBooks.RowHeadersWidth = 51
         CollectionOfBooks.Size = New Size(910, 333)
         CollectionOfBooks.TabIndex = 1
+        ' 
+        ' AddBtn
+        ' 
+        AddBtn.Location = New Point(374, 548)
+        AddBtn.Name = "AddBtn"
+        AddBtn.Size = New Size(58, 29)
+        AddBtn.TabIndex = 2
+        AddBtn.Text = "Button1"
+        AddBtn.UseVisualStyleBackColor = True
+        ' 
+        ' deleteBtn
+        ' 
+        deleteBtn.Location = New Point(463, 548)
+        deleteBtn.Name = "deleteBtn"
+        deleteBtn.Size = New Size(57, 29)
+        deleteBtn.TabIndex = 3
+        deleteBtn.Text = "Button2"
+        deleteBtn.UseVisualStyleBackColor = True
+        ' 
+        ' editBtn
+        ' 
+        editBtn.Location = New Point(552, 548)
+        editBtn.Name = "editBtn"
+        editBtn.Size = New Size(57, 29)
+        editBtn.TabIndex = 4
+        editBtn.Text = "Button3"
+        editBtn.UseVisualStyleBackColor = True
+        ' 
+        ' backBtn
+        ' 
+        backBtn.Location = New Point(890, 548)
+        backBtn.Name = "backBtn"
+        backBtn.Size = New Size(57, 29)
+        backBtn.TabIndex = 5
+        backBtn.Text = "Button4"
+        backBtn.UseVisualStyleBackColor = True
         ' 
         ' Collection
         ' 
@@ -80,6 +109,9 @@ Partial Class Collection
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents logOut As Button
     Friend WithEvents CollectionOfBooks As DataGridView
+    Friend WithEvents backBtn As Button
+    Friend WithEvents editBtn As Button
+    Friend WithEvents deleteBtn As Button
+    Friend WithEvents AddBtn As Button
 End Class
