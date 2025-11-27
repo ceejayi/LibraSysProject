@@ -32,6 +32,7 @@ Partial Class AlreadyRead
         Button6 = New Button()
         Button7 = New Button()
         Button8 = New Button()
+        alreadyReadd = New FlowLayoutPanel()
         SuspendLayout()
         ' 
         ' btnBorrowHistory
@@ -133,13 +134,24 @@ Partial Class AlreadyRead
         Button8.TabIndex = 8
         Button8.UseVisualStyleBackColor = False
         ' 
+        ' alreadyReadd
+        ' 
+        alreadyReadd.AutoScroll = True
+        alreadyReadd.BackColor = Color.MistyRose
+        alreadyReadd.Location = New Point(350, 206)
+        alreadyReadd.Name = "alreadyReadd"
+        alreadyReadd.Size = New Size(572, 309)
+        alreadyReadd.TabIndex = 9
+        alreadyReadd.WrapContents = False
+        ' 
         ' AlreadyRead
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(1006, 633)
+        Controls.Add(alreadyReadd)
         Controls.Add(Button8)
         Controls.Add(Button7)
         Controls.Add(Button6)
@@ -166,4 +178,5 @@ Partial Class AlreadyRead
     Friend WithEvents Button6 As Button
     Friend WithEvents Button7 As Button
     Friend WithEvents Button8 As Button
+    Friend WithEvents alreadyReadd As FlowLayoutPanel
 End Class
