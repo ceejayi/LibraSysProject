@@ -3,7 +3,7 @@ Imports System.Net.Mail
 Imports System.Net
 
 Public Class ClearanceForm
-    Private connectionString As String = "Server=localhost\SQLEXPRESS;Database=LibraSysDB;Trusted_Connection=True;"
+    PUblic connectionString As String = "Server=localhost\SQLEXPRESS;Database=LibraSysDB;Trusted_Connection=True;"
     Private currentUserID As Integer
     Private currentUserRole As String
     Private currentUserEmail As String

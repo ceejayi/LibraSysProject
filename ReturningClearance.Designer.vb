@@ -27,6 +27,7 @@ Partial Class ReturningClearance
         btnCleared = New Button()
         Button2 = New Button()
         Panel1 = New Panel()
+        chk = New CheckBox()
         SuspendLayout()
         ' 
         ' TextBox1
@@ -66,6 +67,23 @@ Partial Class ReturningClearance
         Panel1.Size = New Size(765, 254)
         Panel1.TabIndex = 3
         ' 
+        ' chk
+        ' 
+        chk.AutoSize = True
+        chk.BackColor = Color.Transparent
+        chk.FlatAppearance.BorderColor = Color.White
+        chk.FlatAppearance.BorderSize = 0
+        chk.FlatAppearance.CheckedBackColor = Color.Transparent
+        chk.FlatAppearance.MouseDownBackColor = Color.Transparent
+        chk.FlatAppearance.MouseOverBackColor = Color.Transparent
+        chk.FlatStyle = FlatStyle.Flat
+        chk.Location = New Point(132, 575)
+        chk.Name = "chk"
+        chk.Size = New Size(59, 24)
+        chk.TabIndex = 5
+        chk.Text = "Hide"
+        chk.UseVisualStyleBackColor = False
+        ' 
         ' ReturningClearance
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -73,6 +91,7 @@ Partial Class ReturningClearance
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(1006, 633)
+        Controls.Add(chk)
         Controls.Add(Panel1)
         Controls.Add(Button2)
         Controls.Add(btnCleared)
@@ -88,4 +107,5 @@ Partial Class ReturningClearance
     Friend WithEvents btnCleared As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents chk As CheckBox
 End Class
