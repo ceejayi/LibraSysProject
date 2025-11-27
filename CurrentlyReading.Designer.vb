@@ -30,6 +30,7 @@ Partial Class CurrentlyReading
         Button5 = New Button()
         Button6 = New Button()
         Button7 = New Button()
+        Button8 = New Button()
         SuspendLayout()
         ' 
         ' Button1
@@ -109,6 +110,17 @@ Partial Class CurrentlyReading
         Button7.TabIndex = 6
         Button7.UseVisualStyleBackColor = False
         ' 
+        ' Button8
+        ' 
+        Button8.BackColor = Color.Transparent
+        Button8.FlatAppearance.BorderSize = 0
+        Button8.FlatStyle = FlatStyle.Flat
+        Button8.Location = New Point(74, 386)
+        Button8.Name = "Button8"
+        Button8.Size = New Size(225, 29)
+        Button8.TabIndex = 7
+        Button8.UseVisualStyleBackColor = False
+        ' 
         ' CurrentlyReading
         ' 
         AutoScaleDimensions = New SizeF(8.0F, 20.0F)
@@ -116,6 +128,7 @@ Partial Class CurrentlyReading
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(1006, 633)
+        Controls.Add(Button8)
         Controls.Add(Button7)
         Controls.Add(Button6)
         Controls.Add(Button5)
@@ -126,6 +139,7 @@ Partial Class CurrentlyReading
         MaximizeBox = False
         MinimizeBox = False
         Name = "CurrentlyReading"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "CurrentlyReading"
         ResumeLayout(False)
     End Sub
@@ -137,4 +151,5 @@ Partial Class CurrentlyReading
     Friend WithEvents Button5 As Button
     Friend WithEvents Button6 As Button
     Friend WithEvents Button7 As Button
+    Friend WithEvents Button8 As Button
 End Class
