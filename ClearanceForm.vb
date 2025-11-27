@@ -150,25 +150,93 @@ Public Class ClearanceForm
         ' Send email
         Try
             Dim mail As New MailMessage()
-            mail.From = New MailAddress("unsoncarljoshua@gmail.com")
+            mail.From = New MailAddress("LibraSys2@gmail.com")
             mail.To.Add(currentUserEmail)
-            mail.Subject = "LibraSys Borrow Confirmation"
-            mail.Body = $"Hello,{Environment.NewLine}{Environment.NewLine}" &
-                        $"You have successfully borrowed the book: {selectedBookTitle}.{Environment.NewLine}" &
-                        $"Borrow Date: {DateTime.Now:dd/MM/yyyy HH:mm}{Environment.NewLine}" &
-                        $"Please return within 1 week to avoid penalties.{Environment.NewLine}{Environment.NewLine}" &
-                        $"Thank you, LibraSys"
+            mail.Subject = "Borrowing Confirmation – LibraSys"
 
+            ' ------------------------
+            ' Locate book cover image
+            ' ------------------------
+            Dim coverPath As String = $"C:\Users\LENOVO\source\repos\LibraSysProject\Resources\{selectedBookTitle}.jpg"
+            Dim hasImage As Boolean = IO.File.Exists(coverPath)
+
+            Dim htmlBody As String =
+$"
+<html>
+<body style='font-family: Arial; color:#333333; line-height:1.6;'>
+    <h2 style='color:#1a237e;'>Borrowing Confirmation</h2>
+
+    <p>Hello,</p>
+
+    <p>
+        This email serves as an official confirmation that you have successfully borrowed a book from 
+        <strong>LibraSys Library System</strong>.
+    </p>
+
+    <p style='margin-top:15px;'>
+        <strong>Book Title:</strong> {selectedBookTitle}<br/>
+        <strong>Borrowed On:</strong> {DateTime.Now:MMMM dd, yyyy hh:mm tt}<br/>
+        <strong>Return On or Before:</strong> {DateTime.Now.AddDays(7):MMMM dd, yyyy}
+    </p>
+
+    <p>
+        Kindly return the book on time to avoid penalties. Late returns incur a fee of 
+        <strong>₱20 per day</strong>.
+    </p>
+
+    {(If(hasImage, "<h4>Book Cover:</h4><img src='cid:BookCover' style='width:200px; border-radius:8px;'/>", ""))}
+
+    <br/><br/>
+    <p>
+        Thank you for using <strong>LibraSys</strong>. Should you have any concerns,
+        feel free to reach out to the library staff.
+    </p>
+
+    <p style='margin-top:30px; font-size:13px; color:#777;'>
+        — LibraSys Automated Borrowing System
+    </p>
+</body>
+</html>
+"
+
+            mail.IsBodyHtml = True
+
+            ' -------------------------
+            ' Include book cover (inline + attachment)
+            ' -------------------------
+            If hasImage Then
+                Dim inlineImage As New LinkedResource(coverPath)
+                inlineImage.ContentId = "BookCover"
+
+                Dim view As AlternateView =
+            AlternateView.CreateAlternateViewFromString(htmlBody, Nothing, "text/html")
+                view.LinkedResources.Add(inlineImage)
+                mail.AlternateViews.Add(view)
+
+                ' Also attach the image file itself
+                mail.Attachments.Add(New Attachment(coverPath))
+            Else
+                mail.Body = htmlBody
+            End If
+
+            ' -------------------------
+            ' SMTP CLIENT SETTINGS
+            ' -------------------------
             Dim smtp As New SmtpClient("smtp.gmail.com")
             smtp.Port = 587
-            smtp.Credentials = New NetworkCredential("unsoncarljoshua@gmail.com", "zquw uqsh wzit nzzz")
+            smtp.Credentials = New NetworkCredential("LibraSys2@gmail.com", "lbnuohbdwibniykm")
             smtp.EnableSsl = True
+
             smtp.Send(mail)
 
-            MessageBox.Show("Borrowed successfully! A confirmation email has been sent.", "Borrow Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Borrowed successfully! A confirmation email has been sent.",
+                    "Borrow Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
         Catch ex As Exception
-            MessageBox.Show("Borrowed successfully, but failed to send email: " & ex.Message, "Borrow Success", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("Borrowed successfully, but failed to send email: " & ex.Message,
+                    "Borrow Success", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
+
 
         UserMainPage.Show()
         Me.Close()

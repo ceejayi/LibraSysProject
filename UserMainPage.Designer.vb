@@ -28,6 +28,7 @@ Partial Class UserMainPage
         TextBox1 = New TextBox()
         Button1 = New Button()
         FlowLayoutPanelGenres = New FlowLayoutPanel()
+        ComboBox1 = New ComboBox()
         Panel1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -35,6 +36,7 @@ Partial Class UserMainPage
         ' 
         Panel1.BackgroundImage = My.Resources.Resources.UserMainPage
         Panel1.BackgroundImageLayout = ImageLayout.Stretch
+        Panel1.Controls.Add(ComboBox1)
         Panel1.Controls.Add(Button3)
         Panel1.Controls.Add(Button2)
         Panel1.Controls.Add(TextBox1)
@@ -104,6 +106,14 @@ Partial Class UserMainPage
         FlowLayoutPanelGenres.TabIndex = 0
         FlowLayoutPanelGenres.WrapContents = False
         ' 
+        ' ComboBox1
+        ' 
+        ComboBox1.FormattingEnabled = True
+        ComboBox1.Location = New Point(686, 200)
+        ComboBox1.Name = "ComboBox1"
+        ComboBox1.Size = New Size(151, 28)
+        ComboBox1.TabIndex = 5
+        ' 
         ' UserMainPage
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -126,4 +136,5 @@ Partial Class UserMainPage
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
+    Friend WithEvents ComboBox1 As ComboBox
 End Class
