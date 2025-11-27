@@ -10,7 +10,6 @@ Public Class UserMainPage
         FlowLayoutPanelGenres.WrapContents = False
         FlowLayoutPanelGenres.AutoScroll = True
 
-        ' ----------- ADD SEARCH OPTIONS -----------
         ComboBox1.Items.Clear()
         ComboBox1.Items.Add("Title")
         ComboBox1.Items.Add("Author")
@@ -151,7 +150,7 @@ Public Class UserMainPage
             Case "Author"
                 query = "SELECT Title, PicturePath, Genre FROM Books WHERE Author LIKE @keyword ORDER BY Genre, Title"
             Case "Year Published"
-                query = "SELECT Title, PicturePath, Genre FROM Books WHERE YearPublished LIKE @keyword ORDER BY Genre, Title"
+                query = "SELECT Title, PicturePath, Genre FROM Books WHERE PublishedYear LIKE @keyword ORDER BY Genre, Title"
             Case "Genre"
                 query = "SELECT Title, PicturePath, Genre FROM Books WHERE Genre LIKE @keyword ORDER BY Genre, Title"
         End Select
