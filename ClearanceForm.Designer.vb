@@ -23,11 +23,11 @@ Partial Class ClearanceForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Panel1 = New Panel()
+        chk = New CheckBox()
         Button2 = New Button()
         Panel2 = New Panel()
         TextBox1 = New TextBox()
         Button1 = New Button()
-        chk = New CheckBox()
         Panel1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -45,6 +45,23 @@ Partial Class ClearanceForm
         Panel1.Size = New Size(982, 609)
         Panel1.TabIndex = 0
         ' 
+        ' chk
+        ' 
+        chk.AutoSize = True
+        chk.BackColor = Color.Transparent
+        chk.FlatAppearance.BorderColor = Color.White
+        chk.FlatAppearance.BorderSize = 0
+        chk.FlatAppearance.CheckedBackColor = Color.Transparent
+        chk.FlatAppearance.MouseDownBackColor = Color.Transparent
+        chk.FlatAppearance.MouseOverBackColor = Color.Transparent
+        chk.FlatStyle = FlatStyle.Flat
+        chk.Location = New Point(127, 554)
+        chk.Name = "chk"
+        chk.Size = New Size(59, 24)
+        chk.TabIndex = 4
+        chk.Text = "Hide"
+        chk.UseVisualStyleBackColor = False
+        ' 
         ' Button2
         ' 
         Button2.BackColor = Color.Transparent
@@ -60,6 +77,9 @@ Partial Class ClearanceForm
         ' 
         ' Panel2
         ' 
+        Panel2.AutoScroll = True
+        Panel2.BackColor = Color.Salmon
+        Panel2.Font = New Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Panel2.Location = New Point(127, 220)
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(752, 258)
@@ -68,9 +88,10 @@ Partial Class ClearanceForm
         ' TextBox1
         ' 
         TextBox1.BorderStyle = BorderStyle.None
+        TextBox1.Font = New Font("Tahoma", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         TextBox1.Location = New Point(127, 515)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(302, 20)
+        TextBox1.Size = New Size(302, 21)
         TextBox1.TabIndex = 1
         ' 
         ' Button1
@@ -85,23 +106,6 @@ Partial Class ClearanceForm
         Button1.Size = New Size(87, 36)
         Button1.TabIndex = 0
         Button1.UseVisualStyleBackColor = False
-        ' 
-        ' chk
-        ' 
-        chk.AutoSize = True
-        chk.BackColor = Color.Transparent
-        chk.FlatAppearance.BorderColor = Color.White
-        chk.FlatAppearance.BorderSize = 0
-        chk.FlatAppearance.CheckedBackColor = Color.Transparent
-        chk.FlatAppearance.MouseDownBackColor = Color.Transparent
-        chk.FlatAppearance.MouseOverBackColor = Color.Transparent
-        chk.FlatStyle = FlatStyle.Flat
-        chk.Location = New Point(127, 554)
-        chk.Name = "chk"
-        chk.Size = New Size(99, 24)
-        chk.TabIndex = 4
-        chk.Text = "CheckBox1"
-        chk.UseVisualStyleBackColor = False
         ' 
         ' ClearanceForm
         ' 

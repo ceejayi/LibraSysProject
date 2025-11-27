@@ -97,7 +97,7 @@ Partial Class UserMainPage
         ' FlowLayoutPanelGenres
         ' 
         FlowLayoutPanelGenres.AutoScroll = True
-        FlowLayoutPanelGenres.BackColor = SystemColors.Control
+        FlowLayoutPanelGenres.BackColor = Color.Salmon
         FlowLayoutPanelGenres.Location = New Point(42, 261)
         FlowLayoutPanelGenres.Name = "FlowLayoutPanelGenres"
         FlowLayoutPanelGenres.Size = New Size(845, 309)

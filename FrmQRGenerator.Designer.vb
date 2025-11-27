@@ -60,13 +60,14 @@ Partial Class FrmQRGenerator
         ' 
         ' txtPassword
         ' 
-        txtPassword.Location = New Point(214, 420)
+        txtPassword.Location = New Point(214, 414)
         txtPassword.Name = "txtPassword"
         txtPassword.Size = New Size(330, 27)
         txtPassword.TabIndex = 10
         ' 
         ' pbQRCode
         ' 
+        pbQRCode.BackColor = Color.Salmon
         pbQRCode.Location = New Point(631, 189)
         pbQRCode.Name = "pbQRCode"
         pbQRCode.Size = New Size(285, 270)

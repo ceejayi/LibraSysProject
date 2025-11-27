@@ -51,6 +51,7 @@ Partial Class BookChosen
         ' 
         ' Panel2
         ' 
+        Panel2.BackColor = Color.Salmon
         Panel2.BackgroundImageLayout = ImageLayout.Stretch
         Panel2.Location = New Point(119, 158)
         Panel2.Name = "Panel2"

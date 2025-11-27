@@ -23,9 +23,9 @@ Partial Class TermsAndConditions
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Panel1 = New Panel()
-        userpass = New TextBox()
-        termsandcondi = New Label()
         Label1 = New Label()
+        termsandcondi = New Label()
+        userpass = New TextBox()
         Panel1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -41,12 +41,16 @@ Partial Class TermsAndConditions
         Panel1.Size = New Size(982, 609)
         Panel1.TabIndex = 0
         ' 
-        ' userpass
+        ' Label1
         ' 
-        userpass.Location = New Point(129, 458)
-        userpass.Name = "userpass"
-        userpass.Size = New Size(299, 27)
-        userpass.TabIndex = 0
+        Label1.BackColor = Color.Transparent
+        Label1.Font = New Font("Century Schoolbook", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.ForeColor = SystemColors.Control
+        Label1.Location = New Point(129, 511)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(299, 35)
+        Label1.TabIndex = 7
+        Label1.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' termsandcondi
         ' 
@@ -59,16 +63,12 @@ Partial Class TermsAndConditions
         termsandcondi.TabIndex = 6
         termsandcondi.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' Label1
+        ' userpass
         ' 
-        Label1.BackColor = Color.Transparent
-        Label1.Font = New Font("Century Schoolbook", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.ForeColor = SystemColors.Control
-        Label1.Location = New Point(129, 511)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(299, 35)
-        Label1.TabIndex = 7
-        Label1.TextAlign = ContentAlignment.MiddleCenter
+        userpass.Location = New Point(129, 458)
+        userpass.Name = "userpass"
+        userpass.Size = New Size(299, 27)
+        userpass.TabIndex = 0
         ' 
         ' TermsAndConditions
         ' 

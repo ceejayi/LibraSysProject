@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class EditCollection
+Partial Class UserList
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -24,14 +24,16 @@ Partial Class EditCollection
     Private Sub InitializeComponent()
         SuspendLayout()
         ' 
-        ' EditCollection
+        ' UserList
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.Salmon
-        ClientSize = New Size(800, 450)
-        Name = "EditCollection"
-        Text = "EditCollection"
+        ClientSize = New Size(1006, 633)
+        MaximizeBox = False
+        MinimizeBox = False
+        Name = "UserList"
+        StartPosition = FormStartPosition.CenterScreen
+        Text = "UserList"
         ResumeLayout(False)
     End Sub
 End Class

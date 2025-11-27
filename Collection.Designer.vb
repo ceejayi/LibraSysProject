@@ -23,11 +23,11 @@ Partial Class Collection
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Panel1 = New Panel()
-        CollectionOfBooks = New DataGridView()
-        AddBtn = New Button()
-        deleteBtn = New Button()
-        editBtn = New Button()
         backBtn = New Button()
+        editBtn = New Button()
+        deleteBtn = New Button()
+        AddBtn = New Button()
+        CollectionOfBooks = New DataGridView()
         Panel1.SuspendLayout()
         CType(CollectionOfBooks, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -46,51 +46,60 @@ Partial Class Collection
         Panel1.Size = New Size(982, 609)
         Panel1.TabIndex = 0
         ' 
+        ' backBtn
+        ' 
+        backBtn.BackColor = Color.Transparent
+        backBtn.FlatAppearance.BorderSize = 0
+        backBtn.FlatStyle = FlatStyle.Flat
+        backBtn.Location = New Point(890, 548)
+        backBtn.Name = "backBtn"
+        backBtn.Size = New Size(57, 29)
+        backBtn.TabIndex = 5
+        backBtn.UseVisualStyleBackColor = False
+        ' 
+        ' editBtn
+        ' 
+        editBtn.BackColor = Color.Transparent
+        editBtn.FlatAppearance.BorderSize = 0
+        editBtn.FlatStyle = FlatStyle.Flat
+        editBtn.Location = New Point(552, 548)
+        editBtn.Name = "editBtn"
+        editBtn.Size = New Size(57, 29)
+        editBtn.TabIndex = 4
+        editBtn.UseVisualStyleBackColor = False
+        ' 
+        ' deleteBtn
+        ' 
+        deleteBtn.BackColor = Color.Transparent
+        deleteBtn.FlatAppearance.BorderSize = 0
+        deleteBtn.FlatStyle = FlatStyle.Flat
+        deleteBtn.Location = New Point(463, 548)
+        deleteBtn.Name = "deleteBtn"
+        deleteBtn.Size = New Size(57, 29)
+        deleteBtn.TabIndex = 3
+        deleteBtn.UseVisualStyleBackColor = False
+        ' 
+        ' AddBtn
+        ' 
+        AddBtn.BackColor = Color.Transparent
+        AddBtn.FlatAppearance.BorderSize = 0
+        AddBtn.FlatStyle = FlatStyle.Flat
+        AddBtn.Location = New Point(374, 548)
+        AddBtn.Name = "AddBtn"
+        AddBtn.Size = New Size(58, 29)
+        AddBtn.TabIndex = 2
+        AddBtn.UseVisualStyleBackColor = False
+        ' 
         ' CollectionOfBooks
         ' 
-        CollectionOfBooks.BackgroundColor = SystemColors.Window
+        CollectionOfBooks.BackgroundColor = Color.Tomato
         CollectionOfBooks.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        CollectionOfBooks.GridColor = Color.Coral
         CollectionOfBooks.Location = New Point(37, 174)
         CollectionOfBooks.Name = "CollectionOfBooks"
         CollectionOfBooks.RowHeadersWidth = 51
         CollectionOfBooks.Size = New Size(910, 333)
         CollectionOfBooks.TabIndex = 1
-        ' 
-        ' AddBtn
-        ' 
-        AddBtn.Location = New Point(374, 548)
-        AddBtn.Name = "AddBtn"
-        AddBtn.Size = New Size(58, 29)
-        AddBtn.TabIndex = 2
-        AddBtn.Text = "Button1"
-        AddBtn.UseVisualStyleBackColor = True
-        ' 
-        ' deleteBtn
-        ' 
-        deleteBtn.Location = New Point(463, 548)
-        deleteBtn.Name = "deleteBtn"
-        deleteBtn.Size = New Size(57, 29)
-        deleteBtn.TabIndex = 3
-        deleteBtn.Text = "Button2"
-        deleteBtn.UseVisualStyleBackColor = True
-        ' 
-        ' editBtn
-        ' 
-        editBtn.Location = New Point(552, 548)
-        editBtn.Name = "editBtn"
-        editBtn.Size = New Size(57, 29)
-        editBtn.TabIndex = 4
-        editBtn.Text = "Button3"
-        editBtn.UseVisualStyleBackColor = True
-        ' 
-        ' backBtn
-        ' 
-        backBtn.Location = New Point(890, 548)
-        backBtn.Name = "backBtn"
-        backBtn.Size = New Size(57, 29)
-        backBtn.TabIndex = 5
-        backBtn.Text = "Button4"
-        backBtn.UseVisualStyleBackColor = True
         ' 
         ' Collection
         ' 

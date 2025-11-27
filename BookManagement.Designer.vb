@@ -23,7 +23,6 @@ Partial Class BookManagement
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Panel1 = New Panel()
-        btnSave = New Button()
         btnClear = New Button()
         TextBox7 = New TextBox()
         TextBox6 = New TextBox()
@@ -32,6 +31,7 @@ Partial Class BookManagement
         TextBox3 = New TextBox()
         TextBox2 = New TextBox()
         TextBox1 = New TextBox()
+        btnSave = New Button()
         Panel1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -53,23 +53,18 @@ Partial Class BookManagement
         Panel1.Size = New Size(617, 589)
         Panel1.TabIndex = 0
         ' 
-        ' btnSave
-        ' 
-        btnSave.Location = New Point(513, 500)
-        btnSave.Name = "btnSave"
-        btnSave.Size = New Size(81, 29)
-        btnSave.TabIndex = 7
-        btnSave.Text = "Button2"
-        btnSave.UseVisualStyleBackColor = True
-        ' 
         ' btnClear
         ' 
+        btnClear.BackColor = Color.Transparent
+        btnClear.FlatAppearance.BorderSize = 0
+        btnClear.FlatAppearance.MouseDownBackColor = Color.Transparent
+        btnClear.FlatAppearance.MouseOverBackColor = Color.Transparent
+        btnClear.FlatStyle = FlatStyle.Flat
         btnClear.Location = New Point(415, 500)
         btnClear.Name = "btnClear"
         btnClear.Size = New Size(80, 29)
         btnClear.TabIndex = 6
-        btnClear.Text = "Button1"
-        btnClear.UseVisualStyleBackColor = True
+        btnClear.UseVisualStyleBackColor = False
         ' 
         ' TextBox7
         ' 
@@ -120,6 +115,19 @@ Partial Class BookManagement
         TextBox1.Size = New Size(326, 27)
         TextBox1.TabIndex = 0
         ' 
+        ' btnSave
+        ' 
+        btnSave.BackColor = Color.Transparent
+        btnSave.FlatAppearance.BorderSize = 0
+        btnSave.FlatAppearance.MouseDownBackColor = Color.Transparent
+        btnSave.FlatAppearance.MouseOverBackColor = Color.Transparent
+        btnSave.FlatStyle = FlatStyle.Flat
+        btnSave.Location = New Point(512, 500)
+        btnSave.Name = "btnSave"
+        btnSave.Size = New Size(82, 29)
+        btnSave.TabIndex = 7
+        btnSave.UseVisualStyleBackColor = False
+        ' 
         ' BookManagement
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -127,6 +135,7 @@ Partial Class BookManagement
         ClientSize = New Size(641, 613)
         Controls.Add(Panel1)
         Name = "BookManagement"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "BookManagement"
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
@@ -141,6 +150,6 @@ Partial Class BookManagement
     Friend WithEvents TextBox5 As TextBox
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents btnSave As Button
     Friend WithEvents btnClear As Button
+    Friend WithEvents btnSave As Button
 End Class
