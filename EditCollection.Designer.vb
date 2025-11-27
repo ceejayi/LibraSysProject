@@ -31,6 +31,7 @@ Partial Class EditCollection
         BackColor = Color.Salmon
         ClientSize = New Size(800, 450)
         Name = "EditCollection"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "EditCollection"
         ResumeLayout(False)
     End Sub

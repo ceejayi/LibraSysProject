@@ -240,6 +240,7 @@ Partial Class ServiceFeedback
         ClientSize = New Size(1006, 633)
         Controls.Add(Panel1)
         Name = "ServiceFeedback"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "ServiceFeedback"
         Panel1.ResumeLayout(False)
         Panel2.ResumeLayout(False)

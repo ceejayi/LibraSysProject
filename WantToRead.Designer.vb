@@ -152,15 +152,16 @@ Partial Class WantToRead
         btnBorrowHistory.TabIndex = 0
         btnBorrowHistory.UseVisualStyleBackColor = False
         ' 
-        ' wanttoreadform
+        ' WantToRead
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1006, 633)
         Controls.Add(Panel1)
         MaximizeBox = False
         MinimizeBox = False
         Name = "WantToRead"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "wanttoreadform"
         Panel1.ResumeLayout(False)
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()

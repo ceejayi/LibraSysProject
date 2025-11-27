@@ -77,6 +77,7 @@ Partial Class TermsAndConditions
         ClientSize = New Size(1006, 633)
         Controls.Add(Panel1)
         Name = "TermsAndConditions"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "TermsAndConditions"
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()

@@ -168,6 +168,7 @@ Partial Class FrmQRGenerator
         ClientSize = New Size(1006, 633)
         Controls.Add(Panel1)
         Name = "FrmQRGenerator"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "FrmQRGenerator"
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()

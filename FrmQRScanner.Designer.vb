@@ -24,12 +24,12 @@ Partial Class FrmQRScanner
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmQRScanner))
         Panel1 = New Panel()
+        TextBox1 = New TextBox()
+        btnClear = New Button()
+        btnEnter = New Button()
         btnBack = New Button()
         btnScan = New Button()
         pbCamera = New PictureBox()
-        btnEnter = New Button()
-        btnClear = New Button()
-        TextBox1 = New TextBox()
         Panel1.SuspendLayout()
         CType(pbCamera, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -48,6 +48,41 @@ Partial Class FrmQRScanner
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(982, 609)
         Panel1.TabIndex = 0
+        ' 
+        ' TextBox1
+        ' 
+        TextBox1.Location = New Point(90, 355)
+        TextBox1.Name = "TextBox1"
+        TextBox1.Size = New Size(209, 27)
+        TextBox1.TabIndex = 5
+        ' 
+        ' btnClear
+        ' 
+        btnClear.BackColor = Color.Transparent
+        btnClear.FlatAppearance.BorderSize = 0
+        btnClear.FlatStyle = FlatStyle.Flat
+        btnClear.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnClear.ForeColor = Color.White
+        btnClear.Location = New Point(215, 418)
+        btnClear.Name = "btnClear"
+        btnClear.Size = New Size(69, 29)
+        btnClear.TabIndex = 4
+        btnClear.Text = "CLEAR"
+        btnClear.UseVisualStyleBackColor = False
+        ' 
+        ' btnEnter
+        ' 
+        btnEnter.BackColor = Color.Transparent
+        btnEnter.FlatAppearance.BorderSize = 0
+        btnEnter.FlatStyle = FlatStyle.Flat
+        btnEnter.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnEnter.ForeColor = Color.White
+        btnEnter.Location = New Point(105, 418)
+        btnEnter.Name = "btnEnter"
+        btnEnter.Size = New Size(69, 29)
+        btnEnter.TabIndex = 3
+        btnEnter.Text = "ENTER"
+        btnEnter.UseVisualStyleBackColor = False
         ' 
         ' btnBack
         ' 
@@ -83,41 +118,6 @@ Partial Class FrmQRScanner
         pbCamera.TabIndex = 0
         pbCamera.TabStop = False
         ' 
-        ' btnEnter
-        ' 
-        btnEnter.BackColor = Color.Transparent
-        btnEnter.FlatAppearance.BorderSize = 0
-        btnEnter.FlatStyle = FlatStyle.Flat
-        btnEnter.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnEnter.ForeColor = Color.White
-        btnEnter.Location = New Point(105, 418)
-        btnEnter.Name = "btnEnter"
-        btnEnter.Size = New Size(69, 29)
-        btnEnter.TabIndex = 3
-        btnEnter.Text = "ENTER"
-        btnEnter.UseVisualStyleBackColor = False
-        ' 
-        ' btnClear
-        ' 
-        btnClear.BackColor = Color.Transparent
-        btnClear.FlatAppearance.BorderSize = 0
-        btnClear.FlatStyle = FlatStyle.Flat
-        btnClear.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnClear.ForeColor = Color.White
-        btnClear.Location = New Point(215, 418)
-        btnClear.Name = "btnClear"
-        btnClear.Size = New Size(69, 29)
-        btnClear.TabIndex = 4
-        btnClear.Text = "CLEAR"
-        btnClear.UseVisualStyleBackColor = False
-        ' 
-        ' TextBox1
-        ' 
-        TextBox1.Location = New Point(90, 355)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(209, 27)
-        TextBox1.TabIndex = 5
-        ' 
         ' FrmQRScanner
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -125,6 +125,7 @@ Partial Class FrmQRScanner
         ClientSize = New Size(1006, 633)
         Controls.Add(Panel1)
         Name = "FrmQRScanner"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "FrmQRScanner"
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()

@@ -160,6 +160,7 @@ Partial Class BorrowHistory
         ClientSize = New Size(1006, 633)
         Controls.Add(Panel1)
         Name = "BorrowHistory"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "BorrowHistory"
         Panel1.ResumeLayout(False)
         CType(borrowHistoryy, ComponentModel.ISupportInitialize).EndInit()

@@ -111,6 +111,7 @@ Partial Class Collection
         MaximizeBox = False
         MinimizeBox = False
         Name = "Collection"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Collection"
         Panel1.ResumeLayout(False)
         CType(CollectionOfBooks, ComponentModel.ISupportInitialize).EndInit()

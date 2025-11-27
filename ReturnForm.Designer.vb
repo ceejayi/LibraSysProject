@@ -24,13 +24,13 @@ Partial Class ReturnForm
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ReturnForm))
         Panel1 = New Panel()
+        Panel2 = New Panel()
+        lblDescription = New Label()
+        lblAuthorGenre = New Label()
+        lblTitle = New Label()
         Button3 = New Button()
         btnReview = New Button()
         btnReturn = New Button()
-        lblTitle = New Label()
-        lblAuthorGenre = New Label()
-        lblDescription = New Label()
-        Panel2 = New Panel()
         Panel1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -49,6 +49,48 @@ Partial Class ReturnForm
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(982, 609)
         Panel1.TabIndex = 0
+        ' 
+        ' Panel2
+        ' 
+        Panel2.BackColor = Color.Salmon
+        Panel2.BackgroundImageLayout = ImageLayout.Stretch
+        Panel2.Location = New Point(119, 157)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(265, 403)
+        Panel2.TabIndex = 8
+        ' 
+        ' lblDescription
+        ' 
+        lblDescription.BackColor = Color.Transparent
+        lblDescription.Font = New Font("Century Schoolbook", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblDescription.ForeColor = SystemColors.Control
+        lblDescription.Location = New Point(402, 336)
+        lblDescription.Name = "lblDescription"
+        lblDescription.Size = New Size(483, 154)
+        lblDescription.TabIndex = 7
+        lblDescription.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' lblAuthorGenre
+        ' 
+        lblAuthorGenre.BackColor = Color.Transparent
+        lblAuthorGenre.Font = New Font("Century Schoolbook", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblAuthorGenre.ForeColor = SystemColors.Control
+        lblAuthorGenre.Location = New Point(402, 212)
+        lblAuthorGenre.Name = "lblAuthorGenre"
+        lblAuthorGenre.Size = New Size(483, 101)
+        lblAuthorGenre.TabIndex = 6
+        lblAuthorGenre.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' lblTitle
+        ' 
+        lblTitle.BackColor = Color.Transparent
+        lblTitle.Font = New Font("Century Schoolbook", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblTitle.ForeColor = SystemColors.Control
+        lblTitle.Location = New Point(402, 157)
+        lblTitle.Name = "lblTitle"
+        lblTitle.Size = New Size(483, 35)
+        lblTitle.TabIndex = 5
+        lblTitle.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Button3
         ' 
@@ -83,48 +125,6 @@ Partial Class ReturnForm
         btnReturn.TabIndex = 1
         btnReturn.UseVisualStyleBackColor = False
         ' 
-        ' lblTitle
-        ' 
-        lblTitle.BackColor = Color.Transparent
-        lblTitle.Font = New Font("Century Schoolbook", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblTitle.ForeColor = SystemColors.Control
-        lblTitle.Location = New Point(402, 157)
-        lblTitle.Name = "lblTitle"
-        lblTitle.Size = New Size(483, 35)
-        lblTitle.TabIndex = 5
-        lblTitle.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' lblAuthorGenre
-        ' 
-        lblAuthorGenre.BackColor = Color.Transparent
-        lblAuthorGenre.Font = New Font("Century Schoolbook", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblAuthorGenre.ForeColor = SystemColors.Control
-        lblAuthorGenre.Location = New Point(402, 212)
-        lblAuthorGenre.Name = "lblAuthorGenre"
-        lblAuthorGenre.Size = New Size(483, 101)
-        lblAuthorGenre.TabIndex = 6
-        lblAuthorGenre.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' lblDescription
-        ' 
-        lblDescription.BackColor = Color.Transparent
-        lblDescription.Font = New Font("Century Schoolbook", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblDescription.ForeColor = SystemColors.Control
-        lblDescription.Location = New Point(402, 336)
-        lblDescription.Name = "lblDescription"
-        lblDescription.Size = New Size(483, 154)
-        lblDescription.TabIndex = 7
-        lblDescription.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' Panel2
-        ' 
-        Panel2.BackColor = Color.Salmon
-        Panel2.BackgroundImageLayout = ImageLayout.Stretch
-        Panel2.Location = New Point(119, 157)
-        Panel2.Name = "Panel2"
-        Panel2.Size = New Size(265, 403)
-        Panel2.TabIndex = 8
-        ' 
         ' ReturnForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -132,6 +132,7 @@ Partial Class ReturnForm
         ClientSize = New Size(1006, 633)
         Controls.Add(Panel1)
         Name = "ReturnForm"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Return"
         Panel1.ResumeLayout(False)
         ResumeLayout(False)

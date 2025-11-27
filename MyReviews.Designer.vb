@@ -148,6 +148,7 @@ Partial Class MyReviews
         ClientSize = New Size(1006, 633)
         Controls.Add(Panel1)
         Name = "MyReviews"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "MyReviews"
         Panel1.ResumeLayout(False)
         ResumeLayout(False)

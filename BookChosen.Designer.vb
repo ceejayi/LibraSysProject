@@ -139,6 +139,7 @@ Partial Class BookChosen
         MaximizeBox = False
         MinimizeBox = False
         Name = "BookChosen"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "BookChosen"
         Panel1.ResumeLayout(False)
         ResumeLayout(False)
