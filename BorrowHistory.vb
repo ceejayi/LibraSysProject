@@ -26,10 +26,14 @@ Public Class BorrowHistory
             Try
                 con.Open()
 
+                ' Updated query to display currently borrowed books by logged-in user
                 Dim query As String =
-                    "SELECT BorrowID AS [Borrow Number], BookTitle AS [Book Title], BorrowDate AS [Borrowed On], DueDate AS [Due Date]
+                    "SELECT BorrowID AS [Borrow Number], BookTitle AS [Book Title], BorrowDate AS [Borrowed On], 
+                            DATEADD(day, 7, BorrowDate) AS [Due Date], 
+                            CASE WHEN ReturnDate IS NULL THEN 'Not Returned' ELSE 'Returned' END AS [Status]
                      FROM BorrowedBooks
-                     WHERE UserID = @UserID"
+                     WHERE UserID = @UserID
+                     ORDER BY BorrowDate DESC"
 
                 Using cmd As New SqlCommand(query, con)
                     cmd.Parameters.AddWithValue("@UserID", LoggedInUserID)
