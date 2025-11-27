@@ -138,4 +138,9 @@ Public Class FrmQRGenerator
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Welcome.Show()
+        Me.Hide()
+    End Sub
 End Class

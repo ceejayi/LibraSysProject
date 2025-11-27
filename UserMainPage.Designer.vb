@@ -23,12 +23,12 @@ Partial Class UserMainPage
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Panel1 = New Panel()
+        ComboBox1 = New ComboBox()
         Button3 = New Button()
         Button2 = New Button()
         TextBox1 = New TextBox()
         Button1 = New Button()
         FlowLayoutPanelGenres = New FlowLayoutPanel()
-        ComboBox1 = New ComboBox()
         Panel1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -46,6 +46,18 @@ Partial Class UserMainPage
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(982, 609)
         Panel1.TabIndex = 0
+        ' 
+        ' ComboBox1
+        ' 
+        ComboBox1.BackColor = Color.Maroon
+        ComboBox1.FlatStyle = FlatStyle.Flat
+        ComboBox1.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        ComboBox1.ForeColor = Color.White
+        ComboBox1.FormattingEnabled = True
+        ComboBox1.Location = New Point(686, 200)
+        ComboBox1.Name = "ComboBox1"
+        ComboBox1.Size = New Size(125, 31)
+        ComboBox1.TabIndex = 5
         ' 
         ' Button3
         ' 
@@ -105,14 +117,6 @@ Partial Class UserMainPage
         FlowLayoutPanelGenres.Size = New Size(845, 309)
         FlowLayoutPanelGenres.TabIndex = 0
         FlowLayoutPanelGenres.WrapContents = False
-        ' 
-        ' ComboBox1
-        ' 
-        ComboBox1.FormattingEnabled = True
-        ComboBox1.Location = New Point(686, 200)
-        ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(151, 28)
-        ComboBox1.TabIndex = 5
         ' 
         ' UserMainPage
         ' 
