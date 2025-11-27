@@ -24,7 +24,7 @@ Partial Class ReturningClearance
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ReturningClearance))
         TextBox1 = New TextBox()
-        Button1 = New Button()
+        btnCleared = New Button()
         Button2 = New Button()
         Panel1 = New Panel()
         SuspendLayout()
@@ -36,16 +36,16 @@ Partial Class ReturningClearance
         TextBox1.Size = New Size(307, 27)
         TextBox1.TabIndex = 0
         ' 
-        ' Button1
+        ' btnCleared
         ' 
-        Button1.BackColor = Color.Transparent
-        Button1.FlatAppearance.BorderSize = 0
-        Button1.FlatStyle = FlatStyle.Flat
-        Button1.Location = New Point(457, 525)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(92, 43)
-        Button1.TabIndex = 1
-        Button1.UseVisualStyleBackColor = False
+        btnCleared.BackColor = Color.Transparent
+        btnCleared.FlatAppearance.BorderSize = 0
+        btnCleared.FlatStyle = FlatStyle.Flat
+        btnCleared.Location = New Point(457, 525)
+        btnCleared.Name = "btnCleared"
+        btnCleared.Size = New Size(92, 43)
+        btnCleared.TabIndex = 1
+        btnCleared.UseVisualStyleBackColor = False
         ' 
         ' Button2
         ' 
@@ -68,14 +68,14 @@ Partial Class ReturningClearance
         ' 
         ' ReturningClearance
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(1006, 633)
         Controls.Add(Panel1)
         Controls.Add(Button2)
-        Controls.Add(Button1)
+        Controls.Add(btnCleared)
         Controls.Add(TextBox1)
         Name = "ReturningClearance"
         StartPosition = FormStartPosition.CenterScreen
@@ -85,7 +85,7 @@ Partial Class ReturningClearance
     End Sub
 
     Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnCleared As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Panel1 As Panel
 End Class
