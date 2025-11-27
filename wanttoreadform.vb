@@ -20,8 +20,7 @@
     End Sub
 
     Private Sub btnWanttoRead_Click(sender As Object, e As EventArgs) Handles btnWanttoRead.Click
-        Me.Show()
-        Me.Hide()
+        Me.Refresh()
     End Sub
 
     Private Sub btnAlreadyRead_Click(sender As Object, e As EventArgs) Handles btnAlreadyRead.Click
