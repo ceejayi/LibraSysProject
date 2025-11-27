@@ -127,6 +127,9 @@
   <data name="12. Roman history, Author_ Titus Livius" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\12. Roman history, Author_ Titus Livius.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="QRManagement" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QRManagement.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BookCollection" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BookCollection.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -178,6 +181,9 @@
   <data name="WelcomeScreen1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WelcomeScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="UserList" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UserList.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="13. History of the Peloponnesian war, Author_ Thucydides" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\13. History of the Peloponnesian war, Author_ Thucydides.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -196,8 +202,8 @@
   <data name="ADMINHOMEPAGE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ADMINHOMEPAGE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="QRManagement" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\QRManagement.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CurrentlyReading" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CurrentlyReading.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UserMainPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UserMainPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,7 +220,7 @@
   <data name="WelcomeScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WelcomeScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CurrentlyReading" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CurrentlyReading.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="UserManagement" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UserManagement.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

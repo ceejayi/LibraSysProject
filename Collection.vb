@@ -51,8 +51,8 @@ Public Class Collection
             Return
         End If
 
-        Dim bookID As Integer = CInt(CollectionOfBooks.SelectedRows(0).Cells("BookID").Value)
-        Dim title As String = CollectionOfBooks.SelectedRows(0).Cells("Title").Value.ToString()
+        Dim bookID As Integer = CollectionOfBooks.SelectedRows(0).Cells("BookID").Value
+        Dim title = CollectionOfBooks.SelectedRows(0).Cells("Title").Value.ToString
 
         Dim result = MessageBox.Show($"Do you want to delete '{title}'?", "Delete Book", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
@@ -72,5 +72,9 @@ Public Class Collection
     Private Sub backBtn_Click(sender As Object, e As EventArgs) Handles backBtn.Click
         AdminDashboard.Show()
         Me.Close()
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
     End Sub
 End Class
