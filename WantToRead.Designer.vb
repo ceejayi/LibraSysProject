@@ -24,21 +24,26 @@ Partial Class WantToRead
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(WantToRead))
         Panel1 = New Panel()
-        btnBorrowHistory = New Button()
-        btnMyReviews = New Button()
-        btnServiceFeedback = New Button()
-        btnCurrentlyReading = New Button()
-        btnWanttoRead = New Button()
+        btnLogout = New Button()
         btnAlreadyRead = New Button()
-        Button1 = New Button()
+        btnWanttoRead = New Button()
+        btnCurrentlyReading = New Button()
+        btnServiceFeedback = New Button()
+        btnMyReviews = New Button()
+        btnBorrowHistory = New Button()
+        PictureBox1 = New PictureBox()
+        btnBrowse = New Button()
         Panel1.SuspendLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel1
         ' 
         Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), Image)
         Panel1.BackgroundImageLayout = ImageLayout.Stretch
-        Panel1.Controls.Add(Button1)
+        Panel1.Controls.Add(btnBrowse)
+        Panel1.Controls.Add(PictureBox1)
+        Panel1.Controls.Add(btnLogout)
         Panel1.Controls.Add(btnAlreadyRead)
         Panel1.Controls.Add(btnWanttoRead)
         Panel1.Controls.Add(btnCurrentlyReading)
@@ -50,38 +55,38 @@ Partial Class WantToRead
         Panel1.Size = New Size(982, 609)
         Panel1.TabIndex = 0
         ' 
-        ' btnBorrowHistory
+        ' btnLogout
         ' 
-        btnBorrowHistory.BackColor = Color.Transparent
-        btnBorrowHistory.FlatAppearance.BorderSize = 0
-        btnBorrowHistory.FlatStyle = FlatStyle.Flat
-        btnBorrowHistory.Location = New Point(72, 182)
-        btnBorrowHistory.Name = "btnBorrowHistory"
-        btnBorrowHistory.Size = New Size(221, 29)
-        btnBorrowHistory.TabIndex = 0
-        btnBorrowHistory.UseVisualStyleBackColor = False
+        btnLogout.BackColor = Color.Transparent
+        btnLogout.FlatAppearance.BorderSize = 0
+        btnLogout.FlatStyle = FlatStyle.Flat
+        btnLogout.Location = New Point(70, 533)
+        btnLogout.Name = "btnLogout"
+        btnLogout.Size = New Size(63, 29)
+        btnLogout.TabIndex = 6
+        btnLogout.UseVisualStyleBackColor = False
         ' 
-        ' btnMyReviews
+        ' btnAlreadyRead
         ' 
-        btnMyReviews.BackColor = Color.Transparent
-        btnMyReviews.FlatAppearance.BorderSize = 0
-        btnMyReviews.FlatStyle = FlatStyle.Flat
-        btnMyReviews.Location = New Point(71, 223)
-        btnMyReviews.Name = "btnMyReviews"
-        btnMyReviews.Size = New Size(222, 29)
-        btnMyReviews.TabIndex = 1
-        btnMyReviews.UseVisualStyleBackColor = False
+        btnAlreadyRead.BackColor = Color.Transparent
+        btnAlreadyRead.FlatAppearance.BorderSize = 0
+        btnAlreadyRead.FlatStyle = FlatStyle.Flat
+        btnAlreadyRead.Location = New Point(73, 475)
+        btnAlreadyRead.Name = "btnAlreadyRead"
+        btnAlreadyRead.Size = New Size(220, 18)
+        btnAlreadyRead.TabIndex = 5
+        btnAlreadyRead.UseVisualStyleBackColor = False
         ' 
-        ' btnServiceFeedback
+        ' btnWanttoRead
         ' 
-        btnServiceFeedback.BackColor = Color.Transparent
-        btnServiceFeedback.FlatAppearance.BorderSize = 0
-        btnServiceFeedback.FlatStyle = FlatStyle.Flat
-        btnServiceFeedback.Location = New Point(71, 265)
-        btnServiceFeedback.Name = "btnServiceFeedback"
-        btnServiceFeedback.Size = New Size(222, 29)
-        btnServiceFeedback.TabIndex = 2
-        btnServiceFeedback.UseVisualStyleBackColor = False
+        btnWanttoRead.BackColor = Color.Transparent
+        btnWanttoRead.FlatAppearance.BorderSize = 0
+        btnWanttoRead.FlatStyle = FlatStyle.Flat
+        btnWanttoRead.Location = New Point(73, 419)
+        btnWanttoRead.Name = "btnWanttoRead"
+        btnWanttoRead.Size = New Size(220, 28)
+        btnWanttoRead.TabIndex = 4
+        btnWanttoRead.UseVisualStyleBackColor = False
         ' 
         ' btnCurrentlyReading
         ' 
@@ -94,40 +99,62 @@ Partial Class WantToRead
         btnCurrentlyReading.TabIndex = 3
         btnCurrentlyReading.UseVisualStyleBackColor = False
         ' 
-        ' btnWanttoRead
+        ' btnServiceFeedback
         ' 
-        btnWanttoRead.BackColor = Color.Transparent
-        btnWanttoRead.FlatAppearance.BorderSize = 0
-        btnWanttoRead.FlatStyle = FlatStyle.Flat
-        btnWanttoRead.Location = New Point(72, 418)
-        btnWanttoRead.Name = "btnWanttoRead"
-        btnWanttoRead.Size = New Size(221, 29)
-        btnWanttoRead.TabIndex = 4
-        btnWanttoRead.UseVisualStyleBackColor = False
+        btnServiceFeedback.BackColor = Color.Transparent
+        btnServiceFeedback.FlatAppearance.BorderSize = 0
+        btnServiceFeedback.FlatStyle = FlatStyle.Flat
+        btnServiceFeedback.Location = New Point(71, 265)
+        btnServiceFeedback.Name = "btnServiceFeedback"
+        btnServiceFeedback.Size = New Size(222, 29)
+        btnServiceFeedback.TabIndex = 2
+        btnServiceFeedback.UseVisualStyleBackColor = False
         ' 
-        ' btnAlreadyRead
+        ' btnMyReviews
         ' 
-        btnAlreadyRead.BackColor = Color.Transparent
-        btnAlreadyRead.FlatAppearance.BorderSize = 0
-        btnAlreadyRead.FlatStyle = FlatStyle.Flat
-        btnAlreadyRead.Location = New Point(73, 475)
-        btnAlreadyRead.Name = "btnAlreadyRead"
-        btnAlreadyRead.Size = New Size(220, 29)
-        btnAlreadyRead.TabIndex = 5
-        btnAlreadyRead.UseVisualStyleBackColor = False
+        btnMyReviews.BackColor = Color.Transparent
+        btnMyReviews.FlatAppearance.BorderSize = 0
+        btnMyReviews.FlatStyle = FlatStyle.Flat
+        btnMyReviews.Location = New Point(71, 223)
+        btnMyReviews.Name = "btnMyReviews"
+        btnMyReviews.Size = New Size(222, 29)
+        btnMyReviews.TabIndex = 1
+        btnMyReviews.UseVisualStyleBackColor = False
         ' 
-        ' Button1
+        ' btnBorrowHistory
         ' 
-        Button1.Location = New Point(70, 533)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(63, 29)
-        Button1.TabIndex = 6
-        Button1.Text = "Button1"
-        Button1.UseVisualStyleBackColor = True
+        btnBorrowHistory.BackColor = Color.Transparent
+        btnBorrowHistory.FlatAppearance.BorderSize = 0
+        btnBorrowHistory.FlatStyle = FlatStyle.Flat
+        btnBorrowHistory.Location = New Point(72, 182)
+        btnBorrowHistory.Name = "btnBorrowHistory"
+        btnBorrowHistory.Size = New Size(221, 29)
+        btnBorrowHistory.TabIndex = 0
+        btnBorrowHistory.UseVisualStyleBackColor = False
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.BackColor = Color.Salmon
+        PictureBox1.Location = New Point(323, 129)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(594, 433)
+        PictureBox1.TabIndex = 7
+        PictureBox1.TabStop = False
+        ' 
+        ' btnBrowse
+        ' 
+        btnBrowse.BackColor = Color.Transparent
+        btnBrowse.FlatAppearance.BorderSize = 0
+        btnBrowse.FlatStyle = FlatStyle.Flat
+        btnBrowse.Location = New Point(232, 533)
+        btnBrowse.Name = "btnBrowse"
+        btnBrowse.Size = New Size(61, 29)
+        btnBrowse.TabIndex = 8
+        btnBrowse.UseVisualStyleBackColor = False
         ' 
         ' wanttoreadform
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1006, 633)
         Controls.Add(Panel1)
@@ -136,6 +163,7 @@ Partial Class WantToRead
         Name = "wanttoreadform"
         Text = "wanttoreadform"
         Panel1.ResumeLayout(False)
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -146,5 +174,7 @@ Partial Class WantToRead
     Friend WithEvents btnServiceFeedback As Button
     Friend WithEvents btnMyReviews As Button
     Friend WithEvents btnBorrowHistory As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnLogout As Button
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents btnBrowse As Button
 End Class
