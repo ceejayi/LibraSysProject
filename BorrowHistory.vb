@@ -51,4 +51,7 @@ Public Class BorrowHistory
         ' Nothing yet
     End Sub
 
+    Private Sub borrowHistoryy_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles borrowHistoryy.CellContentClick
+
+    End Sub
 End Class
