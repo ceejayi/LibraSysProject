@@ -22,7 +22,6 @@ Partial Class CurrentlyReading
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CurrentlyReading))
         Button1 = New Button()
         Button2 = New Button()
         Button3 = New Button()
@@ -31,6 +30,9 @@ Partial Class CurrentlyReading
         Button6 = New Button()
         Button7 = New Button()
         Button8 = New Button()
+        currentlyReadingg = New FlowLayoutPanel()
+        btnRead = New Button()
+        btnReturn = New Button()
         SuspendLayout()
         ' 
         ' Button1
@@ -121,13 +123,48 @@ Partial Class CurrentlyReading
         Button8.TabIndex = 7
         Button8.UseVisualStyleBackColor = False
         ' 
+        ' currentlyReadingg
+        ' 
+        currentlyReadingg.AutoScroll = True
+        currentlyReadingg.BackColor = Color.MistyRose
+        currentlyReadingg.Location = New Point(353, 143)
+        currentlyReadingg.Name = "currentlyReadingg"
+        currentlyReadingg.Size = New Size(572, 309)
+        currentlyReadingg.TabIndex = 8
+        currentlyReadingg.WrapContents = False
+        ' 
+        ' btnRead
+        ' 
+        btnRead.BackColor = Color.Transparent
+        btnRead.FlatAppearance.BorderSize = 0
+        btnRead.FlatStyle = FlatStyle.Flat
+        btnRead.Location = New Point(498, 548)
+        btnRead.Name = "btnRead"
+        btnRead.Size = New Size(62, 30)
+        btnRead.TabIndex = 9
+        btnRead.UseVisualStyleBackColor = False
+        ' 
+        ' btnReturn
+        ' 
+        btnReturn.BackColor = Color.Transparent
+        btnReturn.FlatAppearance.BorderSize = 0
+        btnReturn.FlatStyle = FlatStyle.Flat
+        btnReturn.Location = New Point(710, 548)
+        btnReturn.Name = "btnReturn"
+        btnReturn.Size = New Size(62, 30)
+        btnReturn.TabIndex = 10
+        btnReturn.UseVisualStyleBackColor = False
+        ' 
         ' CurrentlyReading
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        BackgroundImage = My.Resources.Resources.CurrentlyReading
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(1006, 633)
+        Controls.Add(btnReturn)
+        Controls.Add(btnRead)
+        Controls.Add(currentlyReadingg)
         Controls.Add(Button8)
         Controls.Add(Button7)
         Controls.Add(Button6)
@@ -152,4 +189,7 @@ Partial Class CurrentlyReading
     Friend WithEvents Button6 As Button
     Friend WithEvents Button7 As Button
     Friend WithEvents Button8 As Button
+    Friend WithEvents currentlyReadingg As FlowLayoutPanel
+    Friend WithEvents btnRead As Button
+    Friend WithEvents btnReturn As Button
 End Class
