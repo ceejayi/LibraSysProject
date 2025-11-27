@@ -18,16 +18,10 @@ Public Class FrmQRScanner
     Private Scanning As Boolean = False
     Private QRDetected As Boolean = False
 
-    ' Designer controls (assumes you use designer, remove manual duplicates)
-    ' Friend WithEvents pbCamera As PictureBox
-    ' Friend WithEvents btnScan As Button
-    ' Friend WithEvents btnBack As Button
-    ' Optional TextBoxes for password login
-    Friend WithEvents txtUsername As TextBox
-    Friend WithEvents txtPassword As TextBox
-    Friend WithEvents btnLogin As Button
+    ' Controls (assume Designer-generated; remove duplicates)
+    ' pbCamera, btnScan, btnBack, btnLogin, btnClear, txtUsername, txtPassword
 
-    ' Form Load: initialize camera devices
+    ' Form Load
     Private Sub FrmQRScanner_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             VideoDevices = New FilterInfoCollection(FilterCategory.VideoInputDevice)
@@ -72,112 +66,13 @@ Public Class FrmQRScanner
         Me.Hide()
     End Sub
 
-    ' New frame event
-    Private Sub Video_NewFrame(sender As Object, eventArgs As NewFrameEventArgs)
-        If Not Scanning Or QRDetected Then Return
-
-        Dim frame As Bitmap = CType(eventArgs.Frame.Clone(), Bitmap)
-
-        ' Display on PictureBox
-        pbCamera.BeginInvoke(Sub()
-                                 Try
-                                     If pbCamera.Image IsNot Nothing Then
-                                         Dim oldImage As Image = pbCamera.Image
-                                         pbCamera.Image = Nothing
-                                         oldImage.Dispose()
-                                     End If
-                                     pbCamera.Image = CType(frame.Clone(), Bitmap)
-                                 Catch
-                                 End Try
-                             End Sub)
-
-        ' Process QR asynchronously
-        ThreadPool.QueueUserWorkItem(Sub()
-                                         Try
-                                             Dim reader As New BarcodeReader()
-                                             Dim result = reader.Decode(frame)
-                                             frame.Dispose()
-
-                                             If result IsNot Nothing Then
-                                                 QRDetected = True
-                                                 Scanning = False
-                                                 Me.BeginInvoke(Sub()
-                                                                    ProcessQR(result.Text)
-                                                                End Sub)
-                                             End If
-                                         Catch ex As Exception
-                                             frame.Dispose()
-                                             Me.BeginInvoke(Sub()
-                                                                MessageBox.Show("QR processing error: " & ex.Message)
-                                                                QRDetected = False
-                                                                Scanning = True
-                                                            End Sub)
-                                         End Try
-                                     End Sub)
+    ' Clear password button
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        txtPassword.Text = ""
     End Sub
 
-    ' Process QR text
-    Private Sub ProcessQR(qrText As String)
-        Dim username As String = ""
-        Dim lines() As String = qrText.Split({Environment.NewLine}, StringSplitOptions.RemoveEmptyEntries)
-        For Each line As String In lines
-            If line.StartsWith("USERNAME:") Then
-                username = line.Replace("USERNAME:", "").Trim()
-                Exit For
-            End If
-        Next
-
-        If ValidateUser(username) Then
-            LoginUser(username)
-        Else
-            MessageBox.Show("Invalid QR code. Scanner reset.", "Error")
-            QRDetected = False
-            Scanning = True
-        End If
-    End Sub
-
-    ' Validate user in DB
-    Private Function ValidateUser(username As String) As Boolean
-        Using con As New SqlConnection("Server=localhost\SQLEXPRESS;Database=LibraSysDB;Trusted_Connection=True;")
-            Using cmd As New SqlCommand("SELECT COUNT(*) FROM Users WHERE UserName=@UserName", con)
-                cmd.Parameters.AddWithValue("@UserName", username)
-                Try
-                    con.Open()
-                    Return CInt(cmd.ExecuteScalar()) > 0
-                Catch ex As Exception
-                    MessageBox.Show("Database error: " & ex.Message)
-                    Return False
-                End Try
-            End Using
-        End Using
-    End Function
-
-    ' Login user
-    Private Sub LoginUser(username As String)
-        Globals.CurrentUserID = GetUserIDByUsername(username)
-
-        ' Log login
-        Using con As New SqlConnection("Server=localhost\SQLEXPRESS;Database=LibraSysDB;Trusted_Connection=True;")
-            Using cmdLog As New SqlCommand("INSERT INTO UserLogs(UserID, LoginTime) VALUES(@UserID, @LoginTime)", con)
-                cmdLog.Parameters.AddWithValue("@UserID", Globals.CurrentUserID)
-                cmdLog.Parameters.AddWithValue("@LoginTime", DateTime.Now)
-                Try
-                    con.Open()
-                    cmdLog.ExecuteNonQuery()
-                Catch ex As Exception
-                    MessageBox.Show("Failed to log user login: " & ex.Message)
-                End Try
-            End Using
-        End Using
-
-        MessageBox.Show($"Welcome to LibraSys, {username}!", "Login Successful")
-        Dim userPage As New UserMainPage()
-        userPage.Show()
-        Me.Hide()
-    End Sub
-
-    ' Password login
-    Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
+    ' Login button
+    Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnEnter.Click
         Dim username As String = txtUsername.Text.Trim()
         Dim password As String = txtPassword.Text.Trim()
 
@@ -205,6 +100,105 @@ Public Class FrmQRScanner
         End Using
     End Sub
 
+    ' Video new frame
+    Private Sub Video_NewFrame(sender As Object, eventArgs As NewFrameEventArgs)
+        If Not Scanning Or QRDetected Then Return
+
+        Dim frame As Bitmap = CType(eventArgs.Frame.Clone(), Bitmap)
+
+        ' Show on PictureBox
+        pbCamera.BeginInvoke(Sub()
+                                 Try
+                                     If pbCamera.Image IsNot Nothing Then
+                                         pbCamera.Image.Dispose()
+                                     End If
+                                     pbCamera.Image = CType(frame.Clone(), Bitmap)
+                                 Catch
+                                 End Try
+                             End Sub)
+
+        ' Process QR
+        ThreadPool.QueueUserWorkItem(Sub()
+                                         Try
+                                             Dim reader As New BarcodeReader()
+                                             Dim result = reader.Decode(frame)
+                                             frame.Dispose()
+
+                                             If result IsNot Nothing Then
+                                                 QRDetected = True
+                                                 Scanning = False
+                                                 Me.BeginInvoke(Sub() ProcessQR(result.Text))
+                                             End If
+                                         Catch ex As Exception
+                                             frame.Dispose()
+                                             Me.BeginInvoke(Sub()
+                                                                MessageBox.Show("QR processing error: " & ex.Message)
+                                                                QRDetected = False
+                                                                Scanning = True
+                                                            End Sub)
+                                         End Try
+                                     End Sub)
+    End Sub
+
+    ' Process QR
+    Private Sub ProcessQR(qrText As String)
+        Dim username As String = ""
+        Dim lines() As String = qrText.Split({Environment.NewLine}, StringSplitOptions.RemoveEmptyEntries)
+        For Each line As String In lines
+            If line.StartsWith("USERNAME:") Then
+                username = line.Replace("USERNAME:", "").Trim()
+                Exit For
+            End If
+        Next
+
+        If ValidateUser(username) Then
+            LoginUser(username)
+        Else
+            MessageBox.Show("Invalid QR code. Scanner reset.", "Error")
+            QRDetected = False
+            Scanning = True
+        End If
+    End Sub
+
+    ' Validate user
+    Private Function ValidateUser(username As String) As Boolean
+        Using con As New SqlConnection("Server=localhost\SQLEXPRESS;Database=LibraSysDB;Trusted_Connection=True;")
+            Using cmd As New SqlCommand("SELECT COUNT(*) FROM Users WHERE UserName=@UserName", con)
+                cmd.Parameters.AddWithValue("@UserName", username)
+                Try
+                    con.Open()
+                    Return CInt(cmd.ExecuteScalar()) > 0
+                Catch ex As Exception
+                    MessageBox.Show("Database error: " & ex.Message)
+                    Return False
+                End Try
+            End Using
+        End Using
+    End Function
+
+    ' Login user
+    Private Sub LoginUser(username As String)
+        Globals.CurrentUserID = GetUserIDByUsername(username)
+
+        Using con As New SqlConnection("Server=localhost\SQLEXPRESS;Database=LibraSysDB;Trusted_Connection=True;")
+            Using cmdLog As New SqlCommand("INSERT INTO UserLogs(UserID, LoginTime) VALUES(@UserID, @LoginTime)", con)
+                cmdLog.Parameters.AddWithValue("@UserID", Globals.CurrentUserID)
+                cmdLog.Parameters.AddWithValue("@LoginTime", DateTime.Now)
+                Try
+                    con.Open()
+                    cmdLog.ExecuteNonQuery()
+                Catch ex As Exception
+                    MessageBox.Show("Failed to log user login: " & ex.Message)
+                End Try
+            End Using
+        End Using
+
+        MessageBox.Show($"Welcome to LibraSys, {username}!", "Login Successful")
+        Dim userPage As New UserMainPage()
+        userPage.Show()
+        Me.Hide()
+    End Sub
+
     ' Get UserID
     Private Function GetUserIDByUsername(username As String) As Integer
         Dim userID As Integer = 0
@@ -227,9 +221,8 @@ Public Class FrmQRScanner
     Private Sub ClearLastQRCode()
         Try
             If pbCamera.Image IsNot Nothing Then
-                Dim oldImage As Image = pbCamera.Image
+                pbCamera.Image.Dispose()
                 pbCamera.Image = Nothing
-                oldImage.Dispose()
             End If
         Catch
         End Try
@@ -278,5 +271,9 @@ Public Class FrmQRScanner
     ' Auto logout
     Private Sub OnAppExit(sender As Object, e As EventArgs)
         LogoutCurrentUser()
+    End Sub
+
+    Private Sub pbCamera_Click(sender As Object, e As EventArgs) Handles pbCamera.Click
+
     End Sub
 End Class
