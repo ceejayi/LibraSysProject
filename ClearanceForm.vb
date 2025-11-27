@@ -119,10 +119,11 @@ Public Class ClearanceForm
             If bookStatus Is Nothing Then
                 MessageBox.Show("Book not found in the library.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return
-            ElseIf bookStatus.ToString().ToLower() = "borrowed" Then
-                MessageBox.Show("This book is already borrowed.", "Unavailable", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            ElseIf bookStatus.ToString().ToLower() <> "available" Then
+                MessageBox.Show("This book is currently unavailable and cannot be borrowed.", "Unavailable", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Return
             End If
+
 
             ' Check borrowed books count for user
             Dim cmdCount As New SqlCommand("SELECT COUNT(*) FROM BorrowedBooks WHERE UserID=@uid AND ReturnDate IS NULL", con)

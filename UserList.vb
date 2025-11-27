@@ -50,7 +50,7 @@ Public Class UserList
         um.TextBox1.Text = ListOfUser.SelectedRows(0).Cells("FullName").Value.ToString()
         um.TextBox2.Text = ListOfUser.SelectedRows(0).Cells("Username").Value.ToString()
         um.TextBox3.Text = ListOfUser.SelectedRows(0).Cells("Password").Value.ToString()
-        um.TextBox4.Text = ListOfUser.SelectedRows(0).Cells("Role").Value.ToString()
+        um.ComboBox1.Text = ListOfUser.SelectedRows(0).Cells("Role").Value.ToString()
         um.TextBox5.Text = ListOfUser.SelectedRows(0).Cells("Email").Value.ToString()
         um.SelectedUserID = selectedUserID
         um.isEditMode = True

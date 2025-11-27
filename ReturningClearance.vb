@@ -86,25 +86,44 @@ Public Class ReturningClearance
                 Return
             End If
 
-            ' Update BorrowedBooks
-            Dim cmd1 As New SqlCommand("
-                UPDATE BorrowedBooks
-                SET ReturnDate=@ReturnDate
-                WHERE BookTitle=@BookTitle AND UserID=@UserID AND ReturnDate IS NULL
-            ", con)
-            cmd1.Parameters.AddWithValue("@ReturnDate", DateTime.Now)
-            cmd1.Parameters.AddWithValue("@BookTitle", SelectedBookTitle)
-            cmd1.Parameters.AddWithValue("@UserID", CurrentUserID)
-            cmd1.ExecuteNonQuery()
+            ' Determine book condition based on RadioButtons
+            Dim bookCondition As String = ""
+            If RadioButton1.Checked Then
+                bookCondition = "Damaged"
+            ElseIf RadioButton2.Checked Then
+                bookCondition = "Lost"
+            ElseIf RadioButton3.Checked Then
+                bookCondition = "Good"
+            ElseIf RadioButton4.Checked Then
+                bookCondition = TextBox2.Text.Trim()
+            End If
+
+            ' Update BorrowedBooks table with condition and return date
+            Dim cmdBorrowed As New SqlCommand("
+            UPDATE BorrowedBooks
+            SET ReturnDate=@ReturnDate, Condition=@Condition
+            WHERE BookTitle=@BookTitle AND UserID=@UserID AND ReturnDate IS NULL
+        ", con)
+            cmdBorrowed.Parameters.AddWithValue("@ReturnDate", DateTime.Now)
+            cmdBorrowed.Parameters.AddWithValue("@Condition", bookCondition)
+            cmdBorrowed.Parameters.AddWithValue("@BookTitle", SelectedBookTitle)
+            cmdBorrowed.Parameters.AddWithValue("@UserID", CurrentUserID)
+            cmdBorrowed.ExecuteNonQuery()
 
             ' Update Books table
-            Dim cmd2 As New SqlCommand("
-                UPDATE Books
-                SET BookStatus='Available'
-                WHERE Title=@BookTitle
-            ", con)
-            cmd2.Parameters.AddWithValue("@BookTitle", SelectedBookTitle)
-            cmd2.ExecuteNonQuery()
+            Dim bookStatus As String = "Available"
+            If bookCondition = "Damaged" Or bookCondition = "Lost" Or (RadioButton4.Checked AndAlso TextBox2.Text.Trim() <> "Good") Then
+                bookStatus = "Unavailable" ' cannot be borrowed
+            End If
+
+            Dim cmdBooks As New SqlCommand("
+            UPDATE Books
+            SET BookStatus=@BookStatus
+            WHERE Title=@BookTitle
+        ", con)
+            cmdBooks.Parameters.AddWithValue("@BookStatus", bookStatus)
+            cmdBooks.Parameters.AddWithValue("@BookTitle", SelectedBookTitle)
+            cmdBooks.ExecuteNonQuery()
         End Using
 
         ' Refresh open forms
@@ -121,6 +140,7 @@ Public Class ReturningClearance
         AlreadyRead.Show()
         Me.Close()
     End Sub
+
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         CurrentlyReading.Show()
@@ -168,4 +188,7 @@ Public Class ReturningClearance
         Return ""
     End Function
 
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs)
+
+    End Sub
 End Class

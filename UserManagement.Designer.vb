@@ -26,10 +26,10 @@ Partial Class UserManagement
         btnSave = New Button()
         btnClear = New Button()
         TextBox5 = New TextBox()
-        TextBox4 = New TextBox()
         TextBox3 = New TextBox()
         TextBox2 = New TextBox()
         TextBox1 = New TextBox()
+        ComboBox1 = New ComboBox()
         Panel1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -37,10 +37,10 @@ Partial Class UserManagement
         ' 
         Panel1.BackgroundImage = My.Resources.Resources.UserManagement
         Panel1.BackgroundImageLayout = ImageLayout.Stretch
+        Panel1.Controls.Add(ComboBox1)
         Panel1.Controls.Add(btnSave)
         Panel1.Controls.Add(btnClear)
         Panel1.Controls.Add(TextBox5)
-        Panel1.Controls.Add(TextBox4)
         Panel1.Controls.Add(TextBox3)
         Panel1.Controls.Add(TextBox2)
         Panel1.Controls.Add(TextBox1)
@@ -82,13 +82,6 @@ Partial Class UserManagement
         TextBox5.Size = New Size(326, 27)
         TextBox5.TabIndex = 11
         ' 
-        ' TextBox4
-        ' 
-        TextBox4.Location = New Point(268, 361)
-        TextBox4.Name = "TextBox4"
-        TextBox4.Size = New Size(326, 27)
-        TextBox4.TabIndex = 10
-        ' 
         ' TextBox3
         ' 
         TextBox3.Location = New Point(268, 327)
@@ -110,6 +103,15 @@ Partial Class UserManagement
         TextBox1.Size = New Size(326, 27)
         TextBox1.TabIndex = 6
         ' 
+        ' ComboBox1
+        ' 
+        ComboBox1.FormattingEnabled = True
+        ComboBox1.Items.AddRange(New Object() {"Student,Faculty"})
+        ComboBox1.Location = New Point(267, 360)
+        ComboBox1.Name = "ComboBox1"
+        ComboBox1.Size = New Size(326, 28)
+        ComboBox1.TabIndex = 14
+        ' 
         ' UserManagement
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -128,10 +130,10 @@ Partial Class UserManagement
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox4 As TextBox
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents btnSave As Button
     Friend WithEvents btnClear As Button
+    Friend WithEvents ComboBox1 As ComboBox
 End Class

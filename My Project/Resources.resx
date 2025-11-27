@@ -136,6 +136,9 @@
   <data name="LoadingScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LoadingScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="UserManagement" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UserManagement.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="TermsAndConditions" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TermsAndConditions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -211,16 +214,25 @@
   <data name="BookCollection1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BookCollection.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ReturningClearance" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReturningClearance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="UserQRLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UserQRLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UserLogs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UserLogs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="6 The history of Herodotus, Author_ Herodotus1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\6 The history of Herodotus, Author_ Herodotus.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="AdminDashboard1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AdminDashboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="WelcomeScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WelcomeScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="UserManagement" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\UserManagement.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ReturningClearance1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReturningClearance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

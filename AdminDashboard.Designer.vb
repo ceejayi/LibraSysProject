@@ -22,7 +22,6 @@ Partial Class AdminDashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AdminDashboard))
         Button1 = New Button()
         Button2 = New Button()
         Button3 = New Button()
@@ -102,7 +101,7 @@ Partial Class AdminDashboard
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        BackgroundImage = My.Resources.Resources.AdminDashboard1
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(1006, 633)
         Controls.Add(Button6)

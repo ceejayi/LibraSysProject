@@ -9,6 +9,11 @@ Public Class FrmQRGenerator
     Private Sub FrmQRGenerator_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadUserIDFromDB()
         userID.ReadOnly = True ' Make UserID read-only
+
+        ' Initialize ComboBox1 for user roles
+        ComboBox1.Items.Clear()
+        ComboBox1.Items.Add("Student")
+        ComboBox1.Items.Add("Faculty")
     End Sub
 
     '===============================
@@ -34,7 +39,7 @@ Public Class FrmQRGenerator
     '==============================
     Private Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
         ' Validation
-        If fullName.Text = "" Or userType.Text = "" Or userName.Text = "" Or txtPassword.Text = "" Or contact.Text = "" Then
+        If fullName.Text = "" Or ComboBox1.SelectedItem Is Nothing Or userName.Text = "" Or txtPassword.Text = "" Or contact.Text = "" Then
             MessageBox.Show("Please fill all required fields.")
             Exit Sub
         End If
@@ -43,7 +48,7 @@ Public Class FrmQRGenerator
         Dim qrContent As String =
             $"USER ID: {userID.Text}{Environment.NewLine}" &
             $"FULL NAME: {fullName.Text}{Environment.NewLine}" &
-            $"USER TYPE: {userType.Text}{Environment.NewLine}" &
+            $"USER TYPE: {ComboBox1.SelectedItem.ToString()}{Environment.NewLine}" &
             $"USERNAME: {userName.Text}{Environment.NewLine}" &
             $"PASSWORD: {txtPassword.Text}{Environment.NewLine}" &
             $"CONTACT: {contact.Text}"
@@ -80,7 +85,7 @@ Public Class FrmQRGenerator
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         ' Clear all textboxes
         fullName.Clear()
-        userType.Clear()
+        ComboBox1.SelectedIndex = -1
         userName.Clear()
         txtPassword.Clear()
         contact.Clear()
@@ -95,7 +100,7 @@ Public Class FrmQRGenerator
     '==============================
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         ' Validation
-        If fullName.Text = "" Or userType.Text = "" Or userName.Text = "" Or txtPassword.Text = "" Or contact.Text = "" Or pbQRCode.Image Is Nothing Then
+        If fullName.Text = "" Or ComboBox1.SelectedItem Is Nothing Or userName.Text = "" Or txtPassword.Text = "" Or contact.Text = "" Or pbQRCode.Image Is Nothing Then
             MessageBox.Show("Please generate QR code first and fill all fields.")
             Exit Sub
         End If
@@ -116,7 +121,7 @@ Public Class FrmQRGenerator
             cmd.Parameters.AddWithValue("@FullName", fullName.Text)
             cmd.Parameters.AddWithValue("@UserName", userName.Text)
             cmd.Parameters.AddWithValue("@Password", txtPassword.Text)
-            cmd.Parameters.AddWithValue("@Role", userType.Text)
+            cmd.Parameters.AddWithValue("@Role", ComboBox1.SelectedItem.ToString())
             cmd.Parameters.AddWithValue("@Email", contact.Text)
             cmd.Parameters.AddWithValue("@QRCodeImagePath", qrPath)
             cmd.Parameters.AddWithValue("@DateCreated", DateTime.Now)

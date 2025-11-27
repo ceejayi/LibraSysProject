@@ -32,8 +32,8 @@ Partial Class FrmQRGenerator
         btnClear = New Button()
         contact = New TextBox()
         userName = New TextBox()
-        userType = New TextBox()
         fullName = New TextBox()
+        ComboBox1 = New ComboBox()
         Panel1.SuspendLayout()
         CType(pbQRCode, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -42,6 +42,7 @@ Partial Class FrmQRGenerator
         ' 
         Panel1.BackgroundImage = My.Resources.Resources.QRManagement
         Panel1.BackgroundImageLayout = ImageLayout.Stretch
+        Panel1.Controls.Add(ComboBox1)
         Panel1.Controls.Add(txtPassword)
         Panel1.Controls.Add(pbQRCode)
         Panel1.Controls.Add(userID)
@@ -51,7 +52,6 @@ Partial Class FrmQRGenerator
         Panel1.Controls.Add(btnClear)
         Panel1.Controls.Add(contact)
         Panel1.Controls.Add(userName)
-        Panel1.Controls.Add(userType)
         Panel1.Controls.Add(fullName)
         Panel1.Location = New Point(12, 12)
         Panel1.Name = "Panel1"
@@ -147,19 +147,21 @@ Partial Class FrmQRGenerator
         userName.Size = New Size(330, 27)
         userName.TabIndex = 2
         ' 
-        ' userType
-        ' 
-        userType.Location = New Point(214, 309)
-        userType.Name = "userType"
-        userType.Size = New Size(330, 27)
-        userType.TabIndex = 2
-        ' 
         ' fullName
         ' 
         fullName.Location = New Point(214, 205)
         fullName.Name = "fullName"
         fullName.Size = New Size(330, 27)
         fullName.TabIndex = 0
+        ' 
+        ' ComboBox1
+        ' 
+        ComboBox1.FormattingEnabled = True
+        ComboBox1.Items.AddRange(New Object() {"Student,Faculty"})
+        ComboBox1.Location = New Point(214, 312)
+        ComboBox1.Name = "ComboBox1"
+        ComboBox1.Size = New Size(330, 28)
+        ComboBox1.TabIndex = 11
         ' 
         ' FrmQRGenerator
         ' 
@@ -183,9 +185,9 @@ Partial Class FrmQRGenerator
     Friend WithEvents btnClear As Button
     Friend WithEvents contact As TextBox
     Friend WithEvents userName As TextBox
-    Friend WithEvents userType As TextBox
     Friend WithEvents fullName As TextBox
     Friend WithEvents pbQRCode As PictureBox
     Friend WithEvents userID As TextBox
     Friend WithEvents txtPassword As TextBox
+    Friend WithEvents ComboBox1 As ComboBox
 End Class

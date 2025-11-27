@@ -6,6 +6,8 @@
     Public Shared bookDescription As String
     Public Shared bookCoverPath As String
     Public Shared bookFile As String
+    Public Shared bookStatus As String
+
 
     Private Sub BookChosen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblTitle.Text = bookTitle

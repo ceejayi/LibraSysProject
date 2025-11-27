@@ -7,6 +7,12 @@ Public Class UserManagement
 
     ' ----------------- FORM LOAD -----------------
     Private Sub UserManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Initialize Role ComboBox
+        ComboBox1.Items.Clear()
+        ComboBox1.Items.Add("Student")
+        ComboBox1.Items.Add("Faculty")
+        ComboBox1.Items.Add("Admin")
+
         If isEditMode Then
             LoadUserData()
         End If
@@ -24,7 +30,7 @@ Public Class UserManagement
                         TextBox1.Text = reader("FullName").ToString()
                         TextBox2.Text = reader("Username").ToString()
                         TextBox3.Text = reader("Password").ToString()
-                        TextBox4.Text = reader("Role").ToString()
+                        ComboBox1.SelectedItem = reader("Role").ToString()
                         TextBox5.Text = reader("Email").ToString()
                     End If
                 End Using
@@ -39,7 +45,7 @@ Public Class UserManagement
         TextBox1.Clear()
         TextBox2.Clear()
         TextBox3.Clear()
-        TextBox4.Clear()
+        ComboBox1.SelectedIndex = -1
         TextBox5.Clear()
         isEditMode = False
         SelectedUserID = 0
@@ -48,7 +54,7 @@ Public Class UserManagement
     ' ----------------- SAVE BUTTON -----------------
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         If String.IsNullOrWhiteSpace(TextBox1.Text) Or String.IsNullOrWhiteSpace(TextBox2.Text) Or
-           String.IsNullOrWhiteSpace(TextBox3.Text) Or String.IsNullOrWhiteSpace(TextBox4.Text) Or
+           String.IsNullOrWhiteSpace(TextBox3.Text) Or ComboBox1.SelectedItem Is Nothing Or
            String.IsNullOrWhiteSpace(TextBox5.Text) Then
             MessageBox.Show("Please fill out all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
@@ -69,7 +75,7 @@ Public Class UserManagement
                 cmd.Parameters.AddWithValue("@FullName", TextBox1.Text.Trim())
                 cmd.Parameters.AddWithValue("@Username", TextBox2.Text.Trim())
                 cmd.Parameters.AddWithValue("@Password", TextBox3.Text.Trim())
-                cmd.Parameters.AddWithValue("@Role", TextBox4.Text.Trim())
+                cmd.Parameters.AddWithValue("@Role", ComboBox1.SelectedItem.ToString())
                 cmd.Parameters.AddWithValue("@Email", TextBox5.Text.Trim())
 
                 cmd.ExecuteNonQuery()
@@ -82,5 +88,9 @@ Public Class UserManagement
         MessageBox.Show("User saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Me.Close()
         UserList.LoadUsers()
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
     End Sub
 End Class

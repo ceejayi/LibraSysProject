@@ -28,7 +28,7 @@ Public Class UserMainPage
 
         Using con As New SqlConnection(connectionString)
             con.Open()
-            Dim cmd As New SqlCommand("SELECT Title, PicturePath, Genre FROM Books ORDER BY Genre, Title", con)
+            Dim cmd As New SqlCommand("SELECT Title, PicturePath, Genre, BookStatus FROM Books ORDER BY Genre, Title", con)
             Dim adapter As New SqlDataAdapter(cmd)
             adapter.Fill(dtBooks)
         End Using
@@ -45,7 +45,7 @@ Public Class UserMainPage
 
             Dim panelGenre As New FlowLayoutPanel()
             panelGenre.Width = FlowLayoutPanelGenres.ClientSize.Width - 25
-            panelGenre.Height = 208
+            panelGenre.Height = 220
             panelGenre.FlowDirection = FlowDirection.LeftToRight
             panelGenre.WrapContents = False
             panelGenre.AutoScroll = True
@@ -56,10 +56,11 @@ Public Class UserMainPage
             For Each row In booksInGenre
                 Dim title As String = row.Field(Of String)("Title")
                 Dim picPath As String = row.Field(Of String)("PicturePath")
+                Dim bookStatus As String = row.Field(Of String)("BookStatus")
 
                 Dim bookPanel As New Panel()
                 bookPanel.Width = 120
-                bookPanel.Height = 180
+                bookPanel.Height = 200
                 bookPanel.Margin = New Padding(10, 5, 5, 5)
                 bookPanel.Cursor = Cursors.Hand
                 bookPanel.Tag = New With {.Title = title, .Genre = genre, .PicturePath = picPath}
@@ -67,14 +68,12 @@ Public Class UserMainPage
                 Dim coverPanel As New Panel()
                 coverPanel.Width = 120
                 coverPanel.Height = 140
-
                 If System.IO.File.Exists(picPath) Then
                     coverPanel.BackgroundImage = Image.FromFile(picPath)
                     coverPanel.BackgroundImageLayout = ImageLayout.Stretch
                 Else
                     coverPanel.BackColor = Color.Gray
                 End If
-
                 bookPanel.Controls.Add(coverPanel)
 
                 Dim lblTitle As New Label()
@@ -85,9 +84,21 @@ Public Class UserMainPage
                 lblTitle.AutoEllipsis = True
                 bookPanel.Controls.Add(lblTitle)
 
+                ' ---------------- Add BookStatus label ----------------
+                Dim statusLabel As New Label()
+                statusLabel.Text = bookStatus
+                statusLabel.Top = lblTitle.Bottom + 2
+                statusLabel.Width = 120
+                statusLabel.Height = 15
+                statusLabel.TextAlign = ContentAlignment.MiddleCenter
+                statusLabel.Font = New Font("Arial", 9, FontStyle.Italic)
+                statusLabel.ForeColor = If(bookStatus.ToLower() = "available", Color.Green, Color.Red)
+                bookPanel.Controls.Add(statusLabel)
+
                 AddHandler bookPanel.Click, AddressOf BookPanel_Click
                 AddHandler coverPanel.Click, AddressOf BookPanel_Click
                 AddHandler lblTitle.Click, AddressOf BookPanel_Click
+                AddHandler statusLabel.Click, AddressOf BookPanel_Click
 
                 panelGenre.Controls.Add(bookPanel)
             Next
@@ -121,6 +132,7 @@ Public Class UserMainPage
                     BookChosen.bookDescription = reader("Description").ToString()
                     BookChosen.bookCoverPath = reader("PicturePath").ToString()
                     BookChosen.bookFile = reader("SoftCopyPath").ToString()
+                    BookChosen.bookStatus = reader("BookStatus").ToString()
                 End If
             End Using
         End Using
@@ -146,13 +158,13 @@ Public Class UserMainPage
 
         Select Case filter
             Case "Title"
-                query = "SELECT Title, PicturePath, Genre FROM Books WHERE Title LIKE @keyword ORDER BY Genre, Title"
+                query = "SELECT Title, PicturePath, Genre, BookStatus FROM Books WHERE Title LIKE @keyword ORDER BY Genre, Title"
             Case "Author"
-                query = "SELECT Title, PicturePath, Genre FROM Books WHERE Author LIKE @keyword ORDER BY Genre, Title"
+                query = "SELECT Title, PicturePath, Genre, BookStatus FROM Books WHERE Author LIKE @keyword ORDER BY Genre, Title"
             Case "Year Published"
-                query = "SELECT Title, PicturePath, Genre FROM Books WHERE PublishedYear LIKE @keyword ORDER BY Genre, Title"
+                query = "SELECT Title, PicturePath, Genre, BookStatus FROM Books WHERE PublishedYear LIKE @keyword ORDER BY Genre, Title"
             Case "Genre"
-                query = "SELECT Title, PicturePath, Genre FROM Books WHERE Genre LIKE @keyword ORDER BY Genre, Title"
+                query = "SELECT Title, PicturePath, Genre, BookStatus FROM Books WHERE Genre LIKE @keyword ORDER BY Genre, Title"
         End Select
 
         Dim dtBooks As New DataTable()
@@ -187,7 +199,7 @@ Public Class UserMainPage
 
             Dim panelGenre As New FlowLayoutPanel()
             panelGenre.Width = FlowLayoutPanelGenres.ClientSize.Width - 25
-            panelGenre.Height = 200
+            panelGenre.Height = 220
             panelGenre.FlowDirection = FlowDirection.LeftToRight
             panelGenre.WrapContents = False
             panelGenre.AutoScroll = True
@@ -198,10 +210,11 @@ Public Class UserMainPage
             For Each row In booksInGenre
                 Dim title As String = row.Field(Of String)("Title")
                 Dim picPath As String = row.Field(Of String)("PicturePath")
+                Dim bookStatus As String = row.Field(Of String)("BookStatus")
 
                 Dim bookPanel As New Panel()
                 bookPanel.Width = 120
-                bookPanel.Height = 180
+                bookPanel.Height = 200
                 bookPanel.Margin = New Padding(10, 5, 5, 5)
                 bookPanel.Cursor = Cursors.Hand
                 bookPanel.Tag = New With {.Title = title, .Genre = genre, .PicturePath = picPath}
@@ -225,9 +238,21 @@ Public Class UserMainPage
                 lblTitle.AutoEllipsis = True
                 bookPanel.Controls.Add(lblTitle)
 
+                ' ---------------- Add BookStatus label ----------------
+                Dim statusLabel As New Label()
+                statusLabel.Text = bookStatus
+                statusLabel.Top = lblTitle.Bottom + 2
+                statusLabel.Width = 120
+                statusLabel.Height = 15
+                statusLabel.TextAlign = ContentAlignment.MiddleCenter
+                statusLabel.Font = New Font("Arial", 9, FontStyle.Italic)
+                statusLabel.ForeColor = If(bookStatus.ToLower() = "available", Color.Green, Color.Red)
+                bookPanel.Controls.Add(statusLabel)
+
                 AddHandler bookPanel.Click, AddressOf BookPanel_Click
                 AddHandler coverPanel.Click, AddressOf BookPanel_Click
                 AddHandler lblTitle.Click, AddressOf BookPanel_Click
+                AddHandler statusLabel.Click, AddressOf BookPanel_Click
 
                 panelGenre.Controls.Add(bookPanel)
             Next
