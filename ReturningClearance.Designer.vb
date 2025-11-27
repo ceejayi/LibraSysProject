@@ -61,7 +61,7 @@ Partial Class ReturningClearance
         ' Panel1
         ' 
         Panel1.BackColor = Color.MistyRose
-        Panel1.Location = New Point(131, 233)
+        Panel1.Location = New Point(132, 233)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(765, 254)
         Panel1.TabIndex = 3
