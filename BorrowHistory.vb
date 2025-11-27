@@ -54,4 +54,44 @@ Public Class BorrowHistory
     Private Sub borrowHistoryy_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles borrowHistoryy.CellContentClick
 
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        MyReviews.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        ServiceFeedback.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        CurrentlyReading.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        wanttoreadform.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        AlreadyRead.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub logOut_Click(sender As Object, e As EventArgs) Handles logOut.Click
+        Welcome.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        UserMainPage.Show()
+        Me.Hide()
+    End Sub
 End Class
