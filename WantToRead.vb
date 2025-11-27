@@ -7,4 +7,8 @@
         BorrowHistory.Show()
         Me.Hide()
     End Sub
+
+    Private Sub btnBrowse_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click
+
+    End Sub
 End Class
