@@ -138,9 +138,9 @@ Partial Class AlreadyRead
         ' 
         alreadyReadd.AutoScroll = True
         alreadyReadd.BackColor = Color.MistyRose
-        alreadyReadd.Location = New Point(350, 206)
+        alreadyReadd.Location = New Point(350, 190)
         alreadyReadd.Name = "alreadyReadd"
-        alreadyReadd.Size = New Size(572, 309)
+        alreadyReadd.Size = New Size(572, 335)
         alreadyReadd.TabIndex = 9
         alreadyReadd.WrapContents = False
         ' 
