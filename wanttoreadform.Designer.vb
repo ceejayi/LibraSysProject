@@ -24,6 +24,8 @@ Partial Class wanttoreadform
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(wanttoreadform))
         Panel1 = New Panel()
+        btnBrowse = New Button()
+        PictureBox1 = New PictureBox()
         btnLogout = New Button()
         btnAlreadyRead = New Button()
         btnWanttoRead = New Button()
@@ -31,8 +33,6 @@ Partial Class wanttoreadform
         btnServiceFeedback = New Button()
         btnMyReviews = New Button()
         btnBorrowHistory = New Button()
-        PictureBox1 = New PictureBox()
-        btnBrowse = New Button()
         Panel1.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -54,6 +54,26 @@ Partial Class wanttoreadform
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(982, 609)
         Panel1.TabIndex = 0
+        ' 
+        ' btnBrowse
+        ' 
+        btnBrowse.BackColor = Color.Transparent
+        btnBrowse.FlatAppearance.BorderSize = 0
+        btnBrowse.FlatStyle = FlatStyle.Flat
+        btnBrowse.Location = New Point(232, 533)
+        btnBrowse.Name = "btnBrowse"
+        btnBrowse.Size = New Size(61, 29)
+        btnBrowse.TabIndex = 8
+        btnBrowse.UseVisualStyleBackColor = False
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.BackColor = Color.Salmon
+        PictureBox1.Location = New Point(323, 129)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(594, 433)
+        PictureBox1.TabIndex = 7
+        PictureBox1.TabStop = False
         ' 
         ' btnLogout
         ' 
@@ -131,26 +151,6 @@ Partial Class wanttoreadform
         btnBorrowHistory.Size = New Size(221, 29)
         btnBorrowHistory.TabIndex = 0
         btnBorrowHistory.UseVisualStyleBackColor = False
-        ' 
-        ' PictureBox1
-        ' 
-        PictureBox1.BackColor = Color.Salmon
-        PictureBox1.Location = New Point(323, 129)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(594, 433)
-        PictureBox1.TabIndex = 7
-        PictureBox1.TabStop = False
-        ' 
-        ' btnBrowse
-        ' 
-        btnBrowse.BackColor = Color.Transparent
-        btnBrowse.FlatAppearance.BorderSize = 0
-        btnBrowse.FlatStyle = FlatStyle.Flat
-        btnBrowse.Location = New Point(232, 533)
-        btnBrowse.Name = "btnBrowse"
-        btnBrowse.Size = New Size(61, 29)
-        btnBrowse.TabIndex = 8
-        btnBrowse.UseVisualStyleBackColor = False
         ' 
         ' wanttoreadform
         ' 
