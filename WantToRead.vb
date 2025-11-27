@@ -1,4 +1,4 @@
-﻿Public Class wanttoreadform
+﻿Public Class WantToRead
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnServiceFeedback.Click
 
     End Sub

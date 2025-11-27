@@ -24,68 +24,106 @@ Partial Class ReturnForm
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ReturnForm))
         Panel1 = New Panel()
-        PictureBox1 = New PictureBox()
-        Button1 = New Button()
-        Button2 = New Button()
         Button3 = New Button()
+        btnReview = New Button()
+        btnReturn = New Button()
+        lblTitle = New Label()
+        lblAuthorGenre = New Label()
+        lblDescription = New Label()
+        Panel2 = New Panel()
         Panel1.SuspendLayout()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel1
         ' 
         Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), Image)
         Panel1.BackgroundImageLayout = ImageLayout.Stretch
+        Panel1.Controls.Add(Panel2)
+        Panel1.Controls.Add(lblDescription)
+        Panel1.Controls.Add(lblAuthorGenre)
+        Panel1.Controls.Add(lblTitle)
         Panel1.Controls.Add(Button3)
-        Panel1.Controls.Add(Button2)
-        Panel1.Controls.Add(Button1)
-        Panel1.Controls.Add(PictureBox1)
-        Panel1.Location = New Point(3, 12)
+        Panel1.Controls.Add(btnReview)
+        Panel1.Controls.Add(btnReturn)
+        Panel1.Location = New Point(12, 12)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(982, 609)
         Panel1.TabIndex = 0
-        ' 
-        ' PictureBox1
-        ' 
-        PictureBox1.BackColor = Color.Salmon
-        PictureBox1.Location = New Point(119, 159)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(264, 393)
-        PictureBox1.TabIndex = 0
-        PictureBox1.TabStop = False
-        ' 
-        ' Button1
-        ' 
-        Button1.BackColor = Color.Transparent
-        Button1.FlatAppearance.BorderSize = 0
-        Button1.FlatStyle = FlatStyle.Flat
-        Button1.Location = New Point(403, 507)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(80, 45)
-        Button1.TabIndex = 1
-        Button1.UseVisualStyleBackColor = False
-        ' 
-        ' Button2
-        ' 
-        Button2.BackColor = Color.Transparent
-        Button2.FlatAppearance.BorderSize = 0
-        Button2.FlatStyle = FlatStyle.Flat
-        Button2.Location = New Point(506, 515)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(79, 29)
-        Button2.TabIndex = 2
-        Button2.UseVisualStyleBackColor = False
         ' 
         ' Button3
         ' 
         Button3.BackColor = Color.Transparent
         Button3.FlatAppearance.BorderSize = 0
         Button3.FlatStyle = FlatStyle.Flat
-        Button3.Location = New Point(877, 541)
+        Button3.Location = New Point(884, 541)
         Button3.Name = "Button3"
-        Button3.Size = New Size(60, 29)
+        Button3.Size = New Size(53, 26)
         Button3.TabIndex = 3
         Button3.UseVisualStyleBackColor = False
+        ' 
+        ' btnReview
+        ' 
+        btnReview.BackColor = Color.Transparent
+        btnReview.FlatAppearance.BorderSize = 0
+        btnReview.FlatStyle = FlatStyle.Flat
+        btnReview.Location = New Point(506, 507)
+        btnReview.Name = "btnReview"
+        btnReview.Size = New Size(79, 37)
+        btnReview.TabIndex = 2
+        btnReview.UseVisualStyleBackColor = False
+        ' 
+        ' btnReturn
+        ' 
+        btnReturn.BackColor = Color.Transparent
+        btnReturn.FlatAppearance.BorderSize = 0
+        btnReturn.FlatStyle = FlatStyle.Flat
+        btnReturn.Location = New Point(402, 507)
+        btnReturn.Name = "btnReturn"
+        btnReturn.Size = New Size(80, 37)
+        btnReturn.TabIndex = 1
+        btnReturn.UseVisualStyleBackColor = False
+        ' 
+        ' lblTitle
+        ' 
+        lblTitle.BackColor = Color.Transparent
+        lblTitle.Font = New Font("Century Schoolbook", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblTitle.ForeColor = SystemColors.Control
+        lblTitle.Location = New Point(402, 157)
+        lblTitle.Name = "lblTitle"
+        lblTitle.Size = New Size(483, 35)
+        lblTitle.TabIndex = 5
+        lblTitle.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' lblAuthorGenre
+        ' 
+        lblAuthorGenre.BackColor = Color.Transparent
+        lblAuthorGenre.Font = New Font("Century Schoolbook", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblAuthorGenre.ForeColor = SystemColors.Control
+        lblAuthorGenre.Location = New Point(402, 212)
+        lblAuthorGenre.Name = "lblAuthorGenre"
+        lblAuthorGenre.Size = New Size(483, 101)
+        lblAuthorGenre.TabIndex = 6
+        lblAuthorGenre.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' lblDescription
+        ' 
+        lblDescription.BackColor = Color.Transparent
+        lblDescription.Font = New Font("Century Schoolbook", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblDescription.ForeColor = SystemColors.Control
+        lblDescription.Location = New Point(402, 336)
+        lblDescription.Name = "lblDescription"
+        lblDescription.Size = New Size(483, 154)
+        lblDescription.TabIndex = 7
+        lblDescription.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' Panel2
+        ' 
+        Panel2.BackColor = Color.Salmon
+        Panel2.BackgroundImageLayout = ImageLayout.Stretch
+        Panel2.Location = New Point(119, 157)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(265, 403)
+        Panel2.TabIndex = 8
         ' 
         ' ReturnForm
         ' 
@@ -96,13 +134,15 @@ Partial Class ReturnForm
         Name = "ReturnForm"
         Text = "Return"
         Panel1.ResumeLayout(False)
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents btnReview As Button
+    Friend WithEvents btnReturn As Button
+    Friend WithEvents lblTitle As Label
+    Friend WithEvents lblAuthorGenre As Label
+    Friend WithEvents lblDescription As Label
+    Friend WithEvents Panel2 As Panel
 End Class
