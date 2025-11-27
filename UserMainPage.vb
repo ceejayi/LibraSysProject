@@ -1,6 +1,8 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class UserMainPage
+
     Private connectionString As String = "Server=localhost\SQLEXPRESS;Database=LibraSysDB;Trusted_Connection=True;"
 
     Private Sub UserMainPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -8,15 +10,23 @@ Public Class UserMainPage
         FlowLayoutPanelGenres.WrapContents = False
         FlowLayoutPanelGenres.AutoScroll = True
 
+        ' ----------- ADD SEARCH OPTIONS -----------
+        ComboBox1.Items.Clear()
+        ComboBox1.Items.Add("Title")
+        ComboBox1.Items.Add("Author")
+        ComboBox1.Items.Add("Year Published")
+        ComboBox1.Items.Add("Genre")
+        ComboBox1.SelectedIndex = 0
+
         LoadNetflixStyleHomepage()
     End Sub
 
+    ' ----------------- LOAD HOME PAGE ----------------------
     Private Sub LoadNetflixStyleHomepage()
         FlowLayoutPanelGenres.Controls.Clear()
 
         Dim dtBooks As New DataTable()
 
-        ' Fetch all books at once
         Using con As New SqlConnection(connectionString)
             con.Open()
             Dim cmd As New SqlCommand("SELECT Title, PicturePath, Genre FROM Books ORDER BY Genre, Title", con)
@@ -24,11 +34,9 @@ Public Class UserMainPage
             adapter.Fill(dtBooks)
         End Using
 
-        ' Get unique genres
         Dim genres = dtBooks.AsEnumerable().Select(Function(r) r.Field(Of String)("Genre")).Distinct().ToList()
 
         For Each genre In genres
-            ' Genre label
             Dim lblGenre As New Label()
             lblGenre.Text = genre
             lblGenre.Font = New Font("Arial", 14, FontStyle.Bold)
@@ -36,7 +44,6 @@ Public Class UserMainPage
             lblGenre.Margin = New Padding(5)
             FlowLayoutPanelGenres.Controls.Add(lblGenre)
 
-            ' Panel for books in this genre
             Dim panelGenre As New FlowLayoutPanel()
             panelGenre.Width = FlowLayoutPanelGenres.ClientSize.Width - 25
             panelGenre.Height = 208
@@ -45,7 +52,6 @@ Public Class UserMainPage
             panelGenre.AutoScroll = True
             panelGenre.Margin = New Padding(0, 0, 0, 20)
 
-            ' Filter books for this genre
             Dim booksInGenre = dtBooks.AsEnumerable().Where(Function(r) r.Field(Of String)("Genre") = genre)
 
             For Each row In booksInGenre
@@ -62,13 +68,14 @@ Public Class UserMainPage
                 Dim coverPanel As New Panel()
                 coverPanel.Width = 120
                 coverPanel.Height = 140
+
                 If System.IO.File.Exists(picPath) Then
                     coverPanel.BackgroundImage = Image.FromFile(picPath)
                     coverPanel.BackgroundImageLayout = ImageLayout.Stretch
                 Else
                     coverPanel.BackColor = Color.Gray
                 End If
-                coverPanel.Cursor = Cursors.Hand
+
                 bookPanel.Controls.Add(coverPanel)
 
                 Dim lblTitle As New Label()
@@ -90,12 +97,14 @@ Public Class UserMainPage
         Next
     End Sub
 
+    ' ----------------- WHEN BOOK IS CLICKED ----------------------
     Private Sub BookPanel_Click(sender As Object, e As EventArgs)
         Dim ctrl As Control = CType(sender, Control)
 
         While ctrl IsNot Nothing AndAlso ctrl.Tag Is Nothing
             ctrl = ctrl.Parent
         End While
+
         If ctrl Is Nothing Then Return
 
         Dim bookInfo = ctrl.Tag
@@ -122,16 +131,36 @@ Public Class UserMainPage
         Me.Hide()
     End Sub
 
-    '-------------------- SEARCH BUTTON -------------------------
+    ' ----------------- SEARCH BUTTON ----------------------
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim keyword As String = TextBox1.Text.Trim()
+        Dim filter As String = ComboBox1.SelectedItem.ToString()
+
         FlowLayoutPanelGenres.Controls.Clear()
+
+        If keyword = "" Then
+            LoadNetflixStyleHomepage()
+            Return
+        End If
+
+        Dim query As String = ""
+
+        Select Case filter
+            Case "Title"
+                query = "SELECT Title, PicturePath, Genre FROM Books WHERE Title LIKE @keyword ORDER BY Genre, Title"
+            Case "Author"
+                query = "SELECT Title, PicturePath, Genre FROM Books WHERE Author LIKE @keyword ORDER BY Genre, Title"
+            Case "Year Published"
+                query = "SELECT Title, PicturePath, Genre FROM Books WHERE YearPublished LIKE @keyword ORDER BY Genre, Title"
+            Case "Genre"
+                query = "SELECT Title, PicturePath, Genre FROM Books WHERE Genre LIKE @keyword ORDER BY Genre, Title"
+        End Select
 
         Dim dtBooks As New DataTable()
 
         Using con As New SqlConnection(connectionString)
             con.Open()
-            Dim cmd As New SqlCommand("SELECT Title, PicturePath, Genre FROM Books WHERE Title LIKE @keyword ORDER BY Genre, Title", con)
+            Dim cmd As New SqlCommand(query, con)
             cmd.Parameters.AddWithValue("@keyword", "%" & keyword & "%")
             Dim adapter As New SqlDataAdapter(cmd)
             adapter.Fill(dtBooks)
@@ -147,7 +176,6 @@ Public Class UserMainPage
             Return
         End If
 
-        ' Group by genre
         Dim genres = dtBooks.AsEnumerable().Select(Function(r) r.Field(Of String)("Genre")).Distinct().ToList()
 
         For Each genre In genres
@@ -188,7 +216,6 @@ Public Class UserMainPage
                 Else
                     coverPanel.BackColor = Color.Gray
                 End If
-                coverPanel.Cursor = Cursors.Hand
                 bookPanel.Controls.Add(coverPanel)
 
                 Dim lblTitle As New Label()
@@ -210,7 +237,7 @@ Public Class UserMainPage
         Next
     End Sub
 
-    ' LOGOUT BUTTON
+    ' LOGOUT
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Dim result As DialogResult = MessageBox.Show("Are you sure you want to log out?", "Logout Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If result = DialogResult.Yes Then
@@ -220,14 +247,11 @@ Public Class UserMainPage
         End If
     End Sub
 
-    ' NAVIGATION BUTTON
+    ' BORROW HISTORY
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim navForm As New BorrowHistory()
         navForm.Show()
         Me.Close()
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-        ' Nothing here
-    End Sub
 End Class
