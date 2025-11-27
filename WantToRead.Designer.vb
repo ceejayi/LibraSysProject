@@ -24,6 +24,8 @@ Partial Class WantToRead
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(WantToRead))
         Panel1 = New Panel()
+        btnBrowse = New Button()
+        PictureBox1 = New PictureBox()
         btnLogout = New Button()
         btnAlreadyRead = New Button()
         btnWanttoRead = New Button()
@@ -31,8 +33,6 @@ Partial Class WantToRead
         btnServiceFeedback = New Button()
         btnMyReviews = New Button()
         btnBorrowHistory = New Button()
-        PictureBox1 = New PictureBox()
-        btnBrowse = New Button()
         Panel1.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -54,6 +54,26 @@ Partial Class WantToRead
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(982, 609)
         Panel1.TabIndex = 0
+        ' 
+        ' btnBrowse
+        ' 
+        btnBrowse.BackColor = Color.Transparent
+        btnBrowse.FlatAppearance.BorderSize = 0
+        btnBrowse.FlatStyle = FlatStyle.Flat
+        btnBrowse.Location = New Point(232, 533)
+        btnBrowse.Name = "btnBrowse"
+        btnBrowse.Size = New Size(61, 29)
+        btnBrowse.TabIndex = 8
+        btnBrowse.UseVisualStyleBackColor = False
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.BackColor = Color.Salmon
+        PictureBox1.Location = New Point(323, 123)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(594, 441)
+        PictureBox1.TabIndex = 7
+        PictureBox1.TabStop = False
         ' 
         ' btnLogout
         ' 
@@ -132,35 +152,15 @@ Partial Class WantToRead
         btnBorrowHistory.TabIndex = 0
         btnBorrowHistory.UseVisualStyleBackColor = False
         ' 
-        ' PictureBox1
+        ' WantToRead
         ' 
-        PictureBox1.BackColor = Color.Salmon
-        PictureBox1.Location = New Point(323, 129)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(594, 433)
-        PictureBox1.TabIndex = 7
-        PictureBox1.TabStop = False
-        ' 
-        ' btnBrowse
-        ' 
-        btnBrowse.BackColor = Color.Transparent
-        btnBrowse.FlatAppearance.BorderSize = 0
-        btnBrowse.FlatStyle = FlatStyle.Flat
-        btnBrowse.Location = New Point(232, 533)
-        btnBrowse.Name = "btnBrowse"
-        btnBrowse.Size = New Size(61, 29)
-        btnBrowse.TabIndex = 8
-        btnBrowse.UseVisualStyleBackColor = False
-        ' 
-        ' wanttoreadform
-        ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1006, 633)
         Controls.Add(Panel1)
         MaximizeBox = False
         MinimizeBox = False
-        Name = "wanttoreadform"
+        Name = "WantToRead"
         Text = "wanttoreadform"
         Panel1.ResumeLayout(False)
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()

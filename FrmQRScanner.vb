@@ -34,6 +34,10 @@ Public Class FrmQRScanner
 
             ' Start camera automatically
             StartCamera()
+
+            ' Hook application exit for auto logout
+            AddHandler Application.ApplicationExit, AddressOf OnAppExit
+
         Catch ex As Exception
             MessageBox.Show("Error initializing camera: " & ex.Message)
         End Try
@@ -46,7 +50,6 @@ Public Class FrmQRScanner
         End If
         Scanning = True
         QRDetected = False
-        ' Clear last QR image
         ClearLastQRCode()
     End Sub
 
@@ -71,7 +74,6 @@ Public Class FrmQRScanner
                                      End If
                                      pbCamera.Image = CType(frame.Clone(), Bitmap)
                                  Catch
-                                     ' Ignore disposal errors
                                  End Try
                              End Sub)
 
@@ -115,10 +117,13 @@ Public Class FrmQRScanner
                                                                     If isValidUser Then
                                                                         MessageBox.Show($"Welcome to LibraSys, {username}!", "Login Successful")
 
+                                                                        ' Set current user globally
+                                                                        Globals.CurrentUserID = GetUserIDByUsername(username)
+
                                                                         ' --- Insert into UserLogs ---
                                                                         Using con As New SqlConnection("Server=localhost\SQLEXPRESS;Database=LibraSysDB;Trusted_Connection=True;")
-                                                                            Using cmdLog As New SqlCommand("INSERT INTO UserLogs(UserID, LoginTime) VALUES((SELECT UserID FROM Users WHERE UserName=@UserName), @LoginTime)", con)
-                                                                                cmdLog.Parameters.AddWithValue("@UserName", username)
+                                                                            Using cmdLog As New SqlCommand("INSERT INTO UserLogs(UserID, LoginTime) VALUES(@UserID, @LoginTime)", con)
+                                                                                cmdLog.Parameters.AddWithValue("@UserID", Globals.CurrentUserID)
                                                                                 cmdLog.Parameters.AddWithValue("@LoginTime", DateTime.Now)
                                                                                 Try
                                                                                     con.Open()
@@ -130,16 +135,12 @@ Public Class FrmQRScanner
                                                                         End Using
                                                                         ' -----------------------------
 
-                                                                        ' Clear last scanned QR immediately
                                                                         ClearLastQRCode()
-
-                                                                        ' Open UserMainPage
                                                                         Dim userPage As New UserMainPage()
                                                                         userPage.Show()
                                                                         Me.Hide()
                                                                     Else
                                                                         MessageBox.Show("Invalid QR code. Scanner reset.", "Error")
-                                                                        ' Reset flags and allow scanning again
                                                                         QRDetected = False
                                                                         Scanning = True
                                                                     End If
@@ -149,7 +150,6 @@ Public Class FrmQRScanner
                                              frame.Dispose()
                                              Me.BeginInvoke(Sub()
                                                                 MessageBox.Show("QR processing error: " & ex.Message)
-                                                                ' Reset flags for next scan
                                                                 QRDetected = False
                                                                 Scanning = True
                                                             End Sub)
@@ -157,9 +157,28 @@ Public Class FrmQRScanner
                                      End Sub)
     End Sub
 
+    ' Helper to get UserID by username
+    Private Function GetUserIDByUsername(username As String) As Integer
+        Dim userID As Integer = 0
+        Using con As New SqlConnection("Server=localhost\SQLEXPRESS;Database=LibraSysDB;Trusted_Connection=True;")
+            Using cmd As New SqlCommand("SELECT UserID FROM Users WHERE UserName=@UserName", con)
+                cmd.Parameters.AddWithValue("@UserName", username)
+                Try
+                    con.Open()
+                    Dim result = cmd.ExecuteScalar()
+                    If result IsNot Nothing Then userID = Convert.ToInt32(result)
+                Catch ex As Exception
+                    MessageBox.Show("Error fetching UserID: " & ex.Message)
+                End Try
+            End Using
+        End Using
+        Return userID
+    End Function
+
     ' Stop camera when closing form
     Private Sub FrmQRScanner_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Try
+            LogoutCurrentUser() ' Ensure logout on form close
             If VideoSource IsNot Nothing AndAlso VideoSource.IsRunning Then
                 RemoveHandler VideoSource.NewFrame, AddressOf Video_NewFrame
                 VideoSource.SignalToStop()
@@ -170,11 +189,12 @@ Public Class FrmQRScanner
         End Try
     End Sub
 
-    ' Back button resets scanner and clears last QR
+    ' Back button resets scanner, updates logout, and shows Welcome
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         ClearLastQRCode()
         QRDetected = False
         Scanning = True
+        LogoutCurrentUser()
         Welcome.Show()
         Me.Hide()
     End Sub
@@ -188,8 +208,40 @@ Public Class FrmQRScanner
                 oldImage.Dispose()
             End If
         Catch
-            ' Ignore disposal errors
         End Try
+    End Sub
+
+    ' Update only the latest login record for logout
+    Private Sub LogoutCurrentUser()
+        If Globals.CurrentUserID = 0 Then Return
+
+        Using con As New SqlConnection("Server=localhost\SQLEXPRESS;Database=LibraSysDB;Trusted_Connection=True;")
+            Using cmd As New SqlCommand("
+                UPDATE UserLogs 
+                SET LogoutTime=@LogoutTime 
+                WHERE UserLogID = (
+                    SELECT TOP 1 UserLogID 
+                    FROM UserLogs 
+                    WHERE UserID=@UserID AND LogoutTime IS NULL 
+                    ORDER BY LoginTime DESC
+                )", con)
+                cmd.Parameters.AddWithValue("@LogoutTime", DateTime.Now)
+                cmd.Parameters.AddWithValue("@UserID", Globals.CurrentUserID)
+                Try
+                    con.Open()
+                    cmd.ExecuteNonQuery()
+                Catch ex As Exception
+                    MessageBox.Show("Failed to log logout time: " & ex.Message)
+                End Try
+            End Using
+        End Using
+
+        Globals.CurrentUserID = 0
+    End Sub
+
+    ' Auto logout on application exit
+    Private Sub OnAppExit(sender As Object, e As EventArgs)
+        LogoutCurrentUser()
     End Sub
 
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
