@@ -24,13 +24,13 @@ Partial Class FrmQRScanner
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmQRScanner))
         Panel1 = New Panel()
+        txtUsername = New TextBox()
         txtPassword = New TextBox()
         btnClear = New Button()
         btnEnter = New Button()
         btnBack = New Button()
         btnScan = New Button()
         pbCamera = New PictureBox()
-        txtUsername = New TextBox()
         Panel1.SuspendLayout()
         CType(pbCamera, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -51,11 +51,21 @@ Partial Class FrmQRScanner
         Panel1.Size = New Size(982, 609)
         Panel1.TabIndex = 0
         ' 
+        ' txtUsername
+        ' 
+        txtUsername.BackColor = SystemColors.Window
+        txtUsername.BorderStyle = BorderStyle.None
+        txtUsername.Location = New Point(126, 365)
+        txtUsername.Name = "txtUsername"
+        txtUsername.Size = New Size(209, 20)
+        txtUsername.TabIndex = 6
+        ' 
         ' txtPassword
         ' 
-        txtPassword.Location = New Point(91, 408)
+        txtPassword.BorderStyle = BorderStyle.None
+        txtPassword.Location = New Point(126, 419)
         txtPassword.Name = "txtPassword"
-        txtPassword.Size = New Size(209, 27)
+        txtPassword.Size = New Size(209, 20)
         txtPassword.TabIndex = 5
         ' 
         ' btnClear
@@ -65,7 +75,7 @@ Partial Class FrmQRScanner
         btnClear.FlatStyle = FlatStyle.Flat
         btnClear.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnClear.ForeColor = Color.White
-        btnClear.Location = New Point(216, 460)
+        btnClear.Location = New Point(253, 471)
         btnClear.Name = "btnClear"
         btnClear.Size = New Size(69, 29)
         btnClear.TabIndex = 4
@@ -79,7 +89,7 @@ Partial Class FrmQRScanner
         btnEnter.FlatStyle = FlatStyle.Flat
         btnEnter.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnEnter.ForeColor = Color.White
-        btnEnter.Location = New Point(109, 460)
+        btnEnter.Location = New Point(148, 471)
         btnEnter.Name = "btnEnter"
         btnEnter.Size = New Size(69, 29)
         btnEnter.TabIndex = 3
@@ -119,13 +129,6 @@ Partial Class FrmQRScanner
         pbCamera.Size = New Size(552, 371)
         pbCamera.TabIndex = 0
         pbCamera.TabStop = False
-        ' 
-        ' txtUsername
-        ' 
-        txtUsername.Location = New Point(91, 352)
-        txtUsername.Name = "txtUsername"
-        txtUsername.Size = New Size(209, 27)
-        txtUsername.TabIndex = 6
         ' 
         ' FrmQRScanner
         ' 
