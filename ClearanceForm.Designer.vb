@@ -22,6 +22,7 @@ Partial Class ClearanceForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ClearanceForm))
         Panel1 = New Panel()
         chk = New CheckBox()
         Button2 = New Button()
@@ -33,7 +34,7 @@ Partial Class ClearanceForm
         ' 
         ' Panel1
         ' 
-        Panel1.BackgroundImage = My.Resources.Resources.CLEARANCE
+        Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), Image)
         Panel1.BackgroundImageLayout = ImageLayout.Stretch
         Panel1.Controls.Add(chk)
         Panel1.Controls.Add(Button2)
