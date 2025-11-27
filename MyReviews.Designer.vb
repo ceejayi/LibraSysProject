@@ -24,14 +24,14 @@ Partial Class MyReviews
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MyReviews))
         Panel1 = New Panel()
+        Button8 = New Button()
+        Button7 = New Button()
+        Button6 = New Button()
         Button5 = New Button()
         Button4 = New Button()
         Button3 = New Button()
         Button2 = New Button()
         Button1 = New Button()
-        Button6 = New Button()
-        Button7 = New Button()
-        Button8 = New Button()
         Panel1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -51,6 +51,39 @@ Partial Class MyReviews
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(982, 609)
         Panel1.TabIndex = 0
+        ' 
+        ' Button8
+        ' 
+        Button8.BackColor = Color.Transparent
+        Button8.FlatAppearance.BorderSize = 0
+        Button8.FlatStyle = FlatStyle.Flat
+        Button8.Location = New Point(230, 532)
+        Button8.Name = "Button8"
+        Button8.Size = New Size(67, 29)
+        Button8.TabIndex = 7
+        Button8.UseVisualStyleBackColor = False
+        ' 
+        ' Button7
+        ' 
+        Button7.BackColor = Color.Transparent
+        Button7.FlatAppearance.BorderSize = 0
+        Button7.FlatStyle = FlatStyle.Flat
+        Button7.Location = New Point(71, 532)
+        Button7.Name = "Button7"
+        Button7.Size = New Size(58, 32)
+        Button7.TabIndex = 6
+        Button7.UseVisualStyleBackColor = False
+        ' 
+        ' Button6
+        ' 
+        Button6.BackColor = Color.Transparent
+        Button6.FlatAppearance.BorderSize = 0
+        Button6.FlatStyle = FlatStyle.Flat
+        Button6.Location = New Point(71, 469)
+        Button6.Name = "Button6"
+        Button6.Size = New Size(226, 29)
+        Button6.TabIndex = 5
+        Button6.UseVisualStyleBackColor = False
         ' 
         ' Button5
         ' 
@@ -79,9 +112,9 @@ Partial Class MyReviews
         Button3.BackColor = Color.Transparent
         Button3.FlatAppearance.BorderSize = 0
         Button3.FlatStyle = FlatStyle.Flat
-        Button3.Location = New Point(71, 254)
+        Button3.Location = New Point(71, 270)
         Button3.Name = "Button3"
-        Button3.Size = New Size(226, 41)
+        Button3.Size = New Size(226, 25)
         Button3.TabIndex = 2
         Button3.UseVisualStyleBackColor = False
         ' 
@@ -102,44 +135,11 @@ Partial Class MyReviews
         Button1.BackColor = Color.Transparent
         Button1.FlatAppearance.BorderSize = 0
         Button1.FlatStyle = FlatStyle.Flat
-        Button1.Location = New Point(71, 174)
+        Button1.Location = New Point(71, 183)
         Button1.Name = "Button1"
-        Button1.Size = New Size(226, 39)
+        Button1.Size = New Size(226, 30)
         Button1.TabIndex = 0
         Button1.UseVisualStyleBackColor = False
-        ' 
-        ' Button6
-        ' 
-        Button6.BackColor = Color.Transparent
-        Button6.FlatAppearance.BorderSize = 0
-        Button6.FlatStyle = FlatStyle.Flat
-        Button6.Location = New Point(71, 469)
-        Button6.Name = "Button6"
-        Button6.Size = New Size(226, 29)
-        Button6.TabIndex = 5
-        Button6.UseVisualStyleBackColor = False
-        ' 
-        ' Button7
-        ' 
-        Button7.BackColor = Color.Transparent
-        Button7.FlatAppearance.BorderSize = 0
-        Button7.FlatStyle = FlatStyle.Flat
-        Button7.Location = New Point(71, 532)
-        Button7.Name = "Button7"
-        Button7.Size = New Size(66, 32)
-        Button7.TabIndex = 6
-        Button7.UseVisualStyleBackColor = False
-        ' 
-        ' Button8
-        ' 
-        Button8.BackColor = Color.Transparent
-        Button8.FlatAppearance.BorderSize = 0
-        Button8.FlatStyle = FlatStyle.Flat
-        Button8.Location = New Point(230, 532)
-        Button8.Name = "Button8"
-        Button8.Size = New Size(67, 29)
-        Button8.TabIndex = 7
-        Button8.UseVisualStyleBackColor = False
         ' 
         ' MyReviews
         ' 

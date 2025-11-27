@@ -22,18 +22,25 @@ Partial Class FrmQRScanner
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmQRScanner))
         Panel1 = New Panel()
         btnBack = New Button()
         btnScan = New Button()
         pbCamera = New PictureBox()
+        btnEnter = New Button()
+        btnClear = New Button()
+        TextBox1 = New TextBox()
         Panel1.SuspendLayout()
         CType(pbCamera, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel1
         ' 
-        Panel1.BackgroundImage = My.Resources.Resources.UserQRLogin1
+        Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), Image)
         Panel1.BackgroundImageLayout = ImageLayout.Stretch
+        Panel1.Controls.Add(TextBox1)
+        Panel1.Controls.Add(btnClear)
+        Panel1.Controls.Add(btnEnter)
         Panel1.Controls.Add(btnBack)
         Panel1.Controls.Add(btnScan)
         Panel1.Controls.Add(pbCamera)
@@ -49,7 +56,7 @@ Partial Class FrmQRScanner
         btnBack.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnBack.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnBack.FlatStyle = FlatStyle.Flat
-        btnBack.Location = New Point(200, 382)
+        btnBack.Location = New Point(658, 530)
         btnBack.Name = "btnBack"
         btnBack.Size = New Size(81, 36)
         btnBack.TabIndex = 2
@@ -62,7 +69,7 @@ Partial Class FrmQRScanner
         btnScan.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnScan.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnScan.FlatStyle = FlatStyle.Flat
-        btnScan.Location = New Point(95, 382)
+        btnScan.Location = New Point(555, 530)
         btnScan.Name = "btnScan"
         btnScan.Size = New Size(81, 36)
         btnScan.TabIndex = 1
@@ -70,11 +77,46 @@ Partial Class FrmQRScanner
         ' 
         ' pbCamera
         ' 
-        pbCamera.Location = New Point(380, 115)
+        pbCamera.Location = New Point(371, 107)
         pbCamera.Name = "pbCamera"
-        pbCamera.Size = New Size(535, 404)
+        pbCamera.Size = New Size(552, 371)
         pbCamera.TabIndex = 0
         pbCamera.TabStop = False
+        ' 
+        ' btnEnter
+        ' 
+        btnEnter.BackColor = Color.Transparent
+        btnEnter.FlatAppearance.BorderSize = 0
+        btnEnter.FlatStyle = FlatStyle.Flat
+        btnEnter.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnEnter.ForeColor = Color.White
+        btnEnter.Location = New Point(105, 418)
+        btnEnter.Name = "btnEnter"
+        btnEnter.Size = New Size(69, 29)
+        btnEnter.TabIndex = 3
+        btnEnter.Text = "ENTER"
+        btnEnter.UseVisualStyleBackColor = False
+        ' 
+        ' btnClear
+        ' 
+        btnClear.BackColor = Color.Transparent
+        btnClear.FlatAppearance.BorderSize = 0
+        btnClear.FlatStyle = FlatStyle.Flat
+        btnClear.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnClear.ForeColor = Color.White
+        btnClear.Location = New Point(215, 418)
+        btnClear.Name = "btnClear"
+        btnClear.Size = New Size(69, 29)
+        btnClear.TabIndex = 4
+        btnClear.Text = "CLEAR"
+        btnClear.UseVisualStyleBackColor = False
+        ' 
+        ' TextBox1
+        ' 
+        TextBox1.Location = New Point(90, 355)
+        TextBox1.Name = "TextBox1"
+        TextBox1.Size = New Size(209, 27)
+        TextBox1.TabIndex = 5
         ' 
         ' FrmQRScanner
         ' 
@@ -85,6 +127,7 @@ Partial Class FrmQRScanner
         Name = "FrmQRScanner"
         Text = "FrmQRScanner"
         Panel1.ResumeLayout(False)
+        Panel1.PerformLayout()
         CType(pbCamera, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
@@ -93,4 +136,7 @@ Partial Class FrmQRScanner
     Friend WithEvents btnBack As Button
     Friend WithEvents btnScan As Button
     Friend WithEvents pbCamera As PictureBox
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents btnClear As Button
+    Friend WithEvents btnEnter As Button
 End Class

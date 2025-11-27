@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class CurrentlyReading
+Partial Class AlreadyRead
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,8 @@ Partial Class CurrentlyReading
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CurrentlyReading))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AlreadyRead))
+        btnBorrowHistory = New Button()
         Button1 = New Button()
         Button2 = New Button()
         Button3 = New Button()
@@ -33,15 +34,26 @@ Partial Class CurrentlyReading
         Button8 = New Button()
         SuspendLayout()
         ' 
+        ' btnBorrowHistory
+        ' 
+        btnBorrowHistory.BackColor = Color.Transparent
+        btnBorrowHistory.FlatAppearance.BorderSize = 0
+        btnBorrowHistory.FlatStyle = FlatStyle.Flat
+        btnBorrowHistory.Location = New Point(76, 190)
+        btnBorrowHistory.Name = "btnBorrowHistory"
+        btnBorrowHistory.Size = New Size(225, 29)
+        btnBorrowHistory.TabIndex = 0
+        btnBorrowHistory.UseVisualStyleBackColor = False
+        ' 
         ' Button1
         ' 
         Button1.BackColor = Color.Transparent
         Button1.FlatAppearance.BorderSize = 0
         Button1.FlatStyle = FlatStyle.Flat
-        Button1.Location = New Point(76, 191)
+        Button1.Location = New Point(76, 190)
         Button1.Name = "Button1"
-        Button1.Size = New Size(223, 29)
-        Button1.TabIndex = 0
+        Button1.Size = New Size(224, 29)
+        Button1.TabIndex = 1
         Button1.UseVisualStyleBackColor = False
         ' 
         ' Button2
@@ -49,10 +61,10 @@ Partial Class CurrentlyReading
         Button2.BackColor = Color.Transparent
         Button2.FlatAppearance.BorderSize = 0
         Button2.FlatStyle = FlatStyle.Flat
-        Button2.Location = New Point(75, 237)
+        Button2.Location = New Point(76, 236)
         Button2.Name = "Button2"
-        Button2.Size = New Size(224, 29)
-        Button2.TabIndex = 1
+        Button2.Size = New Size(225, 29)
+        Button2.TabIndex = 2
         Button2.UseVisualStyleBackColor = False
         ' 
         ' Button3
@@ -60,10 +72,10 @@ Partial Class CurrentlyReading
         Button3.BackColor = Color.Transparent
         Button3.FlatAppearance.BorderSize = 0
         Button3.FlatStyle = FlatStyle.Flat
-        Button3.Location = New Point(74, 275)
+        Button3.Location = New Point(75, 277)
         Button3.Name = "Button3"
         Button3.Size = New Size(225, 29)
-        Button3.TabIndex = 2
+        Button3.TabIndex = 3
         Button3.UseVisualStyleBackColor = False
         ' 
         ' Button4
@@ -71,10 +83,10 @@ Partial Class CurrentlyReading
         Button4.BackColor = Color.Transparent
         Button4.FlatAppearance.BorderSize = 0
         Button4.FlatStyle = FlatStyle.Flat
-        Button4.Location = New Point(76, 441)
+        Button4.Location = New Point(75, 386)
         Button4.Name = "Button4"
-        Button4.Size = New Size(223, 22)
-        Button4.TabIndex = 3
+        Button4.Size = New Size(225, 29)
+        Button4.TabIndex = 4
         Button4.UseVisualStyleBackColor = False
         ' 
         ' Button5
@@ -82,10 +94,10 @@ Partial Class CurrentlyReading
         Button5.BackColor = Color.Transparent
         Button5.FlatAppearance.BorderSize = 0
         Button5.FlatStyle = FlatStyle.Flat
-        Button5.Location = New Point(74, 489)
+        Button5.Location = New Point(75, 439)
         Button5.Name = "Button5"
         Button5.Size = New Size(225, 29)
-        Button5.TabIndex = 4
+        Button5.TabIndex = 5
         Button5.UseVisualStyleBackColor = False
         ' 
         ' Button6
@@ -93,10 +105,10 @@ Partial Class CurrentlyReading
         Button6.BackColor = Color.Transparent
         Button6.FlatAppearance.BorderSize = 0
         Button6.FlatStyle = FlatStyle.Flat
-        Button6.Location = New Point(76, 558)
+        Button6.Location = New Point(76, 486)
         Button6.Name = "Button6"
-        Button6.Size = New Size(56, 29)
-        Button6.TabIndex = 5
+        Button6.Size = New Size(224, 29)
+        Button6.TabIndex = 6
         Button6.UseVisualStyleBackColor = False
         ' 
         ' Button7
@@ -104,10 +116,10 @@ Partial Class CurrentlyReading
         Button7.BackColor = Color.Transparent
         Button7.FlatAppearance.BorderSize = 0
         Button7.FlatStyle = FlatStyle.Flat
-        Button7.Location = New Point(237, 557)
+        Button7.Location = New Point(77, 561)
         Button7.Name = "Button7"
-        Button7.Size = New Size(62, 30)
-        Button7.TabIndex = 6
+        Button7.Size = New Size(52, 29)
+        Button7.TabIndex = 7
         Button7.UseVisualStyleBackColor = False
         ' 
         ' Button8
@@ -115,13 +127,13 @@ Partial Class CurrentlyReading
         Button8.BackColor = Color.Transparent
         Button8.FlatAppearance.BorderSize = 0
         Button8.FlatStyle = FlatStyle.Flat
-        Button8.Location = New Point(74, 386)
+        Button8.Location = New Point(237, 561)
         Button8.Name = "Button8"
-        Button8.Size = New Size(225, 29)
-        Button8.TabIndex = 7
+        Button8.Size = New Size(63, 19)
+        Button8.TabIndex = 8
         Button8.UseVisualStyleBackColor = False
         ' 
-        ' CurrentlyReading
+        ' AlreadyRead
         ' 
         AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
@@ -136,14 +148,16 @@ Partial Class CurrentlyReading
         Controls.Add(Button3)
         Controls.Add(Button2)
         Controls.Add(Button1)
+        Controls.Add(btnBorrowHistory)
         MaximizeBox = False
         MinimizeBox = False
-        Name = "CurrentlyReading"
+        Name = "AlreadyRead"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "CurrentlyReading"
+        Text = "AlreadyRead"
         ResumeLayout(False)
     End Sub
 
+    Friend WithEvents btnBorrowHistory As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
