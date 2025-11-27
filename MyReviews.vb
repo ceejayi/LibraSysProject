@@ -17,7 +17,7 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        MyReviews.Show()
+        Me.Show()
         Me.Hide()
     End Sub
 
@@ -27,7 +27,7 @@
     End Sub
 
     Private Sub Button5_Click_1(sender As Object, e As EventArgs) Handles Button5.Click
-        wanttoreadform.Show()
+        WantToRead.Show()
         Me.Hide()
     End Sub
 

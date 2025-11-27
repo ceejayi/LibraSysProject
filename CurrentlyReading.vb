@@ -24,12 +24,12 @@
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-        CurrentlyReading.Show()
+        Me.Show()
         Me.Hide()
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        wanttoreadform.Show()
+        WantToRead.Show()
         Me.Hide()
     End Sub
 

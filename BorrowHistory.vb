@@ -4,12 +4,20 @@ Public Class BorrowHistory
 
     Private connectionString As String = "Server=localhost\SQLEXPRESS;Database=LibraSysDB;Trusted_Connection=True;"
 
-    ' Logged-in user ID
+    ' Logged-in user ID from QR login
     Private LoggedInUserID As Integer
 
     Private Sub BorrowHistory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Get the currently logged-in user ID safely
-        LoggedInUserID = LoginForm.loggedUserID
+        ' Get the currently logged-in user ID from Globals
+        LoggedInUserID = Globals.CurrentUserID
+
+        ' If no user is logged in, warn and close form
+        If LoggedInUserID = 0 Then
+            MessageBox.Show("No user is currently logged in.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Me.Close()
+            Return
+        End If
+
         LoadBorrowHistory()
     End Sub
 
@@ -19,27 +27,28 @@ Public Class BorrowHistory
                 con.Open()
 
                 Dim query As String =
-                    "SELECT BorrowID AS [Borrow Number], BookTitle AS [Book Title]
+                    "SELECT BorrowID AS [Borrow Number], BookTitle AS [Book Title], BorrowDate AS [Borrowed On], DueDate AS [Due Date]
                      FROM BorrowedBooks
                      WHERE UserID = @UserID"
 
-                Dim cmd As New SqlCommand(query, con)
-                cmd.Parameters.AddWithValue("@UserID", LoggedInUserID)
+                Using cmd As New SqlCommand(query, con)
+                    cmd.Parameters.AddWithValue("@UserID", LoggedInUserID)
 
-                Dim adapter As New SqlDataAdapter(cmd)
-                Dim dt As New DataTable()
-                adapter.Fill(dt)
+                    Dim adapter As New SqlDataAdapter(cmd)
+                    Dim dt As New DataTable()
+                    adapter.Fill(dt)
 
-                ' Bind the data to the DataGridView
-                borrowHistoryy.DataSource = dt
-                borrowHistoryy.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-                borrowHistoryy.ReadOnly = True
-                borrowHistoryy.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+                    ' Bind the data to the DataGridView
+                    borrowHistoryy.DataSource = dt
+                    borrowHistoryy.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+                    borrowHistoryy.ReadOnly = True
+                    borrowHistoryy.SelectionMode = DataGridViewSelectionMode.FullRowSelect
 
-                ' Optional: Show a message if no records are found
-                If dt.Rows.Count = 0 Then
-                    MessageBox.Show("You have no borrowed books.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                End If
+                    ' Optional: Show a message if no records are found
+                    If dt.Rows.Count = 0 Then
+                        MessageBox.Show("You have no borrowed books.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    End If
+                End Using
 
             Catch ex As Exception
                 MessageBox.Show("Failed to load borrow history: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)

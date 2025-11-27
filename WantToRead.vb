@@ -20,7 +20,7 @@
     End Sub
 
     Private Sub btnWanttoRead_Click(sender As Object, e As EventArgs) Handles btnWanttoRead.Click
-        wanttoreadform.Show()
+        Me.Show()
         Me.Hide()
     End Sub
 
