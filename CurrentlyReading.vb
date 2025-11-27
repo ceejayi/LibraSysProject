@@ -136,19 +136,13 @@ Public Class CurrentlyReading
             Return
         End If
 
-        Dim returnForm As New ReturnForm()
-        If System.IO.File.Exists(selectedBookCoverPath) Then
-            returnForm.Panel2.BackgroundImage = Image.FromFile(selectedBookCoverPath)
-            returnForm.Panel2.BackgroundImageLayout = ImageLayout.Stretch
-        Else
-            returnForm.Panel2.BackColor = Color.Gray
-        End If
-
-        returnForm.lblTitle.Text = selectedBookTitle
-        returnForm.lblAuthorGenre.Text = selectedBookAuthor & Environment.NewLine & selectedBookGenre
-        returnForm.lblDescription.Text = selectedBookDescription
-        returnForm.selectedBookTitle = selectedBookTitle
-
+        Dim returnForm As New ReturnForm() With {
+            .SelectedBookTitle = selectedBookTitle,
+            .SelectedBookAuthor = selectedBookAuthor,
+            .SelectedBookGenre = selectedBookGenre,
+            .SelectedBookDescription = selectedBookDescription,
+            .SelectedBookCoverPath = selectedBookCoverPath
+        }
         returnForm.Show()
         Me.Hide()
     End Sub
@@ -171,7 +165,6 @@ Public Class CurrentlyReading
         Me.Hide()
     End Sub
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-        Me.Refresh()
         LoadCurrentlyReading()
     End Sub
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
@@ -182,9 +175,12 @@ Public Class CurrentlyReading
         UserMainPage.Show()
         Me.Hide()
     End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         BorrowHistory.Show()
         Me.Hide()
     End Sub
+    Private Sub CurrentlyReading_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        LoadCurrentlyReading()
+    End Sub
+
 End Class

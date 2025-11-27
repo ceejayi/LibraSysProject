@@ -28,12 +28,15 @@ Public Class BorrowHistory
 
                 ' Updated query to display currently borrowed books by logged-in user
                 Dim query As String =
-                    "SELECT BorrowID AS [Borrow Number], BookTitle AS [Book Title], BorrowDate AS [Borrowed On], 
-                            DATEADD(day, 7, BorrowDate) AS [Due Date], 
-                            CASE WHEN ReturnDate IS NULL THEN 'Not Returned' ELSE 'Returned' END AS [Status]
-                     FROM BorrowedBooks
-                     WHERE UserID = @UserID
-                     ORDER BY BorrowDate DESC"
+    "SELECT ROW_NUMBER() OVER (ORDER BY BorrowDate ASC) AS [Borrow Number],
+            BookTitle AS [Book Title], 
+            BorrowDate AS [Borrowed On], 
+            DATEADD(day, 7, BorrowDate) AS [Due Date], 
+            CASE WHEN ReturnDate IS NULL THEN 'Not Returned' ELSE 'Returned' END AS [Status]
+     FROM BorrowedBooks
+     WHERE UserID = @UserID
+     ORDER BY BorrowDate DESC"
+
 
                 Using cmd As New SqlCommand(query, con)
                     cmd.Parameters.AddWithValue("@UserID", LoggedInUserID)

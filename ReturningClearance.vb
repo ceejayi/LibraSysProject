@@ -1,6 +1,4 @@
 ﻿Imports System.Data.SqlClient
-Imports System.Net.Mail
-Imports System.Net
 
 Public Class ReturningClearance
     Public SelectedBookTitle As String = ""
@@ -11,7 +9,7 @@ Public Class ReturningClearance
         Using con As New SqlConnection(connectionString)
             con.Open()
 
-            ' 1. Update BorrowedBooks (ReturnDate only)
+            ' 1. Update BorrowedBooks ReturnDate
             Dim cmd1 As New SqlCommand("
                 UPDATE BorrowedBooks
                 SET ReturnDate=@ReturnDate
@@ -32,14 +30,12 @@ Public Class ReturningClearance
             cmd2.ExecuteNonQuery()
         End Using
 
-        ' Refresh CurrentlyReading form
+        ' Refresh forms immediately
         For Each frm As Form In Application.OpenForms
-            If TypeOf frm Is CurrentlyReading Then
-                CType(frm, CurrentlyReading).LoadCurrentlyReading()
-            End If
+            If TypeOf frm Is CurrentlyReading Then CType(frm, CurrentlyReading).LoadCurrentlyReading()
+            If TypeOf frm Is AlreadyRead Then CType(frm, AlreadyRead).LoadAlreadyRead()
         Next
 
-        ' Show AlreadyRead form
         AlreadyRead.Show()
         Me.Close()
     End Sub
@@ -47,5 +43,9 @@ Public Class ReturningClearance
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         CurrentlyReading.Show()
         Me.Close()
+    End Sub
+
+    Private Sub ReturningClearance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class
