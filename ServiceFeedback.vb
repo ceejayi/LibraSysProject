@@ -67,8 +67,7 @@ Public Class ServiceFeedback
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Me.Show()
-        Me.Hide()
+        Me.Refresh()
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
